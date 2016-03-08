@@ -9,10 +9,10 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
 </head>
 <body>
-  <h1>This is a test</h1>
-  <h2>Another test</h2>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
+  <h1>This is a test</h1>
+  <h2>Another test</h2>
   <%= yield %>
   <%= javascript_include_tag 'application' %>
 </body>
