@@ -6,10 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-puts "deleting all users"
+GardenReview.destroy_all
+Allotment.destroy_all
+Garden.destroy_all
 User.destroy_all
-
+puts "deleting all users"
 puts "creating new users"
 
 
@@ -25,7 +26,7 @@ puts "Now there are users"
 
 puts "deleting all gardens"
 
-Garden.destroy_all
+
 
 puts "creating new gardens"
 
@@ -41,7 +42,6 @@ puts "Now there are gardens"
 
 puts "deleting all allotments"
 
-Allotment.destroy_all
 
 puts "creating new allotments"
 
@@ -50,7 +50,7 @@ sophia_allotment = Allotment.create!(garden: ams0_garden, user: sophia, start_da
 
 puts "Now there are allotments"
 
-GardenReview.destroy_all
+
 
 harry_allotment.garden_reviews.create!(user: harry, description: "Really good garden", stars: 5)
 sophia_allotment.garden_reviews.create!(user: sophia, description: "Nice garden", stars: 4)
