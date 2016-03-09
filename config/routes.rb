@@ -7,9 +7,10 @@ Rails.application.routes.draw do
     resources :allotments, only: [:new, :create]
   end
 
-  # resources :allotments, only: [] do
-  #   resources :garden_reviews, only: [:new, :create]
-  # end
+  resources :allotments, only: [] do
+    resources :garden_reviews, only: [:new, :create]
+  end
+
   #  # resources :user, only: [] do
   #  LET OP: VIA ALLOTMENT?
   #   resources :user_reviews, only: [:new, :create]
