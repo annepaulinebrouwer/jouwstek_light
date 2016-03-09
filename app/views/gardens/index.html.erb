@@ -3,7 +3,8 @@
 
   <div class="container">
       <% @gardens.each do |garden| %>
-      <%=  link_to garden.address, garden_path(garden) %>
-             <h2><%= garden.description %></h2>
+        <%=  link_to garden.title, garden_path(garden) %>
+        <p><%= garden.address %></p>
+        <p><%= garden.description %></p>
       <% end %>
     </div>
