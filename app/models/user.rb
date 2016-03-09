@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :garden, foreign_key: 'owner_id', dependent: :destroy
+  has_one :garden, dependent: :destroy, foreign_key: 'owner_id'
 
   has_many :garden_reviews, dependent: :destroy
   has_many :user_reviews, dependent: :destroy

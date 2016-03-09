@@ -8,7 +8,6 @@
 
 
 puts "deleting all users"
-
 User.destroy_all
 
 puts "creating new users"
@@ -17,6 +16,9 @@ puts "creating new users"
 anne = User.create!(first_name: "Anne", last_name: "Smith", description: "Looking for a garden to grow my tomatoes", email: "asmith@gmail.com", password: "password", password_confirmation: "password")
 harry = User.create!(first_name: "Harry", last_name: "Kip", description: "Looking for a garden to grow strawberries", email: "blabla@gmail.com", password: "password", password_confirmation: "password")
 sophia = User.create!(first_name: "Sophia", last_name: "Jones", description: "Looking for a garden to plant some weed", email: "sophia@gmail.com", password: "password", password_confirmation: "password")
+anays = User.create!(first_name: "Anays", last_name: "Lamers", description: "Looking for a garden to plant some carrots", email: "anays@gmail.com", password: "password", password_confirmation: "password")
+cecile = User.create!(first_name: "Cecile", last_name: "Venezia", description: "Looking for a garden to plant some ginkgo", email: "cecile@gmail.com", password: "password", password_confirmation: "password")
+paula = User.create!(first_name: "Paula", last_name: "Dylan", description: "Looking for a garden to plant some bonsai", email: "paula@gmail.com", password: "password", password_confirmation: "password")
 
 
 puts "Now there are users"
@@ -29,11 +31,11 @@ puts "creating new gardens"
 
 
 ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Wibautstraat 10, Amsterdam", available: "true", description: "I have space in my garden")
-ams1_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Arena Boulevard 1, Amsterdam", available: "true", description: "I have space in my garden")
-ams2_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
-ams3_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
-ams4_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
-ams5_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Rokin 1, Amsterdam", available: "true", description: "Come over!")
+ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Arena Boulevard 1, Amsterdam", available: "true", description: "I have space in my garden")
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
+ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
+ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
+ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1, Amsterdam", available: "true", description: "Come over!")
 
 puts "Now there are gardens"
 
