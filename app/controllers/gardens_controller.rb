@@ -7,6 +7,7 @@ class GardensController < ApplicationController
 
    def show
     @garden
+    @garden_coordinates = { lat: @garden.latitude, lng: @garden.longitude }
   end
 
 
