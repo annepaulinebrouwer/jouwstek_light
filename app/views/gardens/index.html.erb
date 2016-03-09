@@ -1,0 +1,9 @@
+<h1> Gardens: </h1>
+</div>
+
+  <div class="container">
+      <% @gardens.each do |garden| %>
+      <%=  link_to garden.address, garden_path(garden) %>
+             <h2><%= garden.description %></h2>
+      <% end %>
+    </div>
