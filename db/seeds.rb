@@ -6,11 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-puts "deleting all users"
-
+GardenReview.destroy_all
+Allotment.destroy_all
+Garden.destroy_all
 User.destroy_all
 
+
+
+puts "deleting all users"
 puts "creating new users"
 
 
@@ -23,23 +26,22 @@ puts "Now there are users"
 
 puts "deleting all gardens"
 
-Garden.destroy_all
+
 
 puts "creating new gardens"
 
 
 ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Wibautstraat 10, Amsterdam", available: "true", description: "I have space in my garden")
-ams1_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Arena Boulevard 1, Amsterdam", available: "true", description: "I have space in my garden")
-ams2_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
-ams3_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
-ams4_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
-ams5_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Rokin 1, Amsterdam", available: "true", description: "Come over!")
+ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Arena Boulevard 1, Amsterdam", available: "true", description: "I have space in my garden")
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
+# ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
+# ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
+# ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1, Amsterdam", available: "true", description: "Come over!")
 
 puts "Now there are gardens"
 
 puts "deleting all allotments"
 
-Allotment.destroy_all
 
 puts "creating new allotments"
 
@@ -48,7 +50,7 @@ sophia_allotment = Allotment.create!(garden: ams0_garden, user: sophia, start_da
 
 puts "Now there are allotments"
 
-GardenReview.destroy_all
+
 
 harry_allotment.garden_reviews.create!(user: harry, description: "Really good garden", stars: 5)
 sophia_allotment.garden_reviews.create!(user: sophia, description: "Nice garden", stars: 4)
