@@ -12,6 +12,7 @@ gem 'devise'
 gem 'redis'
 gem 'cloudinary'
 gem 'carrierwave'
+gem "geocoder"
 
 gem 'sass-rails'
 gem 'jquery-rails'
