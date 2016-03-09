@@ -28,8 +28,12 @@ Garden.destroy_all
 puts "creating new gardens"
 
 
-haarlem_garden = Garden.create!(owner: anne, address: "Tetterodestraat 10, Haarlem", available: "true", description: "A have space in my garden")
-ams_garden = Garden.create!(owner: anne, address: "ArenA Boulevard 1, Amsterdam", available: "true", description: "A have space in my garden")
+ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Wibautstraat 10, Amsterdam", available: "true", description: "I have space in my garden")
+ams1_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Arena Boulevard 1, Amsterdam", available: "true", description: "I have space in my garden")
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
+ams3_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
+ams4_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
+ams5_garden = Garden.create!(title: 'Sunny garden', owner: anne, address: "Rokin 1, Amsterdam", available: "true", description: "Come over!")
 
 puts "Now there are gardens"
 
@@ -39,8 +43,8 @@ Allotment.destroy_all
 
 puts "creating new allotments"
 
-harry_allotment = Allotment.create!(garden: haarlem_garden, user: harry, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
-sophia_allotment = Allotment.create!(garden: haarlem_garden, user: sophia, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
+harry_allotment = Allotment.create!(garden: ams0_garden, user: harry, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
+sophia_allotment = Allotment.create!(garden: ams0_garden, user: sophia, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
 
 puts "Now there are allotments"
 
