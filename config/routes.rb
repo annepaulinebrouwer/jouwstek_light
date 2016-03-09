@@ -1,11 +1,33 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
 
-  resources :users
-  resources :gardens
-  resources :allotments
+  devise_for :users
+
+  resources :gardens, only: [:index, :show] do
+    resources :allotments, only: [:new, :create]
+  end
+
+  # resources :allotments, only: [] do
+  #   resources :garden_reviews, only: [:new, :create]
+  # end
+  #  # resources :user, only: [] do
+  #  LET OP: VIA ALLOTMENT?
+  #   resources :user_reviews, only: [:new, :create]
+  # end
 
 
+  resources :users, only: [:show]
 
+  resource :profile, only: [:show]
+
+  namespace :owner do
+    resource :garden
+
+    resources :allotments, only: [] do
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
+  end
 end
