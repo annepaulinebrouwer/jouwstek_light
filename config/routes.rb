@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   #   resources :user_reviews, only: [:new, :create]
   # end
 
-
   resources :users, only: [:show]
 
   resource :profile, only: [:show]
