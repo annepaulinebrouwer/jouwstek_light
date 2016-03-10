@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   has_many :rented_gardens, through: :allotments
 
   mount_uploader :photo, PhotoUploader
+
+  def fullname
+    "#{first_name} #{last_name}"
+  end
 end
