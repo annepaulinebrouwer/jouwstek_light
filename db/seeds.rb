@@ -15,16 +15,16 @@ puts "creating new users"
 
 
 anne = User.create!(first_name: "Anne", last_name: "Smith", description: "Looking for a garden to grow my tomatoes", email: "asmith@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
-harry = User.create!(first_name: "Harry", last_name: "Kip", description: "Looking for a garden to grow strawberries", email: "blabla@gmail.com", password: "password", password_confirmation: "password")
-sophia = User.create!(first_name: "Sophia", last_name: "Jones", description: "Looking for a garden to plant some weed", email: "sophia@gmail.com", password: "password", password_confirmation: "password")
-anays = User.create!(first_name: "Anays", last_name: "Lamers", description: "Looking for a garden to plant some carrots", email: "anays@gmail.com", password: "password", password_confirmation: "password")
-cecile = User.create!(first_name: "Cecile", last_name: "Venezia", description: "Looking for a garden to plant some ginkgo", email: "cecile@gmail.com", password: "password", password_confirmation: "password")
+harry = User.create!(first_name: "Harry", last_name: "Kip", description: "Looking for a garden to grow strawberries", email: "blabla@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+sophia = User.create!(first_name: "Sophia", last_name: "Jones", description: "Looking for a garden to plant some weed", email: "sophia@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+anays = User.create!(first_name: "Anays", last_name: "Lamers", description: "Looking for a garden to plant some carrots", email: "anays@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+cecile = User.create!(first_name: "Cecile", last_name: "Venezia", description: "Looking for a garden to plant some ginkgo", email: "cecile@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 paula = User.create!(first_name: "Paula", last_name: "Dylan", description: "I have a big garden, but I don't make use of it fully, I would love if someone else could make use of it.", email: "paula@gmail.com", password: "password", password_confirmation: "password")
-jojanneke = User.create!(first_name: "Jojanneke", last_name: "Tamis", description: "Looking for a garden to grow some tomatoes", email: "jojanneke@gmail.com", password: "password", password_confirmation: "password")
-carolien = User.create!(first_name: "Carolien", last_name: "Jonkers", description: "Looking for a garden to work in", email: "carolien@gmail.com", password: "password", password_confirmation: "password")
-freek = User.create!(first_name: "Freek", last_name: "Jansen", description: "Looking for a garden to grow my tomatoes", email: "freek@gmail.com", password: "password", password_confirmation: "password")
-els = User.create!(first_name: "Els", last_name: "Hijmans", description: "Looking for a garden to grow strawberries", email: "els@gmail.com", password: "password", password_confirmation: "password")
-marie = User.create!(first_name: "Marie", last_name: "Hellinga", description: "Looking for a garden to plant some spices", email: "marie@gmail.com", password: "password", password_confirmation: "password")
+jojanneke = User.create!(first_name: "Jojanneke", last_name: "Tamis", description: "Looking for a garden to grow some tomatoes", email: "jojanneke@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+carolien = User.create!(first_name: "Carolien", last_name: "Jonkers", description: "Looking for a garden to work in", email: "carolien@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+freek = User.create!(first_name: "Freek", last_name: "Jansen", description: "Looking for a garden to grow my tomatoes", email: "freek@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+els = User.create!(first_name: "Els", last_name: "Hijmans", description: "Looking for a garden to grow strawberries", email: "els@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+marie = User.create!(first_name: "Marie", last_name: "Hellinga", description: "Looking for a garden to plant some spices", email: "marie@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 
 puts "Now there are users"
 
