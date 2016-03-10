@@ -1,8 +1,8 @@
 
-<div class="container">
+<div id="container-garden">
   <div class="row">
     <div class="col-sm-offset-1 col-sm-7">
-      <%= cl_image_tag @garden.photo, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @garden.photo, height: 450, width: 600, crop: :fill %>
 
         <p> <%= @garden.title %></p>
         <p> <%= @garden.address %></p>
@@ -12,4 +12,3 @@
       </div>
     </div>
   </div>
-</div>
