@@ -1,33 +1,33 @@
 
 <div id="container-garden">
 
+  <%= cl_image_tag @garden.photo, height: 450, width: 600, crop: :fill %>
 
-    <%= cl_image_tag @garden.photo, height: 450, width: 600, crop: :fill %>
-
-    <p> <%= @garden.title %></p>
-    <p> <%= @garden.address %></p>
-    <p> <%= @garden.description %></p>
+  <p> <%= @garden.title %></p>
+  <p> <%= @garden.address %></p>
+  <p> <%= @garden.description %></p>
 
 </div>
 
 
 <div id="review-container">
-<% @garden.garden_reviews.each do |review| %>
-<div class="row">
-<div class="col-xs-12 col-sm-6" >
-  <div class="review-cards" >
-  <% review.stars.times do %>
-         <i class="fa fa-star"></i>
-          <% end %>
-          <% (5 - review.stars).times do %>
-         <i class="fa fa-star-o"></i>
-          <% end %>
-    <p><%= review.description %></p>
-    <div class="review-name">
-    <p><%= review.user.fullname %></p>
+
+  <div class="row">
+    <% @garden.garden_reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6" >
+      <div class="review-cards" >
+        <% review.stars.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.stars).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <p><%= review.description %></p>
+        <div class="review-name">
+          <p><%= review.user.fullname %></p>
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
-</div>
-<% end %>
-</div>
 </div>
