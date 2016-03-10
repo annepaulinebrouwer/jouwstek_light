@@ -22,44 +22,29 @@
 </div>
 </div>
 
-<div class="countainer">
+
+
+<div class="countainer-cards">
+   <h2 class="text-center">Your future garden</h2>
+    <div class="text-center padded"><%= link_to "List with all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
   <div class="row">
-
     <div class="col-xs-6 col-sm-4">
-     <div class="blocks">
-      <%= image_tag 'garden1.jpeg'%>
+     <div class="card">
+      <%= image_tag 'garden1.jpeg', class: 'card-image' %>
     </div>
   </div>
 
   <div class="col-xs-6 col-sm-4">
-    <div class="blocks">
-      <%= image_tag 'garden1.jpeg'%>
+    <div class="card">
+      <%= image_tag 'garden7.jpeg', class: 'card-image'%>
     </div>
   </div>
 
   <div class="col-xs-6 col-sm-4">
-    <div class="blocks">
-      <%= image_tag 'garden1.jpeg'%>
+    <div class="card">
+      <%= image_tag 'garden8.jpeg', class: 'card-image'%>
     </div>
   </div>
-
-  <div class="col-xs-6 col-sm-4">
-    <div class="blocks">
-      <%= image_tag 'garden1.jpeg'%>
-    </div>
-  </div>
-
-  <div class="col-xs-6 col-sm-4">
-    <div class="blocks">
-    <p>Hello</p>
-    </div>
-  </div>
-
-  <div class="col-xs-6 col-sm-4">
-    <div class="blocks">
-    <p>Hello</p>
-    </div>
-  </div>
-
 </div>
 </div>
+
