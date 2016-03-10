@@ -10,15 +10,16 @@ GardenReview.destroy_all
 Allotment.destroy_all
 Garden.destroy_all
 User.destroy_all
+
 puts "deleting all users"
 puts "creating new users"
-
 
 anne = User.create!(first_name: "Anne", last_name: "Smith", description: "Looking for a garden to grow my tomatoes", email: "asmith@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 harry = User.create!(first_name: "Harry", last_name: "Kip", description: "Looking for a garden to grow strawberries", email: "blabla@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 sophia = User.create!(first_name: "Sophia", last_name: "Jones", description: "Looking for a garden to plant some weed", email: "sophia@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 anays = User.create!(first_name: "Anays", last_name: "Lamers", description: "Looking for a garden to plant some carrots", email: "anays@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 cecile = User.create!(first_name: "Cecile", last_name: "Venezia", description: "Looking for a garden to plant some ginkgo", email: "cecile@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
+
 paula = User.create!(first_name: "Paula", last_name: "Dylan", description: "I have a big garden, but I don't make use of it fully, I would love if someone else could make use of it.", email: "paula@gmail.com", password: "password", password_confirmation: "password")
 jojanneke = User.create!(first_name: "Jojanneke", last_name: "Tamis", description: "Looking for a garden to grow some tomatoes", email: "jojanneke@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
 carolien = User.create!(first_name: "Carolien", last_name: "Jonkers", description: "Looking for a garden to work in", email: "carolien@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/harry.jpg")))
@@ -30,25 +31,30 @@ puts "Now there are users"
 
 puts "deleting all gardens"
 
-
-
 puts "creating new gardens"
 
-
-ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Wibautstraat 10, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
+ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Prinsgracht 600, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
+sleep(0.3)
 ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Herengracht 435, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden2.jpeg")))
-ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
-ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden4.jpeg")))
+sleep(0.3)
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 550, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
+sleep(0.3)
+ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Rozengracht 286, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden4.jpeg")))
+sleep(0.3)
 ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden5.jpeg")))
+sleep(0.3)
 ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1, Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden6.jpeg")))
+sleep(0.3)
 ams6_garden = Garden.create!(title: 'Sunny garden', owner: freek, address: "Herengracht 200, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden7.jpeg")))
+sleep(0.3)
 ams7_garden = Garden.create!(title: 'Beautiful garden', owner: els, address: "Kinkerstraat 3, Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden8.jpeg")))
-ams8_garden = Garden.create!(title: 'Sunny garden', owner: marie, address: "Westerstraat, Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden9.jpeg")))
+sleep(0.3)
+ams8_garden = Garden.create!(title: 'Sunny garden', owner: marie, address: "Westerstraat 7, Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden9.jpeg")))
+
 
 puts "Now there are gardens"
 
 puts "deleting all allotments"
-
 
 puts "creating new allotments"
 
@@ -64,8 +70,6 @@ jojanneke4_allotment = Allotment.create!(garden: ams8_garden, user: jojanneke, s
 carolien4_allotment = Allotment.create!(garden: ams8_garden, user: carolien, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
 
 puts "Now there are allotments"
-
-
 
 harry_allotment.garden_reviews.create!(user: harry, description: "Really good garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa nulla eaque provident, quibusdam dolorem eos enim quia ducimus ea. Earum aperiam, voluptates odio. Asperiores quibusdam quisquam nisi amet vel eveniet consequatur nihil recusandae nesciunt error at eius in reprehenderit illo possimus ipsum impedit, libero architecto eaque, sit? Quia, porro!", stars: 5)
 sophia_allotment.garden_reviews.create!(user: sophia, description: "Nice garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa nulla eaque provident, quibusdam dolorem eos enim quia ducimus ea. Earum aperiam, voluptates odio. Asperiores quibusdam quisquam nisi amet vel eveniet consequatur nihil recusandae nesciunt error at eius in reprehenderit illo possimus ipsum impedit, libero architecto eaque, sit? Quia, porro!", stars: 4)
@@ -90,4 +94,5 @@ els.user_reviews.create!(user: jojanneke, description: "Nice person, is a good g
 els.user_reviews.create!(user: carolien, description: "Really nice person, planted some beautiful flowers in my garden. She is always welcome back. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa nulla eaque provident, quibusdam dolorem eos enim quia ducimus ea. Earum aperiam, voluptates odio. Asperiores quibusdam quisquam nisi amet vel eveniet consequatur nihil recusandae nesciunt error at eius in reprehenderit illo possimus ipsum impedit, libero architecto eaque, sit? Quia, porro!", stars: 3)
 marie.user_reviews.create!(user: jojanneke, description: "Nice person, is a good gardener and gave me some of her tomatoes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa nulla eaque provident, quibusdam dolorem eos enim quia ducimus ea. Earum aperiam, voluptates odio. Asperiores quibusdam quisquam nisi amet vel eveniet consequatur nihil recusandae nesciunt error at eius in reprehenderit illo possimus ipsum impedit, libero architecto eaque, sit? Quia, porro!", stars: 5)
 marie.user_reviews.create!(user: carolien, description: "Really nice person, planted some beautiful flowers in my garden. She is always welcome back. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat culpa nulla eaque provident, quibusdam dolorem eos enim quia ducimus ea. Earum aperiam, voluptates odio. Asperiores quibusdam quisquam nisi amet vel eveniet consequatur nihil recusandae nesciunt error at eius in reprehenderit illo possimus ipsum impedit, libero architecto eaque, sit? Quia, porro!", stars: 3)
+
 puts "Now there are reviews"

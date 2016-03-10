@@ -2,3 +2,22 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.container-cards {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+}
+
+.box {
+  text-align: center;
+  padding: auto 0,0,0;
+  height: 100px;
+  position: relative;
+}
+
+.map {
+  padding: auto 0,0,0;
+}
+

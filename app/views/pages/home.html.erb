@@ -1,17 +1,50 @@
-<h1>Welcome to GardenThumb</h1>
+<div class='container'>
+  <div class='box'>
+    <h1>Welcome to Greenthumb</h1>
+  </div>
+</div>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-  <% end %>
+<div class="container map">
+  <div class="row">
+   <div id="map" style="width: 100%; height: 600px;"></div>
+   <% content_for(:after_js) do %>
+   <%= javascript_tag do %>
+   $(document).on('ready', function() {
+   handler = Gmaps.build('Google');
+   handler.buildMap({ internal: { id: 'map' } }, function(){
+   markers = handler.addMarkers(<%= raw @markers.to_json %>);
+   handler.bounds.extendWith(markers);
+   handler.fitMapToBounds();
+ });
+})
 <% end %>
+<% end %>
+</div>
+</div>
+
+
+
+<div class="countainer-cards">
+   <h2 class="text-center">Your future garden</h2>
+    <div class="text-center padded"><%= link_to "List with all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-4">
+     <div class="card">
+      <%= image_tag 'garden1.jpeg', class: 'card-image' %>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-4">
+    <div class="card">
+      <%= image_tag 'garden7.jpeg', class: 'card-image'%>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-4">
+    <div class="card">
+      <%= image_tag 'garden8.jpeg', class: 'card-image'%>
+    </div>
+  </div>
+</div>
+</div>
 
