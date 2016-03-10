@@ -1,6 +1,23 @@
 <h1><%= @user.first_name%><%= " " %><%= @user.last_name %></h1>
 <h2><%= @user.description %></h2>
 
-<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag  @user.photo, height: 300, width: 400, crop: :fill %>
 
-
+<div id="review-container">
+  <% @user.user_reviews.each do |review| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6" >
+     <div class="review-cards" >
+       <% review.stars.times do %>
+       <i class="fa fa-star"></i>
+       <% end %>
+       <% (5 - review.stars).times do %>
+       <i class="fa fa-star-o"></i>
+       <% end %>
+       <p><%= review.description %></p>
+       <div class="review-name"> </div>
+     </div>
+   </div>
+   <% end %>
+ </div>
+</div>
