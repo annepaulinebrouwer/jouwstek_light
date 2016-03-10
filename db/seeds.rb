@@ -35,10 +35,10 @@ puts "deleting all gardens"
 puts "creating new gardens"
 
 
-ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Wibautstraat 10, Amsterdam", available: "true", description: "I have space in my garden")
+ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Prinsgracht 600, Amsterdam", available: "true", description: "I have space in my garden")
 ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Herengracht 435, Amsterdam", available: "true", description: "I have space in my garden")
-ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 250, Amsterdam", available: "true", description: "I have space in my garden")
-ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Oostenburgervoorstraat 286, Amsterdam", available: "true", description: "I have space in my garden")
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 550, Amsterdam", available: "true", description: "I have space in my garden")
+ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Rozengracht 286, Amsterdam", available: "true", description: "I have space in my garden")
 ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17, Amsterdam", available: "true", description: "I have space in my garden")
 ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1, Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!")
 ams6_garden = Garden.create!(title: 'Sunny garden', owner: freek, address: "Herengracht 200, Amsterdam", available: "true", description: "I have space in my garden")
