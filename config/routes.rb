@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   #   resources :garden_reviews, only: [:new, :create]
   # end
 
-  #  resources :allotments, only: [] do
-  #   resources :user_reviews, only: [:new, :create]
-  # end
+  resources :allotments, only: [] do
+    resources :user_reviews, only: [:show]
+  end
 
   resources :users, only: [:show]
 
