@@ -51,3 +51,18 @@
 </div>
 </div>
 
+ <div class="container-gar">
+    <div class="row">
+      <% @gardens[3..5].each do |garden| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-description">
+            <h2><%= garden.title %></h2>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
