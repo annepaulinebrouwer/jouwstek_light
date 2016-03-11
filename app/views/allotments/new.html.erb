@@ -1,0 +1,13 @@
+<div class="col-sm-offset-4 col-sm-4 form-group">
+
+<h2>Book your allotment in garden: <%= @garden.title%></h2>
+
+<%= simple_form_for([:garden, @allotment]) do |a| %>
+  <%= a.error_notification %>
+
+  <%= a.input :start_day, placeholder: 'When would you like to start?' %>
+  <%= a.input :message, placeholder: 'What would you like to tell the gardenowner?' %>
+
+  <%= a.button :submit %>
+<% end %>
+</div>

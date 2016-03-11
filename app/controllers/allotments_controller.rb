@@ -1,16 +1,17 @@
-module User
-  class AllotmentsController < ApplicationController
+class AllotmentsController < ApplicationController
 
-    # before_action :find_allotment, only: [ :show, :edit, :update, :destroy ]
+   # before_action :find_allotment, only: [ :show, :edit, :update, :destroy ]
+
 
   def new
     @allotment = Allotment.new
+    @garden = find_garden
   end
 
   def create
     @allotment = Allotment.new(allotment_params)
     @allotment.save!
-    # redirect_to user_path(@)!!!!!!!
+    redirect_to user_path(current_user)
   end
 
   private
@@ -19,9 +20,12 @@ module User
     params.require(:allotment).permit(:start_day, :request_status, :message)
   end
 
+  def find_garden
+    @garden = Garden.find(params[:garden_id])
+  end
   # def find_allotment
   #   @allotment = Allotment.find(params[:id])
   # end
 
-  end
 end
+

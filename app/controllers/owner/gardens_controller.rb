@@ -24,15 +24,6 @@ module Owner
   #   @garden
   # end
 
-  # def create
-  #   @garden = Garden.new(garden_params)
-  #   if @garden.save
-  #       redirect_to garden_path(@garden)
-  #   else
-  #       render :new
-  #   end
-  # end
-
   # def edit
   #   @garden
   # end
