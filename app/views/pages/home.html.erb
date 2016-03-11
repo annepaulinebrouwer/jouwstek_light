@@ -24,27 +24,27 @@
 
 
 
+    <div class="text-center padded"><%= link_to "List with all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
+
+<div class="text-center padded"><%= link_to "List with all users", users_path(@user), {class: "btn btn-success" } %></div>
+
 <div class="countainer-cards">
    <h2 class="text-center">Your future garden</h2>
-    <div class="text-center padded"><%= link_to "List with all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
-  <div class="row">
-    <div class="col-xs-6 col-sm-4">
-     <div class="card">
-      <%= image_tag 'garden1.jpeg', class: 'card-image' %>
-    </div>
-  </div>
 
-  <div class="col-xs-6 col-sm-4">
-    <div class="card">
-      <%= image_tag 'garden7.jpeg', class: 'card-image'%>
-    </div>
-  </div>
-
-  <div class="col-xs-6 col-sm-4">
-    <div class="card">
-      <%= image_tag 'garden8.jpeg', class: 'card-image'%>
+ <div class="container-gar">
+    <div class="row">
+      <% @gardens[3..5].each do |garden| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-description">
+            <h2><%= garden.title %></h2>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
-</div>
+
 
