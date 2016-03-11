@@ -1,10 +1,19 @@
 <h1> Gardens: </h1>
 </div>
 
-  <div class="container">
+
+
+ <div class="container-gar">
+    <div class="row">
       <% @gardens.each do |garden| %>
-        <%=  link_to garden.title, garden_path(garden) %>
-        <p><%= garden.address %></p>
-        <p><%= garden.description %></p>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-description">
+            <h2><%= garden.title %></h2>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
+        </div>
+      </div>
       <% end %>
     </div>
+  </div>
