@@ -1,0 +1,38 @@
+  <div id="container-garden">
+
+  <div class="garden-image">
+
+    <%= cl_image_tag garden.photo, height: 450, width: 600, crop: :fill %>
+  </div>
+
+  <div class="text-garden">
+    <p> <%= garden.title %></p>
+    <p> <%= garden.address %></p>
+    <p> <%= garden.description %></p>
+  </div>
+</div>
+
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
+
+
+<div id="review-container">
+
+  <div class="row">
+    <% garden.garden_reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6" >
+      <div class="review-cards" >
+        <% review.stars.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.stars).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <p><%= review.description %></p>
+        <div class="review-name">
+          <p><%= review.user.fullname %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

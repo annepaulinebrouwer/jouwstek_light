@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resource :profile, only: [:show]
 
   namespace :owner do
-    resource :garden
+    resources :gardens
 
     resources :allotments, only: [] do
       member do

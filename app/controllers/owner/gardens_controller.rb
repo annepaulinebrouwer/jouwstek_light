@@ -10,9 +10,11 @@ module Owner
   def create
     @garden = Garden.new(garden_params)
     @garden.save!
-    redirect_to edit_owner_garden_path(@garden)
+    redirect_to owner_garden_path(@garden)
   end
 
+  def show
+  end
 
   # def index
   #   @gardens = Garden.all
@@ -51,9 +53,9 @@ module Owner
     params.require(:garden).permit(:description, :address, :available, :photo, :photo_cache)
   end
 
-  # def find_garden
-  #   @garden = Garden.find(params[:id])
-  # end
+  def find_garden
+    @garden = Garden.find(params[:id])
+  end
 
   end
 end
