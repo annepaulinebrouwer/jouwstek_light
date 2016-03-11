@@ -2,7 +2,6 @@ class AllotmentsController < ApplicationController
 
    # before_action :find_allotment, only: [ :show, :edit, :update, :destroy ]
 
-
   def new
     @allotment = Allotment.new
     @garden = find_garden
@@ -23,6 +22,7 @@ class AllotmentsController < ApplicationController
   def find_garden
     @garden = Garden.find(params[:garden_id])
   end
+
   # def find_allotment
   #   @allotment = Allotment.find(params[:id])
   # end
