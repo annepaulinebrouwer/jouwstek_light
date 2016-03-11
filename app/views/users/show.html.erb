@@ -32,3 +32,18 @@
  </div>
  <% end %>
 </div>
+<div style="text-align: center"><h3>Garden</h3></div>
+<div id="container-garden">
+
+
+  <div class="garden-image">
+
+    <%= cl_image_tag @user.garden.photo, height: 450, width: 600, crop: :fill %>
+  </div>
+
+  <div class="text-garden">
+    <p> <%= @user.garden.title %></p>
+    <p> <%= @user.garden.address %></p>
+    <p> <%= @user.garden.description %></p>
+  </div>
+</div>
