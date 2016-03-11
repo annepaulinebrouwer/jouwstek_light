@@ -18,3 +18,6 @@ def index
     params.require(:user).permit(:name, :description, :photo, :photo_cache)
   end
 end
+
+
+

@@ -2,6 +2,11 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.container-map {
+padding: 50px;
+}
+
 .container-cards {
   margin: 0 auto;
   display: flex;
@@ -17,7 +22,12 @@
   position: relative;
 }
 
-.map {
-  padding: auto 0,0,0;
+.padded {
+  padding: 5em;
+
+}
+
+.wrapper-grey {
+  background: #F4F4F4;
 }
 

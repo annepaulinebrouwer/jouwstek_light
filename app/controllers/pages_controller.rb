@@ -7,5 +7,6 @@ class PagesController < ApplicationController
       marker.lat garden.latitude
       marker.lng garden.longitude
     end
+    @users = User.all
   end
 end
