@@ -13,7 +13,7 @@
    <%= javascript_tag do %>
    $(document).on('ready', function() {
    handler = Gmaps.build('Google');
-   handler.buildMap({ internal: { id: 'map' } }, function(){
+   handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false, zoomControl: false }}, function(){
    markers = handler.addMarkers(<%= raw @markers.to_json %>);
    handler.bounds.extendWith(markers);
    handler.fitMapToBounds();
@@ -34,6 +34,11 @@
         <div class="card-description">
           <h2><%= garden.title %></h2>
         </div>
+        <div>
+        <%= image_tag garden.owner.photo, class: "card-user avatar avatar-large" %>
+
+
+        </div>
         <%= link_to "", garden_path(garden), { class: "card-link" } %>
       </div>
     </div>
@@ -43,10 +48,11 @@
 <div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
 </div>
 
-
-<h2 class="text-center"> Tuintips</h2>
+<div class="container-tips"></div>
+<h2 class="text-center"> gardentips</h2>
 <p class="text-center"> Hier komen tuin tips</p>
 <p class="text-center"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, maxime quia reiciendis nihil quidem, nesciunt adipisci eos, molestiae temporibus enim aliquam minus sunt ut, repudiandae odit in et iste! Nostrum neque quam ipsum sed officiis recusandae libero impedit debitis adipisci sunt at sit sint nihil assumenda quisquam est, praesentium ut ducimus consequuntur mollitia accusamus explicabo perferendis rerum in? Voluptatum repellat odit enim assumenda perferendis! Iusto eos quaerat corporis repellendus odit molestias incidunt vero labore odio similique qui perferendis fugiat voluptatum aliquam voluptas quidem atque nemo animi quas aut, amet, consectetur exercitationem itaque rerum? Quod ipsa quam voluptate quibusdam, at repellendus.</p>
+</div>
 
 <div class="wrapper-grey padded">
 <div class="container-gar">

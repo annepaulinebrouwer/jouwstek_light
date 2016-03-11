@@ -8,5 +8,6 @@ class PagesController < ApplicationController
       marker.lng garden.longitude
     end
     @users = User.all
+    @user = User.first
   end
 end
