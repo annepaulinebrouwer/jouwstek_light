@@ -9,7 +9,7 @@
 </div>
 
 <div class="review-container">
-  <% @user.user_reviews.each do |review| %>
+  <% @user.owner_reviews.each do |review| %>
   <div class="review-cards">
     <div class="row">
       <div class="col-xs-2" style="padding-left: 50px">
@@ -25,6 +25,7 @@
         <p><%= review.description %></p>
         <div class="review-name">
          <p><%= review.user.fullname %></p>
+         <%#raise%>
        </div>
      </div>
    </div>
