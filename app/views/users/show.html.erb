@@ -8,6 +8,7 @@
   </div>
 </div>
 
+<% if @user.owner_reviews.exists? %>
 <div class="review-container">
   <div class="row">
     <div class="col-xs-12">
@@ -39,12 +40,13 @@
  </div>
  <% end %>
 </div>
+<% end %>
 
-
+<% if @user.garden %>
 <div class="review-container">
   <div class="row">
     <div class="col-xs-12">
-      <div style="text-align: center"><h3>Gardens</h3></div>
+      <div style="text-align: center"><h3>Garden</h3></div>
       <div class="section-title-border">
       </div>
     </div>
@@ -58,11 +60,11 @@
     </div>
     <div class="col-xs-6">
       <div class="text-garden">
-        <p> <%= @user.garden.title %></p>
-        <p> <%= @user.garden.address %></p>
-        <p> <%= @user.garden.description %></p>
+        <p> Address: <%= @user.garden.address %></p>
+        <p> Description: <%= @user.garden.description %></p>
       </div>
     </div>
   </div>
 </div>
+<% end %>
 
