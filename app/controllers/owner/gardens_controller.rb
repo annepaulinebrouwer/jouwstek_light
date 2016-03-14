@@ -3,18 +3,19 @@ module Owner
 
     before_action :find_garden, only: [ :show, :edit, :update, :destroy ]
 
-  def new
-    @garden = Garden.new
-  end
+    def new
+      @garden = Garden.new
+    end
 
-  def create
-    @garden = Garden.new(garden_params)
-    @garden.save!
-    redirect_to owner_garden_path(@garden)
-  end
+    def create
+      @garden = Garden.new(garden_params)
+      @garden.owner = current_user
+      @garden.save!
+      redirect_to owner_garden_path(@garden)
+    end
 
-  def show
-  end
+    def show
+    end
 
   # def index
   #   @gardens = Garden.all
@@ -48,5 +49,5 @@ module Owner
     @garden = Garden.find(params[:id])
   end
 
-  end
+end
 end

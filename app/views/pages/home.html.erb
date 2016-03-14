@@ -6,45 +6,45 @@
 </div>
 
 <div class="container-map">
-<h2 class="text-center" >Find a garden nearby:</h2>
+  <h2 class="text-center" >Find a garden nearby:</h2>
   <div class="row">
    <div id="map" style="width: 100%; height: 600px;">
-   <% content_for(:after_js) do %>
-   <%= javascript_tag do %>
-   $(document).on('ready', function() {
-   handler = Gmaps.build('Google');
-   handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false }}, function(){
-   markers = handler.addMarkers(<%= raw @markers.to_json %>);
-   handler.bounds.extendWith(markers);
-   handler.fitMapToBounds();
- });
-})
-<% end %>
-<% end %>
+     <% content_for(:after_js) do %>
+     <%= javascript_tag do %>
+     $(document).on('ready', function() {
+     handler = Gmaps.build('Google');
+     handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false }}, function(){
+     markers = handler.addMarkers(<%= raw @markers.to_json %>);
+     handler.bounds.extendWith(markers);
+     handler.fitMapToBounds();
+   });
+ })
+ <% end %>
+ <% end %>
 </div>
 </div>
 </div>
 
 <div class="wrapper-grey padded">
-<h2 class="text-center" >Your future garden:</h2>
-<div class="container-gar">
-  <div class="row">
-    <% @gardens[0..2].each do |garden| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background: url('<%= garden.photo %>');">
-        <div class="card-description">
-          <h2><%= garden.title %></h2>
+  <h2 class="text-center" >Your future garden:</h2>
+  <div class="container-gar">
+    <div class="row">
+      <% @gardens[0..2].each do |garden| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-description">
+            <h2><%= garden.title %></h2>
+          </div>
+          <div>
+            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
         </div>
-        <div>
-        <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
-        </div>
-        <%= link_to "", garden_path(garden), { class: "card-link" } %>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
-<div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
+  <div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
 </div>
 
 <div class="container-tips"></div>
@@ -54,7 +54,7 @@
 </div>
 
 <div class="wrapper-grey padded">
-<div class="container-gar">
+  <div class="container-gar">
     <div class="row">
       <% @users[0..2].each do |user| %>
       <div class="col-xs-12 col-sm-4">
@@ -68,19 +68,19 @@
       <% end %>
     </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="text-center padded"><%= link_to "See all users", users_path(@user), {class: "btn btn-success" } %></div>
+  <div class="text-center padded"><%= link_to "See all users", users_path(@user), {class: "btn btn-success" } %></div>
 </div>
 
 
