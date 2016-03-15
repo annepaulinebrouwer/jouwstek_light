@@ -12,3 +12,17 @@
   background-color: #366328 !important;
   transition: all 0.5s ease 0s;
 }
+
+.btn-review {
+  padding: 5px 10px;
+  line-height: 1.3;
+  border-radius: 0px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  color: #333;
+  background-color: #e6e6e6;
+
+  &.hover {
+    text-decoration: none
+  }
+}
