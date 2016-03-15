@@ -9,19 +9,15 @@
       <p> <%= garden.title %></p>
       <p> <%= garden.address %></p>
       <p> <%= garden.description %></p>
+      <br>
+      <div><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-    <div class="col-xs-12 col-sm-6">
-        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
+ <div class="container-small-map">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
       </div>
-      <div class="col-xs-12 col-sm-6">
-        <div><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
-      </div>
-    </div>
-  </div>
+
 
   <div id="review-container">
 
