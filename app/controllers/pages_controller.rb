@@ -19,4 +19,8 @@ end
     @users = User.all
     @user = User.first
   end
+
+  def components
+  end
+
 end
