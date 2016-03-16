@@ -83,29 +83,36 @@
 
 <p> Our tabs: </p>
 <div class="tabs text-align:center">
-  <a class="tab active" href="#">
+  <a class="tab active" data-target="#pending">
  <div class="circle-tab">
     <i class="fa fa-question fa-3x"></i>
   </div>
   </a>
-  <a class="tab" href="#">
+  <a class="tab" data-target="#accepted">
   <div class="circle-tab">
     <i class="fa fa-check fa-3x"></i>
   </div>
   </a>
-  <a class="tab" href="#">
-    <div class="circle-tab">
-    <i class="fa fa-ban fa-3x"></i>
-  </div>
-  </a>
-  <a class="tab" href="#">
+  <a class="tab" data-target="#canceled">
    <div class="circle-tab">
     <i class="fa fa-times fa-3x"></i>
   </div>
   </a>
 </div>
 
-<div class="hexagon hexagon1"><div class="hexagon-in1"><div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)" ></div></div></div>
+
+ <div class="container text-center">
+      <div class="tab-content" id="pending">
+        <p> the pending allotments will be here</p>
+      </div>
+      <div class="tab-content hidden" id="accepted">
+        <p>the accepted allotments will be here</p>
+      </div>
+      <div class="tab-content hidden" id="canceled">
+        <p>the canceled allotments will be here</p>
+      </div>
+    </div>
+
 
 <div class="components">
 

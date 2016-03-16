@@ -22,13 +22,20 @@ padding: 50px;
   position: relative;
 }
 
-.padded {
-  padding: 5em;
+// .padded {
+//   margin: 0 auto;
 
+// }
+
+.container-gar {
+  margin: 0 auto;
 }
-
 .wrapper-grey {
   background: #F4F4F4;
+  margin: 0 auto;
+  .btn {
+    margin-top: 250px;
+  }
 }
 
 .container-tips {
