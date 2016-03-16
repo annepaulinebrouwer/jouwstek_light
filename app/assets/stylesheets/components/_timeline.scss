@@ -1,0 +1,27 @@
+.timeline-container {
+  margin-left: 35px;
+}
+
+.timeline-bar {
+  width: 10px;
+  color: black;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-item-icon {
+  width: 50px;
+  height: 50px;
+  background: #659157;
+  display: flex;
+  color: white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 20px;
+}
