@@ -1,0 +1,58 @@
+.small-icon {
+  width: 30px;
+  height: 30px;
+  color: orange;
+}
+
+#review-container {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #E9F6ED;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.review-cards {
+  margin: 50px;
+  padding: 20px;
+  background-color: #FDFDFD;
+  height: 300px;
+  position: relative;
+  border: 1px solid #1C1C1C;
+}
+
+.review-cards:hover {
+  .circle {
+    background-color: #659157;
+  }
+  .review-name {
+    color: #659157;
+  }
+
+}
+
+.carrots {
+  margin: 25px 5px 15px 5px;
+  text-align: center;
+}
+
+.review-text {
+  margin: 5px 10px 5px 10px;
+  text-align: center;
+}
+
+.review-name {
+  margin: 20px 15px 10px 10px;
+  text-align: center;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #1C1C1C;
+  position: absolute;
+  top: -35px;
+  left: 40%;
+}

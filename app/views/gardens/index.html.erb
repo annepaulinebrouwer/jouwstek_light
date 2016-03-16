@@ -11,6 +11,9 @@
           <div class="card-description">
             <h2><%= garden.title %></h2>
           </div>
+          <div>
+            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+          </div>
           <%= link_to "", garden_path(garden), { class: "card-link" } %>
         </div>
       </div>
