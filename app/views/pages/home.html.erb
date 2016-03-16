@@ -24,7 +24,32 @@
 </div>
 </div>
 </div>
+
+
+
+
+<div class="wrapper-grey padded">
+  <h2 class="text-center" >Your future garden:</h2>
+  <div class="container-gar">
+    <div class="row">
+      <% @gardens[0..2].each do |garden| %>
+      <div class="col-xs-12 col-sm-4">
+      <div class="hexagon hexagon1"><div class="hexagon-in1"><div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" ></div></div>
+          <div class="card-description">
+            <h2><%= garden.title %></h2>
+          </div>
+          <div>
+            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
 </div>
+
 
 
 <div class="wrapper-grey padded">
@@ -102,26 +127,3 @@
     </div> -->
   </div>
 </div>
-
-<!-- <section id="footer" class="footer">
-  <div class="container">
-    <div class="row" style="text-align: center">
-     <div class="col-sm-4">
-       <a href="https://www.github.com/carolienjonker29" class="footer-icons btn-treehouse">
-        <i class="fa fa-github"></i>
-      </a>
-    </div>
-    <div class="col-sm-4">
-      <a href="https://www.facebook.com/carolienjonker-9" class="footer-icons btn-treehouse">
-        <i class="fa fa-facebook"></i>
-      </a>
-    </div>
-    <div class="col-sm-4">
-      <a href="#contact" class="footer-icons btn-treehouse">
-        <i class="fa fa-envelope-o"></i>
-      </a>
-    </div>
-  </div>
-</div>
-</section>
--->
