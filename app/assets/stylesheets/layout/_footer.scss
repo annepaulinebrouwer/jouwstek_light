@@ -45,7 +45,7 @@
   background: #fafafa;
   transition: background 0.3s ease;
   margin: 20px;
-  &.hover {
+  &:hover {
     text-decoration: none !important;
     background: #659157 !important;
     color: #fafafa !important;
