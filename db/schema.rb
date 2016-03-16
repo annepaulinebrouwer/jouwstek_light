@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160316161635) do
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "end_day"
+    t.date     "end_day"
   end
 
   add_index "allotments", ["garden_id"], name: "index_allotments_on_garden_id", using: :btree

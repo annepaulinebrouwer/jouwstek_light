@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     resources :user_reviews, only: [:show]
   end
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show]
+
+  namespace :user do
     resources :allotments, only: [:index] do
       member do
         patch :cancel

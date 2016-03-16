@@ -10,7 +10,7 @@ class AllotmentsController < ApplicationController
   def create
     @allotment = Allotment.new(allotment_params)
     @allotment.save!
-    redirect_to user_path(current_user)
+    redirect_to user_allotments_path
   end
 
   private
