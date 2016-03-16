@@ -51,9 +51,9 @@
     display: flex;
     align-items: center;
     margin-right: 25px;
+    flex: 0 0 200px;
 }
 
 .timeline-item-description {
   opacity: 0.5;
-  letter-spacing: 4px;
 }
