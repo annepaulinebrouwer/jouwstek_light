@@ -2,8 +2,26 @@
 </div>
 
 
+  <div class="container-gar">
+    <div class="row">
+      <% @gardens[0..2].each do |garden| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" >
+          <div class="hex-description">
+          <h3><%= garden.title %></h3>
+          </div>
+            </div>
+          </div>
+          <%= link_to "", garden_path(garden), { class: "card-link" } %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
- <div class="container-gar">
+ <!-- <div class="container-gar">
     <div class="row">
       <% @gardens.each do |garden| %>
       <div class="col-xs-12 col-sm-4">
@@ -19,24 +37,7 @@
       </div>
       <% end %>
     </div>
-  </div>
+  </div> -->
 
 
-  <div class="container-gar">
-    <div class="row">
-      <% @gardens.each do |garden| %>
-      <div class="col-xs-12 col-sm-4">
-      <div class="hexagon hexagon1"><div class="hexagon-in1"><div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" ></div></div>
-          <div class="card-description">
-            <h2><%= garden.title %></h2>
-          </div>
-          <div>
-            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
-          </div>
-          <%= link_to "", garden_path(garden), { class: "card-link" } %>
-        </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
 
