@@ -34,16 +34,17 @@
     <div class="row">
       <% @gardens[0..2].each do |garden| %>
       <div class="col-xs-12 col-sm-4">
-      <div class="hexagon hexagon1"><div class="hexagon-in1"><div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" ></div></div>
-          <div class="card-description">
-            <h2><%= garden.title %></h2>
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" >
+          <div class="hex-description">
+          <h3><%= garden.title %></h3>
           </div>
-          <div>
-            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+            </div>
           </div>
           <%= link_to "", garden_path(garden), { class: "card-link" } %>
         </div>
-        </div>
+      </div>
       <% end %>
     </div>
   </div>
@@ -63,7 +64,7 @@
             <h2><%= garden.title %></h2>
           </div>
           <div>
-            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+            <%= link_to image_tag(garden.owner.photo, class: " avatar-medium "), user_path(garden.owner), { class: "avatar-link card-user" } %>
           </div>
           <%= link_to "", garden_path(garden), { class: "card-link" } %>
         </div>
@@ -114,25 +115,16 @@
 
 
 <div id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        <ul class="list-inline">
-          <li><%= link_to "", "", class: "fa fa-youtube" %></li>
-          <li><%= link_to "", "", class: "fa fa-instagram" %></li>
-          <li><%= link_to "", "", class: "fa fa-facebook" %></li>
-          <li><%= link_to "", "", class: "fa fa-twitter" %></li>
-        </ul>
+  <div class="footer-container">
+    <!-- <div class="row">
+      <div class="col-xs-12"> -->
+        <!-- <ul class="list-inline"> -->
+          <%= link_to "", "", class: "fa fa-youtube footer-icons btn-footer" %>
+          <%= link_to "", "", class: "fa fa-instagram footer-icons btn-footer" %>
+          <%= link_to "", "", class: "fa fa-facebook footer-icons btn-footer" %>
+          <%= link_to "", "", class: "fa fa-twitter footer-icons btn-footer" %>
+        <!-- </ul>
       </div>
-      <div class="col-xs-8 text-right">
-        <p>Greenthumb</p>
-      </div>
-    </div>
+    </div> -->
   </div>
 </div>
-
-
-
-
-
-
