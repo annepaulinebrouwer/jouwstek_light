@@ -1,9 +1,9 @@
 - title: SEARCH
   content: Search a garden in your neighbourhood
-  icon: fa fa-search fa-2x
+  icon: fa fa-search
 - title: CONNECT
   content: Connect with the garden owner
-  icon: fa fa-comments fa-2x
+  icon: fa fa-comments
 - title: GROW
   content: Grow your own veggies
-  icon: fa fa-pagelines fa-2x
+  icon: fa fa-pagelines
