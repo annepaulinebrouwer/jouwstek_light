@@ -1,0 +1,59 @@
+.timeline-container {
+  display: flex;
+  background: #fafafa;
+  justify-content: center;
+}
+
+.timeline-bar {
+  background: #659157;
+  opacity: 0.4;
+  position: relative;
+  margin-bottom: 10px;
+  width: 3px;
+  margin-right: -26px;
+  z-index: 0;
+}
+
+.timeline-content {
+  position: relative;
+  max-width: 675px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.timeline-item-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 1px solid rgba(#659157, 0.4);
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 30px;
+  flex: 0 0 50px;
+  color: #659157;
+}
+
+.timeline-item-info {
+  display: flex;
+}
+
+.timeline-item-title {
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.timeline-item-description {
+  opacity: 0.5;
+  letter-spacing: 4px;
+}
