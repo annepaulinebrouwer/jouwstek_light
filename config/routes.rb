@@ -19,15 +19,23 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
+  namespace :user do
+    resources :allotments, only: [:index] do
+      member do
+        patch :cancel
+      end
+    end
+  end
+
   resource :profile, only: [:show]
 
   namespace :owner do
-    resources :gardens
+    resource :garden
 
-    resources :allotments, only: [] do
+    resources :allotments, only: [:index] do
       member do
         patch :accept
-        patch :decline
+        patch :cancel
       end
     end
   end
