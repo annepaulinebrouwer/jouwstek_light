@@ -15,17 +15,24 @@
   </div>
 
   <div class="container-small-map">
+  <h2> Location: </h2>
     <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
   </div>
 
 
   <div id="review-container">
-
     <div class="row">
       <% garden.garden_reviews.each do |review| %>
       <div class="col-xs-12 col-sm-6" >
         <div class="review-cards" >
-          <div class="circle"></div>
+          <div class="circle">
+          </div>
+          <div class="review-name">
+            <p> <%= review.user.fullname %></p>
+          </div>
+          <div class="review-text">
+            <p><%= review.description %></p>
+          </div>
           <div class="carrots">
             <% review.stars.times do %>
             <%= image_tag "carrot_full.png", class: "small-icon"%>
@@ -33,12 +40,6 @@
             <% (5 - review.stars).times do %>
             <%= image_tag "carrot_empty",  class: "small-icon"%>
             <% end %>
-          </div>
-          <div class="review-text">
-            <p><%= review.description %></p>
-          </div>
-          <div class="review-name">
-            <p> - <%= review.user.fullname %></p>
           </div>
         </div>
       </div>

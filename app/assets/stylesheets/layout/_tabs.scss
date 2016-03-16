@@ -6,13 +6,13 @@
   margin:0 auto;
 }
 .tabs a {
-  color: white;
+  color: #FAFAFA;
 }
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  background-color: #1C1C1C;
-  opacity: 0.2;
+  background-color: rgb(233, 246, 237);
+  // opacity: 0.2;
 }
 
 .tab {
@@ -25,6 +25,7 @@
   // border-color: #659157;
   .fa {
     margin-top: 25px;
+    color: #FAFAFA;
   }
 }
 .tab:first-child {
