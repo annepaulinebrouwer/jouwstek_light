@@ -1,2 +1,13 @@
-<p> These are allo your allotment requests: <%=@allotments%></p>
+<h2>See here are all your allotment requests</h2>
+
+  <% @allotments.each do |allotment| %>
+  <p><%= allotment.garden.title %></p>
+  <p><%= allotment.garden.owner.fullname %></p>
+  <%= cl_image_tag allotment.garden.photo, class: "avatar-large" %>
+  <%= link_to "Cancel", cancel_user_allotment_path(allotment), { class: "btn btn-success btn-sm" }, :method => 'put' %>
+
+<% end %>
+
+
+
 
