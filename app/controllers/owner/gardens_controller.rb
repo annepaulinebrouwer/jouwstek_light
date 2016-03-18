@@ -47,7 +47,6 @@ module Owner
 
   def find_garden
     @garden = current_user.garden
-    raise
   end
 
 end

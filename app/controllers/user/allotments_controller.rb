@@ -11,21 +11,11 @@ class User::AllotmentsController < ApplicationController
      if @allotment.save
       redirect_to user_allotments_path
     else
-      flash[:warning] = 'Canceling the garden didn work'
+      flash[:warning] = 'Canceling the garden did not work'
       redirect_to user_allotments_path
     end
   end
 
-  # def update
-  #   @garden.update!(garden_params)
-  # redirect_to garden_path(@garden)
-  # end
-
-  # def destroy
-  #   @garden.destroy!
-  # redirect_to user_path(@user_id)
-  # end
-  #
 private
 
   def find_allotment

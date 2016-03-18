@@ -35,7 +35,7 @@
         <th><p>message</p></th>
         <% @allotments.each do |allotment| %>
           <% if allotment.request_status == "pending" %>
-            <% if current_user.gardens.any? %>
+            <% if current_user.garden %>
              <%= render "shared/booking/content_owner", allotment: allotment %>
             <% else %>
              <%= render "shared/booking/content_user", allotment: allotment %>
@@ -52,15 +52,15 @@
         <th><p>address</p></th>
         <th><p>name</p></th>
         <th><p>message</p></th>
-        <% @allotments.each do |allotment| %>
-        <% if allotment.request_status == "accepted" %>
-        <% if current_user.gardens.any? %>
-        <%= render "shared/booking/content_owner", allotment: allotment %>
-        <% else %>
-        <%= render "shared/booking/content_user", allotment: allotment %>
-        <% end %>
-        <% end %>
-        <% end %>
+          <% @allotments.each do |allotment| %>
+            <% if allotment.request_status == "accepted" %>
+              <% if current_user.garden %>
+                <%= render "shared/booking/content_owner", allotment: allotment %>
+              <% else %>
+                <%= render "shared/booking/content_user", allotment: allotment %>
+              <% end %>
+            <% end %>
+          <% end %>
       </table>
     </div>
   </div>
@@ -72,9 +72,13 @@
         <th><p>name</p></th>
         <th><p>message</p></th>
         <% @allotments.each do |allotment| %>
-        <% if allotment.request_status == "cancelled" && "declined"%>
-        <%= render "shared/booking//content_user", allotment: allotment %>
-        <% end %>
+          <% if allotment.request_status == "cancelled" || "declined"%>
+            <% if current_user.garden %>
+              <%= render "shared/booking/content_owner", allotment: allotment %>
+            <% else %>
+              <%= render "shared/booking//content_user", allotment: allotment %>
+            <% end %>
+           <% end %>
         <% end %>
       </table>
     </div>

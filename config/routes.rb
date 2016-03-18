@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :allotments, only: [:index] do
       member do
         patch :accept
-        patch :cancel
+        patch :decline
       end
     end
   end
