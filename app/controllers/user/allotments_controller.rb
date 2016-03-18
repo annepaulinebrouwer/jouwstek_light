@@ -7,12 +7,12 @@ class User::AllotmentsController < ApplicationController
   end
 
   def cancel
-    @allotment.status_request = "cancelled"
+    @allotment.request_status = "cancelled"
      if @allotment.save
-      redirect_to user_allotments_index
+      redirect_to user_allotments_path
     else
-      redirect_to user_allotments_index
       flash[:warning] = 'Canceling the garden didn work'
+      redirect_to user_allotments_path
     end
   end
 

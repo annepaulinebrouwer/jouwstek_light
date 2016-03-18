@@ -10,6 +10,7 @@ class AllotmentsController < ApplicationController
 
   def create
     @allotment = Allotment.new(allotment_params)
+    @allotment.request_status = "pending"
     @allotment.user = current_user
     @allotment.garden = @garden
 

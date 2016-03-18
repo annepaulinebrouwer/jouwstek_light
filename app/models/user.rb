@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_one :garden, dependent: :destroy, foreign_key: 'owner_id'
 
   has_many :allotments, dependent: :destroy
-  has_many :garden_allotments, class_name: "Allotment", through: :garden
+  has_many :garden_allotments, through: :garden, source: "allotments"
   has_many :garden_reviews, dependent: :destroy
   has_many :user_reviews, dependent: :destroy
   has_many :owner_reviews, dependent: :destroy, class_name: 'UserReview', foreign_key: 'owner_id'
