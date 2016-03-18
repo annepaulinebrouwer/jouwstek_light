@@ -6,6 +6,17 @@
   margin: 0;
   text-align: center;
   color: white;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0%);
+  transition: transform .3s ease;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
 }
 .alert-info {
   background: $green;

@@ -10,6 +10,19 @@
   justify-content: space-between;
 }
 
+.pages-home {
+  .navbar-wagon {
+    background: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    .navbar-wagon-link {
+      color: #fafafa;
+    }
+  }
+}
+
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
