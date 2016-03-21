@@ -1,0 +1,26 @@
+.booking-item {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  text-align: left;
+}
+
+.booking-item-thumb {
+  .avatar-large {
+    border-radius: 5px;
+  }
+
+}
+.booking-item-infos{
+  margin-left: 25px;
+  margin-right: 25px;
+
+}
+.booking-item-side {
+  margin-left: auto;
+}
+
+.booking-item-owner {
+  display: flex;
+  align-items: center;
+}
