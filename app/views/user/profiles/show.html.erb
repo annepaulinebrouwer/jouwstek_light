@@ -1,0 +1,72 @@
+<div class="user-container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%= @user.fullname %></h1>
+      <%= cl_image_tag  @user.photo, class: "avatar-extralarge" %>
+      <p><%= @user.description %></p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quaerat omnis fuga eos similique quos odio ratione neque. Soluta ducimus saepe omnis repellat natus similique dicta aspernatur blanditiis, eum placeat quisquam eius officiis ullam sint. Vero sapiente voluptates, saepe placeat necessitatibus consequuntur tenetur quisquam illum magnam. Fugiat rerum doloremque earum? </p>
+    </div>
+  </div>
+</div>
+
+<% if @user.owner_reviews.exists? %>
+<div class="review-container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div style="text-align: center"><h3>Reviews</h3></div>
+      <div class="section-title-border">
+      </div>
+    </div>
+  </div>
+  <% @user.owner_reviews.each do |review| %>
+  <div class="review-cards">
+    <div class="row">
+      <div class="col-xs-2" style="padding-left: 50px">
+        <%= cl_image_tag  @user.photo, class: "avatar-large" %>
+      </div>
+      <div class="col-xs-10">
+        <% review.stars.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.stars).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <p><%= review.description %></p>
+        <div class="review-name">
+         <p><%= review.user.fullname %></p>
+         <%#raise%>
+       </div>
+     </div>
+   </div>
+ </div>
+ <% end %>
+</div>
+<% end %>
+
+<%= link_to "Edit", edit_user_profile_path, { class: "btn-success"} %>
+
+<% if @user.garden %>
+<div class="review-container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div style="text-align: center"><h3>Garden</h3></div>
+      <div class="section-title-border">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="garden-image">
+
+        <%= cl_image_tag @user.garden.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="text-garden">
+        <p> Address: <%= @user.garden.address %></p>
+        <p> Description: <%= @user.garden.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+

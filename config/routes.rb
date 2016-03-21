@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resource :garden
+    resource :profile, only: [:show, :edit, :update]
 
     resources :allotments, only: [:index] do
       member do
