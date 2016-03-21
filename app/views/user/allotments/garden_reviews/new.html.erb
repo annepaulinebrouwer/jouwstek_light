@@ -1,0 +1,12 @@
+<div class="col-sm-offset-4 col-sm-4 form-group">
+<h2>Create a new garden review</h2>
+<%= simple_form_for([:garden, @garden_reviews]) do |g| %>
+  <%= g.error_notification %>
+
+  <%= g.input :description %>
+  <%= g.input :stars %>
+
+
+  <%= g.button :submit %>
+<% end %>
+</div>
