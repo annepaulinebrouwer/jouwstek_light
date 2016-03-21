@@ -9,10 +9,10 @@ class Owner::AllotmentsController < ApplicationController
   def accept
     @allotment.request_status = "accepted"
     if @allotment.save
-      redirect_to user_allotments_path
+      redirect_to owner_allotments_path
     else
       flash[:warning] = 'Canceling the garden did not work'
-      redirect_to user_allotments_path
+      redirect_to owner_allotments_path
     end
   end
 
