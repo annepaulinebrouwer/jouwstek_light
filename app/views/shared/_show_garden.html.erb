@@ -6,7 +6,7 @@
    <% end %>
     </div>
 
-   <%= cl_image_tag garden.owner.photo, class: "avatar-medium", id: "avatar-owner-garden"%>
+   <%= link_to image_tag(garden.owner.photo, class: "avatar-medium"), user_path(garden.owner), { class: "avatar-link card-user" } %>
 
    <div class="text-garden">
 

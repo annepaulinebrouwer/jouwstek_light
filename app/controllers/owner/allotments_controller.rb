@@ -19,10 +19,10 @@ class Owner::AllotmentsController < ApplicationController
   def decline
     @allotment.request_status = "declined"
     if @allotment.save
-      redirect_to user_allotments_path
+      redirect_to owner_allotments_path
     else
       flash[:warning] = 'Declining the garden did not work'
-      redirect_to user_allotments_path
+      redirect_to owner_allotments_path
     end
   end
 

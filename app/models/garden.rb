@@ -8,4 +8,6 @@ class Garden < ActiveRecord::Base
   after_validation :geocode, if: :address_changed?
 
   mount_uploader :photo, PhotoUploader
+  mount_uploader :photo2, PhotoUploader
+  mount_uploader :photo3, PhotoUploader
 end
