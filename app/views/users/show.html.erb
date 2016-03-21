@@ -10,37 +10,36 @@
 
 <% if @user.owner_reviews.exists? %>
 <div class="review-container">
-  <div class="row">
-    <div class="col-xs-12">
       <div style="text-align: center"><h3>Reviews</h3></div>
-      <div class="section-title-border">
-      </div>
-    </div>
-  </div>
+      <div class="section-title-border"></div>
+  <div class="row">
   <% @user.owner_reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6">
   <div class="review-cards">
-    <div class="row">
-      <div class="col-xs-2" style="padding-left: 50px">
-        <%= cl_image_tag  @user.photo, class: "avatar-large" %>
+  <div class="circle">
+        <%= cl_image_tag  @user.photo, class: "avatar-medium", id: "avatar-review" %>
       </div>
-      <div class="col-xs-10">
-        <% review.stars.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-        <% (5 - review.stars).times do %>
-        <i class="fa fa-star-o"></i>
-        <% end %>
-        <p><%= review.description %></p>
-        <div class="review-name">
-         <p><%= review.user.fullname %></p>
-         <%#raise%>
+       <div class="review-name">
+          <p> <%= review.user.fullname %></p>
+        </div>
+        <div class="review-text">
+          <p><%= review.description %></p>
+        </div>
+        <div class="carrots">
+          <% review.stars.times do %>
+          <%= image_tag "carrot_full.png", class: "small-icon"%>
+          <% end %>
+          <% (5 - review.stars).times do %>
+          <%= image_tag "carrot_empty",  class: "small-icon"%>
+          <% end %>
+        </div>
        </div>
-     </div>
-   </div>
- </div>
- <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
 <% end %>
+
 
 <% if @user.garden %>
 <div class="review-container">

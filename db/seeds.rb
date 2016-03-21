@@ -62,11 +62,11 @@ harry_allotment = Allotment.create!(garden: ams0_garden, user: harry, start_day:
 sophia_allotment = Allotment.create!(garden: ams0_garden, user: sophia, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
 jojanneke_allotment = Allotment.create!(garden: ams5_garden, user: jojanneke, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
 carolien_allotment = Allotment.create!(garden: ams5_garden, user: carolien, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
-jojanneke2_allotment = Allotment.create!(garden: ams7_garden, user: jojanneke, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
+jojanneke2_allotment = Allotment.create!(garden: ams7_garden, user: jojanneke, start_day: "2016-04-30", request_status: "accepted", message: "Hi, I would like to work in your garden")
 carolien2_allotment = Allotment.create!(garden: ams7_garden, user: carolien, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
-jojanneke3_allotment = Allotment.create!(garden: ams6_garden, user: jojanneke, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
+jojanneke3_allotment = Allotment.create!(garden: ams6_garden, user: jojanneke, start_day: "2016-04-30", request_status: "accepted", message: "Hi, I would like to work in your garden")
 carolien3_allotment = Allotment.create!(garden: ams6_garden, user: carolien, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
-jojanneke4_allotment = Allotment.create!(garden: ams8_garden, user: jojanneke, start_day: "2016-04-30", request_status: "pending", message: "Hi, I would like to work in your garden")
+jojanneke4_allotment = Allotment.create!(garden: ams8_garden, user: jojanneke, start_day: "2016-04-30", request_status: "accepted", message: "Hi, I would like to work in your garden")
 carolien4_allotment = Allotment.create!(garden: ams8_garden, user: carolien, start_day: "2016-07-19", request_status: "pending", message: "Hi, I would like to work in your garden")
 
 puts "Now there are allotments"
