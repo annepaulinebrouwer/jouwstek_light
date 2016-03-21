@@ -3,6 +3,9 @@ module Owner
 
     before_action :find_garden, only: [ :show, :edit, :update, :destroy ]
 
+    def show
+    end
+
     def new
       @garden = Garden.new
     end
@@ -14,30 +17,23 @@ module Owner
       redirect_to owner_garden_path
     end
 
-    def show
+    def edit
     end
 
-  # def index
-  #   @gardens = Garden.all
-  # end
+    def update
+      @garden.update(garden_params)
+      redirect_to owner_garden_path
+    end
 
-  #  def show
-  #   @garden
-  # end
-
-  # def edit
-  #   @garden
-  # end
-
-  # def update
-  #   @garden.update!(garden_params)
-  # redirect_to garden_path(@garden)
-  # end
-
-  # def destroy
-  #   @garden.destroy!
-  # redirect_to user_path(@user_id)
-  # end
+    def destroy
+      if @garden.allotments.empty?
+      @garden.destroy!
+      redirect_to user_path(@user_id)
+      else
+        flash[:warning] = 'You can only delete a garden if the garden has no allotments'
+        redirect_to user_path(@user_id)
+      end
+    end
 
   private
 

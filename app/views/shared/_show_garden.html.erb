@@ -14,7 +14,16 @@
     <p> <%= garden.address %></p>
     <p> <%= garden.description %></p>
     <br>
+    <% if current_user.garden %>
+    <div><%= link_to "Edit", edit_owner_garden_path, class:"btn btn-success" %></div>
+    <br>
+      <% if garden.allotments.empty? %>
+        <div><%= link_to "Delete", owner_garden_path, method: :delete, class:"btn btn-success" %></div>
+        <% end %>
+
+    <% else %>
     <div><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
+    <% end %>
   </div>
 </div>
 
