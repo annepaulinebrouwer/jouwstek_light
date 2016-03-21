@@ -20,6 +20,7 @@ gem "gmaps4rails"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
+  gem 'rails-assets-swipebox'
 end
 
 gem 'sass-rails'
