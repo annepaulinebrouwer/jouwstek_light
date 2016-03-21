@@ -41,7 +41,9 @@ NOT LOGGED IN: logo, about, search, login, join -->
   </div>
 </div>
 
+<% if !current_user.garden %>
 <%= link_to "Add new garden", new_owner_garden_path, {class: "navbar-wagon-item btn-success btn-lg"} %>
+<% end %>
 
 <% else %>
 
