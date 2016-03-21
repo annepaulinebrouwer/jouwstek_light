@@ -11,25 +11,18 @@ Rails.application.routes.draw do
     resources :allotments, only: [:new, :create]
   end
 
-  # resources :allotments, only: [] do
-  #   resources :garden_reviews, only: [:new, :create]
-  # end
-
-  resources :allotments, only: [] do
-    resources :user_reviews, only: [:show]
-  end
-
   resources :users, only: [:index, :show]
 
   namespace :user do
+    resource :profile, only: [:show, :edit, :update]
     resources :allotments, only: [:index] do
       member do
         patch :cancel
       end
+    resources :garden_reviews, only: [:new, :create, :edit, :update]
     end
   end
 
-  resource :profile, only: [:show, :edit]
 
   namespace :owner do
     resource :garden
@@ -39,6 +32,7 @@ Rails.application.routes.draw do
         patch :accept
         patch :decline
       end
+    resources :user_reviews, only: [:show]
     end
   end
 end
