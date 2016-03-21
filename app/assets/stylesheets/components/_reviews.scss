@@ -48,12 +48,18 @@
 }
 
 .circle {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background-color: white;
   border: 1px solid #1C1C1C;
   position: absolute;
-  top: -35px;
+  top: -45px;
   left: 40%;
+}
+
+#avatar-review {
+position: absolute;
+top: 10px;
+left: 10px;
 }

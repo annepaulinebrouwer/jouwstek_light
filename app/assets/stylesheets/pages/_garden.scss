@@ -8,6 +8,7 @@
   display: flex;
   width: 1000px;
   margin: 50px auto 25px auto;
+  position: relative;
 }
 
 
@@ -47,4 +48,8 @@
   padding-top: 25px;
 }
 
-
+#avatar-owner-garden {
+position: absolute;
+top: 50px;
+right: 50px;
+}
