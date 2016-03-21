@@ -33,7 +33,9 @@
         <th><p>address</p></th>
         <th><p>name</p></th>
         <th><p>message</p></th>
-        <% @allotments.each do |allotment| %>
+        <th><p>start day</p></th>
+        <th><p>end day</p></th>
+            <% @allotments.each do |allotment| %>
           <% if allotment.request_status == "pending" %>
             <% if current_user.garden %>
              <%= render "shared/booking/content_owner", allotment: allotment %>
@@ -52,6 +54,8 @@
         <th><p>address</p></th>
         <th><p>name</p></th>
         <th><p>message</p></th>
+        <th><p>start day</p></th>
+        <th><p>end day</p></th>
           <% @allotments.each do |allotment| %>
             <% if allotment.request_status == "accepted" %>
               <% if current_user.garden %>
@@ -71,12 +75,14 @@
         <th><p>address</p></th>
         <th><p>name</p></th>
         <th><p>message</p></th>
+        <th><p>start day</p></th>
+        <th><p>end day</p></th>
         <% @allotments.each do |allotment| %>
           <% if allotment.request_status == "cancelled" || "declined"%>
             <% if current_user.garden %>
               <%= render "shared/booking/content_owner", allotment: allotment %>
             <% else %>
-              <%= render "shared/booking//content_user", allotment: allotment %>
+              <%= render "shared/booking/content_user", allotment: allotment %>
             <% end %>
            <% end %>
         <% end %>
