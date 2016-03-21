@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'components', to: "pages#components"
 
+  get 'about', to: "pages#about"
+
   devise_for :users
 
   resources :gardens, only: [:index, :show] do
@@ -27,7 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :profile, only: [:show]
+  resource :profile, only: [:show, :edit]
 
   namespace :owner do
     resource :garden

@@ -21,7 +21,7 @@
     </div>
   </div>
 
- <!-- <div class="container-gar">
+ <div class="container-gar">
     <div class="row">
       <% @gardens.each do |garden| %>
       <div class="col-xs-12 col-sm-4">
@@ -30,14 +30,93 @@
             <h2><%= garden.title %></h2>
           </div>
           <div>
-            <%= link_to image_tag(garden.owner.photo, class: " avatar "), user_path(garden.owner), { class: "avatar-link card-user" } %>
+            <%= link_to image_tag(garden.owner.photo, class: "avatar-medium"), user_path(garden.owner), { class: "avatar-link card-user" } %>
           </div>
           <%= link_to "", garden_path(garden), { class: "card-link" } %>
         </div>
       </div>
       <% end %>
     </div>
-  </div> -->
+  </div>
+
+
+<!-- <div class="positioning">
+ <div class="hexagon hexagon1">
+  <div class="hexagon-in1">
+    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
+  </div>
+ </div>
+</div>
+
+<div class="positioning">
+ <div class="hexagon hexagon1">
+  <div class="hexagon-in1">
+    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
+  </div>
+ </div>
+</div>
+
+<div class="positioning">
+ <div class="hexagon hexagon1">
+  <div class="hexagon-in1">
+    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
+  </div>
+ </div>
+</div>
+
+<div class="odd">
+ <div class="positioning">
+   <div class="hexagon hexagon1">
+    <div class="hexagon-in1">
+      <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
+    </div>
+   </div>
+ </div>
 
 
 
+ <div class="positioning">
+   <div class="hexagon hexagon1">
+    <div class="hexagon-in1">
+      <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
+    </div>
+   </div>
+ </div>
+</div> -->
+
+<!-- hex-grid-loop
+<div class="total">
+  <div class="table">
+    <% [1,2,3,4,5,6,7,8,9,10].in_groups_of(3).each do |group| %>
+      <div class="row-hex">
+        <% group.each do |number| %>
+          <div class="hex">
+            <div class="hexagon hexagon1">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)">
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="table two">
+    <% [1,2,3,4,5,6,7,8,9,10].in_groups_of(3).each do |group| %>
+      <div class="row-hex">
+        <% group.each do |number| %>
+          <div class="hex">
+            <div class="hexagon hexagon1">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)">
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div> -->
