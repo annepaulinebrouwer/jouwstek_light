@@ -1,0 +1,13 @@
+
+<tr>
+  <td><%= cl_image_tag allotment.user.photo, class: "avatar-large" %></td>
+  <td><p><%= allotment.user.fullname %></p></td>
+  <td><p><%= allotment.start_day %></p></td>
+  <td><p><%= allotment.end_day %></p></td>
+  <td><p><%= allotment.message %></p></td>
+  <td><p class="<%= allotment.request_status %>"><%= allotment.request_status %></p></td>
+  <td><% if allotment.request_status == "pending" %>
+    <%= link_to "accept", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
+    <%= link_to "decline", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm", method: :patch %>
+    <% end %></td>
+  </tr>

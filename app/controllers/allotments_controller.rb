@@ -1,6 +1,7 @@
 class AllotmentsController < ApplicationController
 
    # before_action :find_allotment, only: [ :show, :edit, :update, :destroy ]
+     before_action :find_garden, only: [ :create ]
 
   def new
     @allotment = Allotment.new
@@ -9,14 +10,22 @@ class AllotmentsController < ApplicationController
 
   def create
     @allotment = Allotment.new(allotment_params)
-    @allotment.save!
-    redirect_to user_allotments_path
+    @allotment.request_status = "pending"
+    @allotment.user = current_user
+    @allotment.garden = @garden
+
+
+    if @allotment.save
+      redirect_to user_allotments_path
+    else
+      # todo. handle error
+    end
   end
 
   private
 
   def allotment_params
-    params.require(:allotment).permit(:start_day, :request_status, :message)
+    params.require(:allotment).permit(:start_day, :end_day, :request_status, :message)
   end
 
   def find_garden

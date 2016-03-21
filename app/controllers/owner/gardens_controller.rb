@@ -11,7 +11,7 @@ module Owner
       @garden = Garden.new(garden_params)
       @garden.owner = current_user
       @garden.save!
-      redirect_to owner_garden_path(@garden)
+      redirect_to owner_garden_path
     end
 
     def show
@@ -46,7 +46,7 @@ module Owner
   end
 
   def find_garden
-    @garden = Garden.find(params[:id])
+    @garden = current_user.garden
   end
 
 end
