@@ -32,7 +32,7 @@ NOT LOGGED IN: logo, about, search, login, join -->
     <% end %>
 
     <!-- Profile picture and dropdown -->
-            <%= link_to t(".profile", default: "Profile"), profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            <%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
             <%= link_to t(".allotments", default: "Allotments"), owner_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to t(".garden", default: "My garden"), owner_garden_path, class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to t(".destroy", default: "Sign out"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
