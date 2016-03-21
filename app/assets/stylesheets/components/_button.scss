@@ -1,4 +1,4 @@
-.btn-succes {
+.btn-success {
   color: #fafafa;
 }
 
@@ -6,11 +6,13 @@
   background-color: #659157 !important;
   border-color: #659157 !important;
   border-radius: 20px;
+  text-decoration: none !important;
 }
 
 .btn.btn-success:hover {
   background-color: #366328 !important;
   transition: all 0.5s ease 0s;
+  text-decoration: none !important;
 }
 
 .btn-review {
