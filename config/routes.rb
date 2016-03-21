@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       member do
         patch :cancel
       end
-    resources :garden_reviews, only: [:new, :create, :edit, :update]
+    resources :garden_reviews, only: [:new, :create]
     end
   end
 
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
         patch :accept
         patch :decline
       end
-    resources :user_reviews, only: [:show]
+    resources :user_reviews, only: [:new, :create]
     end
   end
 end
