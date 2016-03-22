@@ -1,6 +1,6 @@
 <div class="col-sm-offset-4 col-sm-4 form-group">
 <h2>Create a new user review</h2>
-<%= simple_form_for(@user_review, url: user_allotment_garden_reviews_path(@allotment) ) do |g| %>
+<%= simple_form_for(@user_review, url: owner_allotment_user_reviews_path(@allotment) ) do |g| %>
   <%= g.error_notification %>
 
   <%= g.input :description %>

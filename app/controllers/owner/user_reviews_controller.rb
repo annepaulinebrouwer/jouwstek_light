@@ -8,7 +8,7 @@ class Owner::UserReviewsController < ApplicationController
 
   def create
     @user_review = UserReview.new(user_review_params)
-    @user_review.owner = current_user
+    @user_review.owner = owner
     @user_review.allotment = @allotment
     @user_review.save!
 
@@ -18,7 +18,7 @@ class Owner::UserReviewsController < ApplicationController
 private
 
   def find_allotment
-    @allotment = current_user.allotments.find(params[:allotment_id])
+    @allotment = owner.allotments.find(params[:allotment_id])
   end
 
   def user_review_params
