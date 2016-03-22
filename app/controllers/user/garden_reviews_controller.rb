@@ -11,8 +11,9 @@ class User::GardenReviewsController < ApplicationController
     @garden_review.user = current_user
     @garden_review.allotment = @allotment
     @garden_review.save!
+    @garden = @allotment.garden_id
 
-    redirect_to user_allotments_path
+    redirect_to garden_path(@garden)
   end
 
 
@@ -24,6 +25,10 @@ private
 
   def garden_review_params
     params.require(:garden_review).permit(:description, :stars)
+  end
+
+  def find_garden
+    @garden = @allotment.garden_id
   end
 
 end
