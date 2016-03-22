@@ -28,33 +28,20 @@
 <div class="container text-center">
   <div class="tab-content" id="pending">
     <div class="col-sm-12">
-      <table>
-        <th></th>
-        <th><p>address</p></th>
-        <th><p>name</p></th>
-        <th><p>message</p></th>
-        <th><p>start day</p></th>
-        <th><p>end day</p></th>
-            <% @allotments.each do |allotment| %>
-          <% if allotment.request_status == "pending" %>
-            <% if current_user.garden %>
-             <%= render "shared/booking/content_owner", allotment: allotment %>
-            <% else %>
+       <% @allotments.each do |allotment| %>
+         <% if allotment.request_status == "pending" %>
+           <% if current_user.garden %>
+              <%= render "shared/booking/content_owner", allotment: allotment %>
+           <% else %>
              <%= render "shared/booking/content_user", allotment: allotment %>
-            <% end %>
+           <% end %>
           <% end %>
         <% end %>
-      </table>
     </div>
   </div>
   <div class="tab-content hidden" id="accepted">
     <div class="col-sm-12">
-      <table>
-        <th></th>
-        <th><p>address</p></th>
-        <th><p>name</p></th>
-        <th><p>message</p></th>
-          <% @allotments.each do |allotment| %>
+        <% @allotments.each do |allotment| %>
             <% if allotment.request_status == "accepted" %>
               <% if current_user.garden %>
                 <%= render "shared/booking/content_owner", allotment: allotment %>
@@ -63,17 +50,12 @@
               <% end %>
             <% end %>
           <% end %>
-      </table>
     </div>
   </div>
   <div class="tab-content hidden" id="canceled">
     <div class="col-sm-12">
-      <table>
-        <th></th>
-        <th><p>address</p></th>
-        <th><p>name</p></th>
-        <th><p>message</p></th>
-        <% @allotments.each do |allotment| %>
+
+          <% @allotments.each do |allotment| %>
           <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
             <% if current_user.garden %>
               <%= render "shared/booking/content_owner", allotment: allotment %>
@@ -82,7 +64,6 @@
             <% end %>
            <% end %>
         <% end %>
-      </table>
     </div>
   </div>
 </div>
