@@ -2,23 +2,23 @@
   <div class="booking-item-thumb"><%= cl_image_tag allotment.garden.photo, class: "avatar-large" %></div>
 
 <div class="booking-item-infos">
-  <div><%= allotment.garden.address %></div>
-  <div><%= allotment.garden.city %></div>
+  <div class="booking-item-street"><%= allotment.garden.address %></div>
+  <div class="booking-item-city"><%= allotment.garden.city %></div>
 </div>
-<div>
+<div class="booking-item-text">
   <div class="booking-item-owner">
-    <div><%= cl_image_tag allotment.garden.owner.photo, class: "avatar-small" %></div>
+    <div class="booking-picture"><%= cl_image_tag allotment.garden.owner.photo, class: "avatar-small" %></div>
     <div><%= allotment.garden.owner.fullname %></div>
   </div>
-  <div><%= allotment.message %></div>
+  <div class="booking-item-message"><%= allotment.message %></div>
 </div>
   <div class="booking-item-side">
     <div class="booking-item-data">
       <div><%= allotment.start_day %></div>
       <div><%= allotment.end_day %></div>
     </div>
-    <div class="<%= allotment.request_status %>"><%= allotment.request_status %></div>
-    <div><% if allotment.request_status == "pending" %>
+    <div class="<%= allotment.request_status %> booking-item-btn"><%= allotment.request_status %></div>
+    <div class="booking-item-btn"><% if allotment.request_status == "pending" %>
       <%= link_to "cancel", cancel_user_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
       <% elsif allotment.request_status == "accepted" %>
       <%= link_to "write review", new_user_allotment_garden_review_path(allotment), class: "btn btn-success btn-sm" %>
