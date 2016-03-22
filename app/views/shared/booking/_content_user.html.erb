@@ -1,18 +1,19 @@
 <div class="booking-item">
   <div class="booking-item-thumb"><%= cl_image_tag allotment.garden.photo, class: "avatar-large" %></div>
-  <div class="booking-item-infos">
-    <div><%= allotment.garden.address %></div>
-    <div><%= allotment.garden.city %></div>
+
+<div class="booking-item-infos">
+  <div><%= allotment.garden.address %></div>
+  <div><%= allotment.garden.city %></div>
+</div>
+<div>
+  <div class="booking-item-owner">
+    <div><%= cl_image_tag allotment.garden.owner.photo, class: "avatar-small" %></div>
+    <div><%= allotment.garden.owner.fullname %></div>
   </div>
-  <div>
-    <div class="booking-item-owner">
-      <div><%= cl_image_tag allotment.garden.owner.photo, class: "avatar-small" %></div>
-      <div><%= allotment.garden.owner.fullname %></div>
-    </div>
-      <div><%= allotment.message %></div>
-  </div>
+  <div><%= allotment.message %></div>
+</div>
   <div class="booking-item-side">
-    <div>
+    <div class="booking-item-data">
       <div><%= allotment.start_day %></div>
       <div><%= allotment.end_day %></div>
     </div>

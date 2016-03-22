@@ -18,9 +18,15 @@
 }
 .booking-item-side {
   margin-left: auto;
+  display: flex;
 }
 
 .booking-item-owner {
   display: flex;
   align-items: center;
+}
+
+.booking-item-data {
+
+  margin-right: 10px;
 }

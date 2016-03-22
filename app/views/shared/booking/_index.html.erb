@@ -5,25 +5,24 @@
 
       <div class="tabs text-align:center">
         <a class="tab active" data-target="#pending">
+          <div class="circle-tab">
+            <i class="fa fa-question fa-3x"></i>
+          </div>
+        </a>
+        <a class="tab" data-target="#accepted">
+          <div class="circle-tab">
+            <i class="fa fa-check fa-3x"></i>
+          </div>
+        </a>
+        <a class="tab" data-target="#canceled">
          <div class="circle-tab">
-          <i class="fa fa-question fa-3x"></i>
-        </div>
-      </a>
-      <a class="tab" data-target="#accepted">
-        <div class="circle-tab">
-          <i class="fa fa-check fa-3x"></i>
-        </div>
-      </a>
-      <a class="tab" data-target="#canceled">
-       <div class="circle-tab">
-        <i class="fa fa-times fa-3x"></i>
+            <i class="fa fa-times fa-3x"></i>
+          </div>
+        </a>
       </div>
-    </a>
+    </div>
   </div>
 </div>
-</div>
-</div>
-
 
 <div class="container text-center">
   <div class="tab-content" id="pending">
@@ -35,37 +34,34 @@
            <% else %>
              <%= render "shared/booking/content_user", allotment: allotment %>
            <% end %>
-          <% end %>
-        <% end %>
+         <% end %>
+       <% end %>
     </div>
   </div>
   <div class="tab-content hidden" id="accepted">
     <div class="col-sm-12">
-        <% @allotments.each do |allotment| %>
-            <% if allotment.request_status == "accepted" %>
-              <% if current_user.garden %>
-                <%= render "shared/booking/content_owner", allotment: allotment %>
-              <% else %>
-                <%= render "shared/booking/content_user", allotment: allotment %>
-              <% end %>
-            <% end %>
+      <% @allotments.each do |allotment| %>
+        <% if allotment.request_status == "accepted" %>
+          <% if current_user.garden %>
+            <%= render "shared/booking/content_owner", allotment: allotment %>
+          <% else %>
+            <%= render "shared/booking/content_user", allotment: allotment %>
           <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="tab-content hidden" id="canceled">
     <div class="col-sm-12">
-
-          <% @allotments.each do |allotment| %>
-          <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
-            <% if current_user.garden %>
-              <%= render "shared/booking/content_owner", allotment: allotment %>
-            <% else %>
-              <%= render "shared/booking/content_user", allotment: allotment %>
-            <% end %>
-           <% end %>
+      <% @allotments.each do |allotment| %>
+        <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
+          <% if current_user.garden %>
+            <%= render "shared/booking/content_owner", allotment: allotment %>
+          <% else %>
+            <%= render "shared/booking/content_user", allotment: allotment %>
+          <% end %>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-
-
