@@ -18,7 +18,7 @@
   <br>
 </div>
 
-<% if current_user.garden %>
+<% if user_signed_in? && current_user.garden %>
   <div class="buttons-garden"><%= link_to "Edit", edit_owner_garden_path, class:"btn btn-success" %>
   </div>
   <br>
