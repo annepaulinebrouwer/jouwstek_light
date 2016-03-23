@@ -9,6 +9,7 @@
 <div class="components">
 
   <div class="timeline-container">
+    <div class="title-timeline"><h2>How it works:</h2></div>
     <div class="timeline-bar">
       <div class="timeline-bar-starter">
       </div>
@@ -37,21 +38,8 @@
 
  </div>
 
+<%= render "shared/map"%>
 
- <div id="map" style="width: 100%; height: 600px;">
-   <% content_for(:after_js) do %>
-   <%= javascript_tag do %>
-   $(document).on('ready', function() {
-   handler = Gmaps.build('Google');
-   handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false }}, function(){
-   markers = handler.addMarkers(<%= raw @markers.to_json %>);
-   handler.bounds.extendWith(markers);
-   handler.fitMapToBounds();
- });
-})
-<% end %>
-<% end %>
-</div>
 
 <div class="total">
   <div class="table one">
@@ -139,7 +127,7 @@
       <div class="card-testimonial">
       <%= image_tag("person1.png", class: "testimonial-picture", style: "margin-left: 10%") %>
         <div class="section-title-border-testimonial"></div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente.</p>
+        <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente."</p>
       </div>
       </div>
       <div class="col-xs-12 col-sm-4">
@@ -153,7 +141,7 @@
        <div class="card-testimonial">
       <%= image_tag("person4.png", class: "testimonial-picture", style: "margin-left: 25%") %>
       <div class="section-title-border-testimonial"></div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut. </p>
+        <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut."" </p>
       </div>
       </div>
     </div>
