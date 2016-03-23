@@ -16,7 +16,7 @@ class PagesController < ApplicationController
                          <i>#{ garden.description }</i>"
       marker.lat garden.latitude
       marker.picture({
-         url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png", # up to you to pass the proper parameters in the url, I guess with a method from device
+         url: "http://icons.iconarchive.com/icons/pixture/vegetable/32/Chinese-Spinach-icon.png", # up to you to pass the proper parameters in the url, I guess with a method from device
          width: 32,
          height: 32
       })

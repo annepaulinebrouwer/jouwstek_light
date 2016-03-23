@@ -49,42 +49,49 @@
 #hex2 {
   position: absolute;
     top: 113px;
-    right: 130px
+    right: 130px;
+    opacity: 0;
 }
 
 #hex4 {
   position: absolute;
     top: 250px;
+    opacity: 0;
 }
 
 #hex1 {
     position: absolute;
     top: 113px;
-    left: 170px
+    left: 170px;
+    opacity: 0;
 }
 
 #hex3 {
   position: absolute;
     top: 250px;
     right: 50px;
+    opacity: 0;
 }
 
 #hex5 {
   position: absolute;
     top: 250px;
     left: 85px;
+    opacity: 0;
 }
 
 #hex6 {
   position: absolute;
   top: 390px;
     left: 170px;
+    opacity: 0;
 }
 
 #hex7 {
    position: absolute;
     top: 390px;
     right: 130px;
+    opacity: 0;
 }
 // .odd {
 //  display: inline-block;
