@@ -1,15 +1,23 @@
 
-<tr>
-  <td><%= cl_image_tag allotment.user.photo, class: "avatar-large" %></td>
-  <td><p><%= allotment.user.fullname %></p></td>
-  <td><p><%= allotment.start_day %></p></td>
-  <td><p><%= allotment.end_day %></p></td>
-  <td><p><%= allotment.message %></p></td>
-  <td><p class="<%= allotment.request_status %>"><%= allotment.request_status %></p></td>
-  <td><% if allotment.request_status == "pending" %>
-    <%= link_to "accept", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
-    <%= link_to "decline", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm", method: :patch %>
-    <% elsif allotment.request_status == "accepted" %>
-      <%= link_to "write review", new_owner_allotment_user_review_path(allotment), class: "btn btn-success btn-sm" %>
-    <% end %></td>
-  </tr>
+<div class="booking-item">
+  <div class="booking-item-user">
+    <div><%= cl_image_tag allotment.user.photo, class: "avatar-large" %></div>
+    <div class="booking-item-user-name"><%= allotment.user.fullname %></div>
+  </div>
+  <div class="booking-item-data">
+    <div><%= allotment.start_day %></div>
+    <div><%= allotment.end_day %></div>
+  </div>
+  <div class="booking-item-message"><%= allotment.message %></div>
+  <div class="booking-item-side">
+    <div class="<%= allotment.request_status %> booking-item-btn"><%= allotment.request_status %></div>
+    <div><% if allotment.request_status == "pending" %>
+      <%= link_to "accept", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm booking-item-btn", method: :patch %>
+      <%= link_to "decline", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm booking-item-btn", method: :patch %>
+      <% elsif allotment.request_status == "accepted" %>
+      <%= link_to "write review", owner_allotment_user_reviews_path(allotment), class: "btn btn-success btn-sm" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
