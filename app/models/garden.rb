@@ -10,4 +10,8 @@ class Garden < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   mount_uploader :photo2, PhotoUploader
   mount_uploader :photo3, PhotoUploader
+
+  def photos
+    [photo, photo2,photo3].select { |photo| photo.present? }
+  end
 end

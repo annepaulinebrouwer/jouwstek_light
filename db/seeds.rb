@@ -33,23 +33,23 @@ puts "deleting all gardens"
 
 puts "creating new gardens"
 
-ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Prinsgracht 600", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
+ams0_garden = Garden.create!(title: 'Beautiful garden', owner: anne, address: "Prinsgracht 600", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, assumenda?", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
 sleep(0.3)
-ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Herengracht 435", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden2.jpeg")))
+ams1_garden = Garden.create!(title: 'Sunny garden', owner: harry, address: "Herengracht 435", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, aspernatur.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden2.jpeg")))
 sleep(0.3)
-ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 550", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
+ams2_garden = Garden.create!(title: 'Beautiful garden', owner: sophia, address: "Singel 550", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, laborum?", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden1.jpeg")))
 sleep(0.3)
-ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Rozengracht 286", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden4.jpeg")))
+ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Rozengracht 286", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, hic.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden4.jpeg")))
 sleep(0.3)
-ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden5.jpeg")))
+ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, vero.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden5.jpeg")))
 sleep(0.3)
-ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden6.jpeg")))
+ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, mollitia?", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden6.jpeg")))
 sleep(0.3)
-ams6_garden = Garden.create!(title: 'Sunny garden', owner: freek, address: "Herengracht 200", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden7.jpeg")))
+ams6_garden = Garden.create!(title: 'Sunny garden', owner: freek, address: "Herengracht 200", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, aliquam.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden7.jpeg")))
 sleep(0.3)
-ams7_garden = Garden.create!(title: 'Beautiful garden', owner: els, address: "Kinkerstraat 3", city: "Amsterdam", available: "true", description: "I have space in my garden", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden8.jpeg")))
+ams7_garden = Garden.create!(title: 'Beautiful garden', owner: els, address: "Kinkerstraat 3", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, assumenda.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden8.jpeg")))
 sleep(0.3)
-ams8_garden = Garden.create!(title: 'Sunny garden', owner: marie, address: "Westerstraat 7", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over!", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden9.jpeg")))
+ams8_garden = Garden.create!(title: 'Sunny garden', owner: marie, address: "Westerstraat 7", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, natus.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden9.jpeg")))
 
 
 puts "Now there are gardens"

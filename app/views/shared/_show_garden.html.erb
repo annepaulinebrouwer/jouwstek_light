@@ -1,12 +1,14 @@
 <div class="garden-photo">
-<%= link_to garden.photo.url, class: "swipebox" do %>
-<%= cl_image_tag garden.photo, class: "garden-image" %>
-<% end %>
+  <% garden.photos.each do |photo| %>
+    <%= link_to photo.url, class: "swipebox" do %>
+      <%= cl_image_tag photo, class: "garden-image" %>
+    <% end %>
+  <% end %>
 </div>
 
 <div id="container-garden">
   <div class="avatar-garden">
-    <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), user_path(garden.owner), { class: "avatar-link card-user" } %>
+    <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), owner_path(garden.owner), { class: "avatar-link card-user" } %>
   </div>
 
 <div class="text-garden">
@@ -28,7 +30,7 @@
   <% end %>
 </div>
 
-<div class="wrapper">
+<div class="wrapper-grey-padded">
 <div id="container-garden">
   <div class="garden-description">
     <h4>About this garden</h4>
@@ -37,13 +39,6 @@
   </div>
 </div>
 </div>
-
-<div class="wrapper-map">
-<div class="container-small-map">
-  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
-</div>
-</div>
-
 
 <div class="review-container">
   <div class="row">
@@ -72,4 +67,12 @@
     <% end %>
   </div>
 </div>
+
+<div class="wrapper-map">
+<div class="container-small-map">
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
+</div>
+</div>
+
+
 

@@ -91,6 +91,77 @@ right: 50px;
   height: 100%;
 }
 
+.swipebox {
+  display: none;
+
+  &:first-child {
+    display: block
+  }
+}
+
+.swipebox-prev {
+ margin: 20px;
+  &:after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 30px;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 30px;
+    width: 4px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotate(-45deg)
+  }
+}
+
+// #swipebox-next {
+//  margin: 20px;
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     background: white;
+//     height: 30px;
+//     width: 4px;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+//     transform: rotate(45deg);
+//   }
+
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     background: white;
+//     height: 30px;
+//     width: 4px;
+//     left: 0;
+//     margin: auto;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     transform: rotate(-45deg)
+//   }
+// }
+
+
 #swipebox-close {
   margin: 20px;
   &:after {

@@ -38,7 +38,17 @@ module Owner
   private
 
   def garden_params
-    params.require(:garden).permit(:description, :address, :available, :photo, :photo_cache)
+    params.require(:garden).permit(
+      :description,
+      :address,
+      :available,
+      :photo,
+      :photo_cache,
+      :photo2,
+      :photo2_cache,
+      :photo3,
+      :photo3_cache
+    )
   end
 
   def find_garden
