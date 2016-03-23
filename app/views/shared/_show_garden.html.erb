@@ -6,10 +6,11 @@
   <% end %>
 </div>
 
-<div id="container-garden">
+<div id="container-garden-details">
   <div class="avatar-garden">
-    <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), owner_path(garden.owner), { class: "avatar-link card-user" } %>
+    <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), user_path(garden.owner), { class: "avatar-link card-user" } %>
   </div>
+
 
 <div class="text-garden">
   <h2> <%= garden.title %></h2>
@@ -30,8 +31,8 @@
   <% end %>
 </div>
 
-<div class="wrapper-grey-padded">
-<div id="container-garden">
+<div class="wrapper-white-about">
+<div id="container-garden-details">
   <div class="garden-description">
     <h4>About this garden</h4>
     <br>
