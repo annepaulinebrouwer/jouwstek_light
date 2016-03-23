@@ -38,16 +38,96 @@
 
  </div>
 
-<%= render "shared/map"%>
+ <%= render "shared/map"%>
 
 
-<div class="total">
+ <div class="container" id="hex-container">
+  <div class="row">
+  <div class="col-xs-12 col-sm-6">
+      <div class="hex" id="hex1">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="hex" id="hex2">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden_tools.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class=" col-xs-12 col-sm-4">
+      <div class="hex" id="hex3">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="hex" id="hex4">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb3.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="hex" id="hex5">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+  <div class="col-xs-12 col-sm-6">
+      <div class="hex" id="hex6">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="hex" id="hex7">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="total">
   <div class="table one">
     <div class="row-hex2">
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpeg' %>);">
             </div>
           </div>
         </div>
@@ -55,7 +135,7 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden_tools.jpg' %>);">
             </div>
           </div>
         </div>
@@ -68,7 +148,7 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpeg' %>);">
             </div>
           </div>
         </div>
@@ -76,7 +156,7 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb3.jpg' %>);">
             </div>
           </div>
         </div>
@@ -84,7 +164,7 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpeg' %>);">
             </div>
           </div>
         </div>
@@ -97,7 +177,7 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpeg' %>);">
             </div>
           </div>
         </div>
@@ -105,17 +185,15 @@
       <div class="hex">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpeg' %>);">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="text-center"><p> Got excited? Explore <%= link_to "more gardens", gardens_path(@garden) %> in your area! </p></div>
-
-
+</div> -->
+<div class="text-center"><p> Got excited? Explore <%= link_to "gardens", gardens_path(@garden), class: "link" %> in your area! </p></div>
 
 
 
@@ -124,26 +202,30 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-      <div class="card-testimonial">
-      <%= image_tag("person1.png", class: "testimonial-picture", style: "margin-left: 10%") %>
-        <div class="section-title-border-testimonial"></div>
-        <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente."</p>
-      </div>
+        <div class="card-testimonial">
+          <%= image_tag("person1.png", class: "testimonial-picture", style: "margin-left: 10%") %>
+          <div class="section-title-border-testimonial"></div>
+          <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente."</p>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-4">
        <div class="card-testimonial">
-      <%= image_tag("person2.png", class: "testimonial-picture", style: "margin-left: 25%") %>
-      <div class="section-title-border-testimonial"></div>
+        <%= image_tag("person2.png", class: "testimonial-picture", style: "margin-left: 25%") %>
+        <div class="section-title-border-testimonial"></div>
         <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore."</p>
       </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-       <div class="card-testimonial">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+     <div class="card-testimonial">
       <%= image_tag("person4.png", class: "testimonial-picture", style: "margin-left: 25%") %>
       <div class="section-title-border-testimonial"></div>
-        <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut."" </p>
-      </div>
-      </div>
+      <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut."" </p>
     </div>
   </div>
 </div>
+</div>
+</div>
+
+
+
+
