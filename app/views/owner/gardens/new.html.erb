@@ -1,16 +1,21 @@
-<div class="col-sm-offset-4 col-sm-4 form-group">
-  <h2>Create a new garden</h2>
-  <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
-  <%= g.error_notification %>
 
-  <%= g.input :title %>
-  <%= g.input :address, placeholder: 'Single 250, Amsterdan' %>
-  <%= g.input :available %>
-  <%= g.input :description %>
-  <%= g.input :photo %>
-  <%= g.input :photo2 %>
-  <%= g.input :photo3 %>
+<div class="wrapper">
+ <div class="container">
+  <div class="col-sm-offset-4 col-sm-4 form-group">
+    <h2>Create a new garden</h2>
+      <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
+      <%= g.error_notification %>
 
-  <%= g.button :submit %>
-  <% end %>
+      <%= g.input :title %>
+      <%= g.input :address, placeholder: 'Single 250, Amsterdan' %>
+      <%= g.input :available %>
+      <%= g.input :description %>
+      <%= g.input :photo %>
+      <%= g.input :photo2 %>
+      <%= g.input :photo3 %>
+
+      <%= g.button :submit %>
+      <% end %>
+    </div>
+  </div>
 </div>
