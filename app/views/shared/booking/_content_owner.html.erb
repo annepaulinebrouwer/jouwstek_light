@@ -10,6 +10,6 @@
     <%= link_to "accept", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
     <%= link_to "decline", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm", method: :patch %>
     <% elsif allotment.request_status == "accepted" %>
-      <%= link_to "write review", owner_allotment_user_reviews_path(allotment), class: "btn btn-success btn-sm" %>
+      <%= link_to "write review", new_owner_allotment_user_review_path(allotment), class: "btn btn-success btn-sm" %>
     <% end %></td>
   </tr>

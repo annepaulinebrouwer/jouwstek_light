@@ -6,86 +6,19 @@
   </div>
 </div>
 
+<div class="components">
 
-   <div id="map" style="width: 100%; height: 600px;">
-     <% content_for(:after_js) do %>
-     <%= javascript_tag do %>
-     $(document).on('ready', function() {
-     handler = Gmaps.build('Google');
-     handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false }}, function(){
-     markers = handler.addMarkers(<%= raw @markers.to_json %>);
-     handler.bounds.extendWith(markers);
-     handler.fitMapToBounds();
-   });
- })
- <% end %>
- <% end %>
-</div>
-
-
-
-
-<div class="wrapper-grey padded">
-  <h2 class="text-center" >Your future garden:</h2>
-  <div class="container-gar">
-    <div class="row">
-      <% @gardens[0..2].each do |garden| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="hexagon hexagon1">
-          <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url('<%= garden.photo %>');" >
-          <div class="hex-description">
-          <h3><%= garden.title %></h3>
-          </div>
-            </div>
-          </div>
-          <%= link_to "", garden_path(garden), { class: "card-link" } %>
-        </div>
+  <div class="timeline-container">
+    <div class="timeline-bar">
+      <div class="timeline-bar-starter">
       </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
-</div>
-
-
-
-<!-- <div class="wrapper-grey padded">
-  <h2 class="text-center" >Your future garden:</h2>
-  <div class="container-gar">
-    <div class="row">
-      <% @gardens[0..2].each do |garden| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: url('<%= garden.photo %>');">
-          <div class="card-description">
-            <h2><%= garden.title %></h2>
-          </div>
-          <div>
-            <%= link_to image_tag(garden.owner.photo, class: " avatar-medium "), user_path(garden.owner), { class: "avatar-link card-user" } %>
-          </div>
-          <%= link_to "", garden_path(garden), { class: "card-link" } %>
-        </div>
+      <div class="timeline-bar-body">
       </div>
-      <% end %>
+      <div class="timeline-bar-end">
+      </div>
     </div>
-  </div>
-  <div class="text-center "><%= link_to "See all gardens", gardens_path(@garden), {class: "btn btn-success" } %></div>
-</div>
- -->
-
- <div class="components">
-
-<div class="timeline-container">
-  <div class="timeline-bar">
-    <div class="timeline-bar-starter">
-    </div>
-    <div class="timeline-bar-body">
-    </div>
-    <div class="timeline-bar-end">
-    </div>
-  </div>
-  <div class="timeline-content">
-    <% YAML.load(File.open("#{Rails.root}/db/data/timeline.yml")).each do |timeline_item| %>
+    <div class="timeline-content">
+      <% YAML.load(File.open("#{Rails.root}/db/data/timeline.yml")).each do |timeline_item| %>
       <div class="timeline-item">
         <div class="timeline-item-icon">
           <i class="<%= timeline_item['icon'] %>"></i>
@@ -93,62 +26,155 @@
         <div class="timeline-item-info">
           <div class="timeline-item-title">
            <%= timeline_item['title'] %>
-          </div>
-          <div class="timeline-item-description">
+         </div>
+         <div class="timeline-item-description">
            <%= timeline_item['content'] %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+         </div>
+       </div>
+     </div>
+     <% end %>
+   </div>
 
+ </div>
+
+
+ <div id="map" style="width: 100%; height: 600px;">
+   <% content_for(:after_js) do %>
+   <%= javascript_tag do %>
+   $(document).on('ready', function() {
+   handler = Gmaps.build('Google');
+   handler.buildMap({ internal: { id: 'map' }, provider: { scrollwheel: false }}, function(){
+   markers = handler.addMarkers(<%= raw @markers.to_json %>);
+   handler.bounds.extendWith(markers);
+   handler.fitMapToBounds();
+ });
+})
+<% end %>
+<% end %>
 </div>
 
-<div class="wrapper-grey padded">
-  <div class="container-gar">
-    <div class="row">
-      <% @users[0..2].each do |user| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: url('<%= user.photo %>');">
-          <div class="card-description">
-            <h2><%= user.fullname %></h2>
+<div class="total">
+  <div class="table one">
+    <div class="row-hex2">
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
           </div>
-          <%= link_to "", user_path(user), { class: "card-link" } %>
         </div>
       </div>
-      <% end %>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore officia possimus sit voluptatibus ratione maiores repudiandae labore voluptates velit alias in nihil laborum repellat. Quod numquam molestias a saepe molestiae illum, veniam unde consectetur. Vel eius quam dignissimos odio quo.</p>
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="text-center padded"><%= link_to "See all users", users_path(@user), {class: "btn btn-success" } %></div>
+
+  <div class="table">
+    <div class="row-hex1">
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table two">
+    <div class="row-hex2">
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hex">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'garden4-small.jpeg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center"><p> Got excited? Explore <%= link_to "more gardens", gardens_path(@garden) %> in your area! </p></div>
+
+
+
+
+
+<div class="wrapper-grey padded">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+      <div class="card-testimonial">
+      <%= image_tag("person1.png", class: "testimonial-picture", style: "margin-left: 10%") %>
+        <div class="section-title-border-testimonial"></div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente.</p>
+      </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+       <div class="card-testimonial">
+      <%= image_tag("person2.png", class: "testimonial-picture", style: "margin-left: 25%") %>
+      <div class="section-title-border-testimonial"></div>
+        <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore."</p>
+      </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+       <div class="card-testimonial">
+      <%= image_tag("person4.png", class: "testimonial-picture", style: "margin-left: 25%") %>
+      <div class="section-title-border-testimonial"></div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut. </p>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 
 
 <div id="footer">
-<div class="footer-links">
- <div class="space-between-links"><%= link_to "About", ""  %></div>
- <div class="space-between-links"><%= link_to "Blog", ""  %></div>
- <div class="space-between-links"><%= link_to "Garden tips", ""  %></div>
+  <div class="footer-links">
+   <div class="space-between-links"><%= link_to "About", ""  %></div>
+   <div class="space-between-links"><%= link_to "Blog", ""  %></div>
+   <div class="space-between-links"><%= link_to "Garden tips", ""  %></div>
  </div>
  <div class="section-title-border-footer">
-      </div>
-  <div class="footer-social">
-    <%= link_to "", "", class: "fa fa-youtube footer-icons btn-footer" %>
-    <%= link_to "", "", class: "fa fa-instagram footer-icons btn-footer" %>
-    <%= link_to "", "", class: "fa fa-facebook footer-icons btn-footer" %>
-    <%= link_to "", "", class: "fa fa-twitter footer-icons btn-footer" %>
-    </div>
+ </div>
+ <div class="footer-social">
+  <%= link_to "", "", class: "fa fa-youtube footer-icons btn-footer" %>
+  <%= link_to "", "", class: "fa fa-instagram footer-icons btn-footer" %>
+  <%= link_to "", "", class: "fa fa-facebook footer-icons btn-footer" %>
+  <%= link_to "", "", class: "fa fa-twitter footer-icons btn-footer" %>
+</div>
 </div>
