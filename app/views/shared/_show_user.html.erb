@@ -82,16 +82,18 @@
 
 <div class="review-container">
   <div class="row">
-    <div class="col-xs-12">
-      <div style="text-align: center"><h3>Garden</h3></div>
+    <div class="col-xs-12" style="text-align: center">
+      <h3><%= link_to "Garden", garden_path(user.garden) %></h3>
       <div class="section-title-border">
       </div>
     </div>
   </div>
   <div class="garden-on-profile-page">
-      <div class="garden-image">
-        <%= cl_image_tag @user.garden.photo, height: 300, width: 400, crop: :fill %>
-      </div>
+      <% user.garden.photos.each do |photo| %>
+    <%= link_to photo.url, class: "swipebox" do %>
+      <%= cl_image_tag photo, class: "garden-image" %>
+    <% end %>
+  <% end %>
     <div class="garden-image">
         <p> Address: <%= @user.garden.address %></p>
         <p> Description: <%= @user.garden.description %></p>
