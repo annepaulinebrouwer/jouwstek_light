@@ -6,10 +6,27 @@
  // background-color: #E9F6ED;
   // position: relative;
   display: flex;
-  width: 1000px;
+  width: 600px;
+  margin: 0 auto;
+  background-color: #fafafa;
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#container-garden-details {
+  // margin-top: 50px;
+  // margin: 20px;
+  // padding-top: 50px;
+ // background-color: #E9F6ED;
+  // position: relative;
+  display: flex;
+  width: 600px;
   margin: 0px auto 25px auto;
   position: relative;
 }
+
 
 .border {
   border: 1px solid #dce0e0;
@@ -35,11 +52,10 @@
   // top: 50px;
   // left: 50px;
   // width: 500px;
-  text-align: center;
+  // text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  background-color: #f5f5f5;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -91,6 +107,81 @@ right: 50px;
   height: 100%;
 }
 
+.garden-description {
+  padding: 50px;
+}
+
+.swipebox {
+  display: none;
+
+  &:first-child {
+    display: block
+  }
+}
+
+.swipebox-prev {
+ margin: 20px;
+  &:after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 30px;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 30px;
+    width: 4px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotate(-45deg)
+  }
+}
+
+// #swipebox-next {
+//  margin: 20px;
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     background: white;
+//     height: 30px;
+//     width: 4px;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     margin: auto;
+//     transform: rotate(45deg);
+//   }
+
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     background: white;
+//     height: 30px;
+//     width: 4px;
+//     left: 0;
+//     margin: auto;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     transform: rotate(-45deg)
+//   }
+// }
+
+
 #swipebox-close {
   margin: 20px;
   &:after {
@@ -122,14 +213,4 @@ right: 50px;
   }
 }
 
-.wrapper {
-  background-color: #E3E3E0;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
 
-.wrapper-map {
-  background-color: #fafafa;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
