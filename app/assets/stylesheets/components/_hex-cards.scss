@@ -1,48 +1,91 @@
 // DIT HEB JE NODIG VOOR DE HEXGRID:
-.total {
+// .total {
+//   position: relative;
+//   margin: 0 auto;
+// }
+
+// .table {
+//    &.one {
+//     position: absolute;
+//     bottom: 115px;
+//     left: 230px;
+//      width: 1000px;
+//   }
+//   &.two{
+//     position: absolute;
+//     top: -65px;
+//     left: 230px;
+//      width: 1000px;
+//      height: 280px;
+
+//   }
+//   .row-hex1 {
+//     margin-bottom: 5px;
+//     width: 1400px;
+//     .hex{
+//       display: inline-block;
+//       margin-left: 57px;
+//     }
+//   }
+//   .row-hex2 {
+//     margin-bottom: 5px;
+//     width: 1000px;
+//     .hex{
+//       display: inline-block;
+//       margin-left: 57px;
+//     }
+//   }
+//   height: 400px;
+//   margin-top: 200px;
+//    width: 1400px;
+// }
+
+
+#hex-container {
   position: relative;
-  margin: 0 auto;
+  height: 700px;
 }
 
-.table {
-   &.one {
-    position: absolute;
-    bottom: 115px;
-    left: 230px;
-     width: 1000px;
-  }
-  &.two{
-    position: absolute;
-    top: -65px;
-    left: 230px;
-     width: 1000px;
-     height: 280px;
-
-  }
-  .row-hex1 {
-    margin-bottom: 5px;
-    width: 1400px;
-    .hex{
-      display: inline-block;
-      margin-left: 57px;
-    }
-  }
-  .row-hex2 {
-    margin-bottom: 5px;
-    width: 1000px;
-    .hex{
-      display: inline-block;
-      margin-left: 57px;
-    }
-  }
-  height: 400px;
-  margin-top: 200px;
-   width: 1400px;
+#hex2 {
+  position: absolute;
+    top: 113px;
+    right: 130px
 }
 
+#hex4 {
+  position: absolute;
+    top: 250px;
+}
 
+#hex1 {
+    position: absolute;
+    top: 113px;
+    left: 170px
+}
 
+#hex3 {
+  position: absolute;
+    top: 250px;
+    right: 50px;
+}
 
+#hex5 {
+  position: absolute;
+    top: 250px;
+    left: 85px;
+}
+
+#hex6 {
+  position: absolute;
+  top: 390px;
+    left: 170px;
+}
+
+#hex7 {
+   position: absolute;
+    top: 390px;
+    right: 130px;
+}
 // .odd {
 //  display: inline-block;
 //  margin-top: -90px;
