@@ -42,3 +42,27 @@ padding: 50px;
 padding-right: 5em;
 padding-left: 5em;
 }
+
+.testimonial-picture {
+  // width: 350px;
+  // height: 350px;
+  // object-fit: cover
+   margin-right: auto;
+    margin-left: auto;
+  }
+
+  .card-testimonial {
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    p {
+      text-align: center;
+    }
+  }
+
+.section-title-border-testimonial {
+width: 250px;
+background-color: #366328;
+    height: 3px;
+    margin: 0 auto;
+}

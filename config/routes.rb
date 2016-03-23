@@ -33,7 +33,8 @@ Rails.application.routes.draw do
         patch :accept
         patch :decline
       end
-    resources :user_reviews, only: [:new, :create]
+
+      resources :user_reviews, only: [:new, :create]
     end
   end
 end
