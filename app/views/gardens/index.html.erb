@@ -1,27 +1,25 @@
-
-
-<%= render "shared/map", gardens: @gardens%>
-
- <div class="container">
-    <div class="row">
-      <% @gardens.each do |garden| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: url('<%= garden.photo %>');">
-
-          <div class="card-hover">
-            <h2><%= garden.title %></h2>
-             <p><%= garden.description %></p>
-             <div id="garden-address">
-             <p ><%= garden.address %></p>
-             </div>
+<div class="container" style="padding-top: 20px">
+  <div class="row">
+    <% @gardens.each do |garden|%>
+      <% if garden.available == true %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: url('<%= garden.photo %>');">
+              <div class="card-hover">
+                <h2><%= garden.title %></h2>
+                 <p><%= garden.description %></p>
+                 <div id="garden-address">
+                 <p ><%= garden.address %></p>
+                 </div>
+              </div>
+              <%= link_to "", garden_path(garden), { class: "card-link" } %>
+            </div>
           </div>
-          <%= link_to "", garden_path(garden), { class: "card-link" } %>
-        </div>
-      </div>
+        <% end %>
       <% end %>
     </div>
   </div>
 
+<%= render "shared/map", gardens: @gardens%>
 <!--
 <div class="positioning">
  <div class="hexagon hexagon1">
