@@ -25,17 +25,18 @@ en:
     #   user: User
     # attributes:
     #   user:
-    #     email: "E-Mail"
+    #     email: "Email*"
+    #     password: "Password*"
     #     password_confirmation: "Password again"
   simple_form:
-    # labels:
-    #   user:
-    #     email: 'Blah mail'
-    #     password: 'Password'
-    #     password_confirmation: "Password again"
-    # hints:
-    #   user:
-    #     password: 'No special characters, please.'
-    # placeholders:
-    #   user:
-    #     password: '****'
+    labels:
+      user:
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: "Confirm password"
+    hints:
+      user:
+        password: 'No special characters, please.'
+    placeholders:
+      user:
+        password: '****'
