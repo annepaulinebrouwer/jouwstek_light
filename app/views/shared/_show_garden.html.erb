@@ -24,18 +24,20 @@
       <br>
     </div>
 
-    <% if user_signed_in? && current_user.garden %>
-      <div class="buttons-garden"><%= link_to "Edit", edit_owner_garden_path, class:"btn btn-success" %>
-      </div>
-      <br>
-      <% if garden.allotments.empty? %>
+    <% if user_signed_in? %>
+      <% if current_user.garden == garden %>
+        <div class="buttons-garden"><%= link_to "Edit", edit_owner_garden_path, class:"btn btn-success" %>
+        </div>
+        <br>
         <div class="buttons-garden"><%= link_to "Delete", owner_garden_path, method: :delete, class:"btn btn-success" %></div>
-      <% end %>
-
-      <% else %>
-      <div class="buttons-garden"><p>Want to explore <%= garden.owner.first_name %> 's <%= link_to "garden?", new_garden_allotment_path(@garden), {class: "link" } %></p></div>
-      <% end %>
-    </div>
+        <% end %>
+        <% if current_user.garden.nil? %>
+          <div class="buttons-garden"><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
+        <% end %>
+     <% else %>
+       <div class="buttons-garden"><p>Want to explore <%= garden.owner.first_name %> 's <%= link_to "garden?", new_garden_allotment_path(@garden), {class: "link" } %></p></div>
+    <% end %>
+  </div>
 
     <div id="container-garden-details">
       <div style="width: 100%">

@@ -18,4 +18,20 @@ class User < ActiveRecord::Base
   def fullname
     "#{first_name} #{last_name}"
   end
+
+  def garden_destroyable?
+    self.garden.allotments.each do |allotment|
+      if allotment.request_status == "pending"
+        return false
+      end
+    end
+    return true
+  end
+
+  def profile_complete?
+    if self.first_name.nil? || self.last_name.nil? || self.photo.nil? || self.description.nil?
+      return false
+    end
+      return true
+  end
 end

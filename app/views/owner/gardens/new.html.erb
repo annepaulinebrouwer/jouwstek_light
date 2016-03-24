@@ -1,15 +1,17 @@
 <div class="wrapper-fullscreen">
   <div class="container">
     <div class="row">
-      <div class="col-sm-offset-4 col-sm-4 form-group">
-        <h2>Create a new garden</h2>
+      <div class="col-sm-offset-3 col-sm-6 form-group">
+        <div class="garden-new-title"><h2>Hi <%=current_user.first_name %>, <small> welcome to the community</small></h2>
+        <br><p><small>Tell us more about your garden</small></p></div>
+
         <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
         <%= g.error_notification %>
 
-        <%= g.input :title %>
+        <%= g.input :title, placeholder: 'Amsterdam' %>
         <%= g.input :address, placeholder: 'Single 250' %>
         <%= g.input :city, placeholder: 'Amsterdam' %>
-        <%= g.input :description %>
+        <%= g.input :description, placeholder: 'Describe in max. 100 words typical charasteristics of your garden' %>
         <%= g.input :photo %>
         <%= g.input :photo2 %>
         <%= g.input :photo3 %>

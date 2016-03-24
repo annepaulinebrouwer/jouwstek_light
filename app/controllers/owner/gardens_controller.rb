@@ -7,7 +7,12 @@ module Owner
     end
 
     def new
-      @garden = Garden.new
+      if current_user.profile_complete? == true
+        @garden = Garden.new
+      else
+        redirect_to edit_user_profile_path
+        flash[:notice] = "You are one step away from creating your garden. You need to complete your profile first!"
+      end
     end
 
     def create
@@ -26,12 +31,13 @@ module Owner
     end
 
     def destroy
-      if @garden.allotments.empty?
-      @garden.destroy!
-      redirect_to user_path(@user_id)
+      if current_user.garden_destroyable? == false
+        flash[:alert] = "Hi #{current_user.first_name}, why deleting your garden? Checkout <a href='allotments'>here</a> who is still waiting to share your garden".html_safe
+        render :show
       else
-        flash[:warning] = 'You can only delete a garden if the garden has no allotments'
-        redirect_to user_path(@user_id)
+        @garden.destroy!
+        redirect_to user_path(current_user)
+        flash[:notice] = "Hi #{current_user.first_name}, you have scuccefully deleted the garden"
       end
     end
 
@@ -41,6 +47,7 @@ module Owner
     params.require(:garden).permit(
       :description,
       :address,
+      :city,
       :available,
       :photo,
       :photo_cache,
