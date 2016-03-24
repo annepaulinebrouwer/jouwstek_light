@@ -28,4 +28,10 @@ class User < ActiveRecord::Base
     return true
   end
 
+  def profile_complete
+    if self.photo.nil? || self.description.nil?
+    return false
+    end
+    return true
+  end
 end

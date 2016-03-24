@@ -7,7 +7,11 @@ module Owner
     end
 
     def new
+      # if check if methodd profile complete is true
+      #
       @garden = Garden.new
+      # else
+      # redirect_to edit your profile with a flash message.
     end
 
     def create
@@ -26,13 +30,13 @@ module Owner
     end
 
     def destroy
-      @garden.allotments.each do |allotment|
-        if allotment.request_status == "pending"
-          flash[:alert] = 'You can only delete a garden if the garden has no allotments'
-          else
-          @garden.destroy!
-          redirect_to user_path(current_user)
-        end
+      if current_user.garden_destroyable? == false
+        flash[:alert] = "Hi #{current_user.first_name}, why deleting your garding, if there are still pioneers waiting to work with you.. Check it out <a href='allotments'>here</a>".html_safe
+        render :show
+      else
+        @garden.destroy!
+        redirect_to user_path(current_user)
+        flash[:notice] = "Hi #{current_user.first_name}, you scuccefully deleted your garden"
       end
     end
 
@@ -42,6 +46,7 @@ module Owner
     params.require(:garden).permit(
       :description,
       :address,
+      :city,
       :available,
       :photo,
       :photo_cache,
