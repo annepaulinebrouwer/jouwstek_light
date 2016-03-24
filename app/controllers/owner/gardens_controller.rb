@@ -7,11 +7,12 @@ module Owner
     end
 
     def new
-      # if check if methodd profile complete is true
-      #
-      @garden = Garden.new
-      # else
-      # redirect_to edit your profile with a flash message.
+      if current_user.profile_complete? == true
+        @garden = Garden.new
+      else
+        redirect_to edit_user_profile_path
+        flash[:notice] = "You are one step away from creating your garden. You need to complete your profile first!"
+      end
     end
 
     def create
@@ -31,12 +32,12 @@ module Owner
 
     def destroy
       if current_user.garden_destroyable? == false
-        flash[:alert] = "Hi #{current_user.first_name}, why deleting your garding, if there are still pioneers waiting to work with you.. Check it out <a href='allotments'>here</a>".html_safe
+        flash[:alert] = "Hi #{current_user.first_name}, why deleting your garden? Checkout <a href='allotments'>here</a> who is still waiting to share your garden".html_safe
         render :show
       else
         @garden.destroy!
         redirect_to user_path(current_user)
-        flash[:notice] = "Hi #{current_user.first_name}, you scuccefully deleted your garden"
+        flash[:notice] = "Hi #{current_user.first_name}, you have scuccefully deleted the garden"
       end
     end
 
