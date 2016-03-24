@@ -22,7 +22,7 @@
  // background-color: #E9F6ED;
   // position: relative;
   display: flex;
-  width: 600px;
+  max-width: 1000px;
   margin: 0px auto 25px auto;
   position: relative;
 }
@@ -60,38 +60,25 @@
   width: 100%;
   object-fit: cover;
   height: 400px;
-  padding-left: 50px;
 }
 
 .avatar-garden {
   padding: 20px;
-  // position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 500px;
-  // text-align: center;
   align-self: center;
 }
 
 .text-garden {
   padding: 20px;
-  // position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 500px;
-  // text-align: center;
   align-self: center;
-  width: 1000px;
-  margin-left: 50px;
+  p {
+    opacity: .6;
+  }
 }
 
 .buttons-garden {
   padding: 20px;
-  // position: absolute;
-  top: 20px;
-  right: 20px;
-  // text-align: center;
   align-self: center;
+  margin-left: auto;
 }
 
 .container-gar {
@@ -108,80 +95,60 @@ right: 50px;
   height: 100%;
 }
 
+.garden-photo-swipebox {
+  padding-left: 20px;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  padding-bottom: 40px;
+}
+
 .garden-description {
-  padding: 50px;
+  padding: 40px 20px;
 }
 
 .swipebox {
   display: none;
 
   &:first-child {
-    display: block
+    display: block;
   }
 }
 
-.swipebox-prev {
- margin: 20px;
+#swipebox-next, #swipebox-prev{
+ position: relative;
   &:after {
     content: '';
     position: absolute;
     background: white;
-    height: 30px;
-    width: 4px;
-    top: 0;
+    height: 4px;
+    width: 15px;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateY(-6px)
   }
 
   &:before {
     content: '';
     position: absolute;
     background: white;
-    height: 30px;
-    width: 4px;
+    height: 4px;
+    width: 15px;
     left: 0;
     margin: auto;
     right: 0;
     top: 0;
     bottom: 0;
-    transform: rotate(-45deg)
+    transform: rotate(-45deg) translateY(6px)
   }
 }
 
-// #swipebox-next {
-//  margin: 20px;
-//   &:after {
-//     content: '';
-//     position: absolute;
-//     background: white;
-//     height: 30px;
-//     width: 4px;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     margin: auto;
-//     transform: rotate(45deg);
-//   }
-
-//   &:before {
-//     content: '';
-//     position: absolute;
-//     background: white;
-//     height: 30px;
-//     width: 4px;
-//     left: 0;
-//     margin: auto;
-//     right: 0;
-//     top: 0;
-//     bottom: 0;
-//     transform: rotate(-45deg)
-//   }
-// }
-
+#swipebox-prev {
+  transform: rotate(-180deg);
+}
 
 #swipebox-close {
   margin: 20px;

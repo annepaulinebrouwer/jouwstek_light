@@ -9,6 +9,7 @@
 <div id="container-garden-details">
   <div class="avatar-garden">
     <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), user_path(garden.owner), { class: "avatar-link card-user" } %>
+    <p><%= @garden.owner.fullname %></p>
   </div>
 
 
@@ -32,13 +33,32 @@
 </div>
 
 <div class="wrapper-white-about">
-<div id="container-garden-details">
-  <div class="garden-description">
-    <h4>About this garden</h4>
-    <br>
-    <p> <%= garden.description %></p>
+  <div id="container-garden-details">
+  <div>
+    <div class="garden-description">
+      <h4>About this garden</h4>
+      <br>
+      <p> <%= garden.description %></p>
+    </div>
+<div>
+  <% garden.photos.each do |photo| %>
+    <%= link_to photo.url, class: "swipebox" do %>
+      <%= cl_image_tag photo, class: "garden-photo-swipebox" %>
+    <% end %>
+  <% end %>
+</div>
+  </div>
   </div>
 </div>
+
+<div class>
+  <div id="container-garden-details">
+    <div class="garden-description">
+      <h4>About the owner</h4>
+      <br>
+      <p><%= @garden.owner.description %></p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quaerat omnis fuga eos similique quos odio ratione neque. Soluta ducimus saepe omnis repellat natus similique dicta aspernatur blanditiis, eum placeat quisquam eius officiis ullam sint. Vero sapiente voluptates, saepe placeat necessitatibus consequuntur tenetur quisquam illum magnam. Fugiat rerum doloremque earum? </p>
+    </div>
+  </div>
 </div>
 
 <div class="review-container">
@@ -74,6 +94,8 @@
   <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
 </div>
 </div>
+
+
 
 
 
