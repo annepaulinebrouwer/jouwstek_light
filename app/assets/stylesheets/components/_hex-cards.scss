@@ -40,6 +40,9 @@
 //    width: 1400px;
 // }
 
+.hexes {
+  margin: 0 auto;
+}
 
 #hex-container {
   position: relative;
@@ -48,43 +51,50 @@
 
 #hex2 {
   position: absolute;
-    top: 113px;
-    right: 130px
+    top: 114px;
+    right: 185px;
+    opacity: 0;
 }
 
 #hex4 {
   position: absolute;
     top: 250px;
+    opacity: 0;
 }
 
 #hex1 {
     position: absolute;
-    top: 113px;
-    left: 170px
+    top: 114px;
+    left: 170px;
+    opacity: 0;
 }
 
 #hex3 {
   position: absolute;
     top: 250px;
-    right: 50px;
+    right: 100px;
+    opacity: 0;
 }
 
 #hex5 {
   position: absolute;
     top: 250px;
     left: 85px;
+    opacity: 0;
 }
 
 #hex6 {
   position: absolute;
   top: 390px;
     left: 170px;
+    opacity: 0;
 }
 
 #hex7 {
    position: absolute;
-    top: 390px;
-    right: 130px;
+    top: 388px;
+    right: 185px;
+    opacity: 0;
 }
 // .odd {
 //  display: inline-block;
@@ -131,15 +141,104 @@
   }
 
 .hexagon1 {
-  width: 400px;
+  width: 350px;
   height: 250px;
   margin: 0 0 0 0px;
 }
 
 .hexagon:hover {
-  opacity: 1;
+  opacity: 0.8;
+}
+
+@media(max-width: 1200px) {
+ #hex2 {
+  position: absolute;
+    top: 114px;
+    right: 50px;
+    opacity: 0;
+}
+
+#hex4 {
+  position: absolute;
+    top: 250px;
+    opacity: 0;
+}
+
+#hex1 {
+    position: absolute;
+    top: 114px;
+    left: 100px;
+    opacity: 0;
+}
+
+#hex6 {
+  position: absolute;
+  top: 390px;
+    left: 100px;
+    opacity: 0;
+}
+
+#hex7 {
+   position: absolute;
+    top: 388px;
+    right: 50px;
+    opacity: 0;
+}
+}
+@media(max-width: 990px) {
+ #hex2 {
+  position: absolute;
+    top: 114px;
+    right: -100px;
+    opacity: 0;
+}
+
+#hex4 {
+  position: absolute;
+    top: 250px;
+    opacity: 0;
+}
+
+#hex1 {
+    position: absolute;
+    top: 114px;
+    left: 30px;
+    opacity: 0;
+}
+
+#hex6 {
+  position: absolute;
+  top: 390px;
+    left: 30px;
+    opacity: 0;
+}
+
+#hex7 {
+   position: absolute;
+    top: 388px;
+    right: -100px;
+    opacity: 0;
+}
+}
+@media(max-width: 767px) {
+  .hexagon1 {
+    width: 450px;
+  height: 300px;
+  }
+
+#hex4 {
+  position: absolute;
+    top: 250px;
+    opacity: 0;
+    margin-left: 20%;
+}
+
 }
 //   _____________________________________________________________
 //
+
+#hex8 {
+  margin: 20px
+}
 
 
