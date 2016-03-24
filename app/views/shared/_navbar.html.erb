@@ -45,8 +45,9 @@ NOT LOGGED IN: logo, about, search, login, join -->
 <!-- Login text link -->
 <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
+
 <!-- Button (call-to-action) -->
-<%= link_to "Join", new_user_registration_path, {class: "navbar-wagon-item btn btn-success btn-default"} %>
+<%= link_to "Join", new_user_registration_path, {class: "navbar-wagon-item btn btn-success btn-default", "data-toggle": "modal", "data-target": "#sign-up"} %>
 
 <% end %>
 
@@ -61,4 +62,9 @@ NOT LOGGED IN: logo, about, search, login, join -->
 </div>
 
 </div>
+
+<div class="modal fade" id="sign-up">
+<%= render "devise/registrations/sign_up" %>
+</div>
+
 

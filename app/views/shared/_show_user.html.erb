@@ -1,21 +1,26 @@
-<div class="wrapper-grey padded">
+<div class="wrapper-white-about">
+<div class="container">
   <div class="user-container">
+    <div class="user-container-text">
     <div class="row">
       <div class="col-xs-12" style="padding: 20px">
         <%= cl_image_tag  @user.photo, class: "avatar-extralarge" %>
         <h1><%= @user.fullname %></h1>
         <p><%= @user.description %></p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quaerat omnis fuga eos similique quos odio ratione neque. Soluta ducimus saepe omnis repellat natus similique dicta aspernatur blanditiis, eum placeat quisquam eius officiis ullam sint. Vero sapiente voluptates, saepe placeat necessitatibus consequuntur tenetur quisquam illum magnam. Fugiat rerum doloremque earum? </p>
-        <div><%= link_to "Edit", edit_owner_profile_path, { class: "btn btn-success"} %></div>
+        <% if current_user == @user %><div><%= link_to "Edit", edit_owner_profile_path, { class: "btn btn-success"} %></div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
+  </div>
 
 <% if @user.owner_reviews.exists? %>
-<div class="wrapper-white">
-<div class="user-container">
-      <div style="text-align: center"><h3>Reviews</h3></div>
-      <div class="section-title-border"></div>
+<div class="user-container2">
+      <div class="row">
+        <div class="col-xs-12"><h3>Reviews</h3>
+        <div class="section-title-border"></div>
+        </div>
+      </div>
   <div class="row">
   <% @user.owner_reviews.each do |review| %>
     <div class="col-xs-12 col-sm-6">
@@ -42,62 +47,6 @@
     <% end %>
   </div>
 </div>
-</div>
 <% end %>
-
-<!-- <div class="wrapper-white">
-  <div class="user-container">
-    <div class="col-xs-12">
-      <div style="text-align: center"><h3>Reviews</h3></div>
-      <div class="section-title-border">
-      </div>
-    </div>
-  <% @user.owner_reviews.each do |review| %>
-  <div class="review-cards">
-    <div class="row">
-      <div class="col-xs-2" style="padding-left: 50px">
-        <%= cl_image_tag  @user.photo, class: "avatar-large" %>
-      </div>
-      <div class="col-xs-10">
-        <% review.stars.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-        <% (5 - review.stars).times do %>
-        <i class="fa fa-star-o"></i>
-        <% end %>
-        <p><%= review.description %></p>
-        <div class="review-name">
-         <p><%= review.user.fullname %></p>
-         <%#raise%>
-       </div>
-     </div>
-   </div>
-  </div>
- <% end %>
 </div>
 </div>
-
- -->
-<% if @user.garden %>
-
-<div class="review-container">
-  <div class="row">
-    <div class="col-xs-12" style="text-align: center">
-      <h3><%= link_to "Garden", garden_path(user.garden) %></h3>
-      <div class="section-title-border">
-      </div>
-    </div>
-  </div>
-  <div class="garden-on-profile-page">
-      <% user.garden.photos.each do |photo| %>
-    <%= link_to photo.url, class: "swipebox" do %>
-      <%= cl_image_tag photo, class: "garden-image" %>
-    <% end %>
-  <% end %>
-    <div class="garden-image">
-        <p> Address: <%= @user.garden.address %></p>
-        <p> Description: <%= @user.garden.description %></p>
-      </div>
-  </div>
-</div>
-<% end %>
