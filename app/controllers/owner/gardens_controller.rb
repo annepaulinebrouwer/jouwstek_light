@@ -26,12 +26,13 @@ module Owner
     end
 
     def destroy
-      if @garden.allotments.empty?
-      @garden.destroy!
-      redirect_to user_path(@user_id)
-      else
-        flash[:warning] = 'You can only delete a garden if the garden has no allotments'
-        redirect_to user_path(@user_id)
+      @garden.allotments.each do |allotment|
+        if allotment.request_status == "pending"
+          flash[:alert] = 'You can only delete a garden if the garden has no allotments'
+          else
+          @garden.destroy!
+          redirect_to user_path(current_user)
+        end
       end
     end
 
