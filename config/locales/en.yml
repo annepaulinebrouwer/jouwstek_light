@@ -23,7 +23,9 @@ en:
   activerecord:
     # models:
     #   user: User
-    # attributes:
+    attributes:
+      garden:
+        title: "Title"
     #   user:
     #     email: "Email*"
     #     password: "Password*"

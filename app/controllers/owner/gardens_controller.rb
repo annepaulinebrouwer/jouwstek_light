@@ -18,8 +18,12 @@ module Owner
     def create
       @garden = Garden.new(garden_params)
       @garden.owner = current_user
-      @garden.save!
-      redirect_to owner_garden_path
+      if @garden.save
+        redirect_to owner_garden_path
+      else
+        flash[:alert] = "Unable to create your garden."
+        render :new
+      end
     end
 
     def edit
@@ -45,6 +49,7 @@ module Owner
 
   def garden_params
     params.require(:garden).permit(
+      :title,
       :description,
       :address,
       :city,
