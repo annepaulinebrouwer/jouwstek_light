@@ -3,9 +3,30 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.container-map {
-padding: 50px;
-}
+IMG.hiw {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+  }
+
+  .how-it-works {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    #hiw-text{        position: absolute;
+    top: 151px;
+    left: 40%;
+    color: white;
+    font-size: 250%;
+    }
+     #hiw-text2 {
+      text-align: center;
+      position: absolute;
+      left: 40%;
+     }
+  }
 
 .marker-photo {
   height: 150px;

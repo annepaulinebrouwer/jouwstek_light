@@ -46,55 +46,83 @@
 
 #hex-container {
   position: relative;
-  height: 700px;
+  height: 750px;
 }
 
 #hex2 {
   position: absolute;
-    top: 114px;
+    top: 64px;
     right: 185px;
     opacity: 0;
 }
 
 #hex4 {
   position: absolute;
-    top: 250px;
+    top: 200px;
     opacity: 0;
 }
 
 #hex1 {
     position: absolute;
-    top: 114px;
+    top: 64px;
     left: 170px;
     opacity: 0;
 }
 
 #hex3 {
   position: absolute;
-    top: 250px;
+    top: 200px;
     right: 100px;
     opacity: 0;
 }
 
 #hex5 {
   position: absolute;
-    top: 250px;
+    top: 200px;
     left: 85px;
     opacity: 0;
 }
 
 #hex6 {
   position: absolute;
-  top: 390px;
+  top: 338px;
     left: 170px;
     opacity: 0;
 }
 
 #hex7 {
    position: absolute;
-    top: 388px;
+    top: 338px;
     right: 185px;
     opacity: 0;
+}
+
+#hex8 {
+  position: absolute;
+  top: 450px;
+  right: 85px;
+  opacity: 0;
+}
+
+#hex9 {
+  position: absolute;
+  top: 473px;
+  opacity: 0;
+}
+
+#hex10 {
+  position: absolute;
+top: 475px;
+left: 85px;
+opacity: 0;
+}
+
+.how-to {
+  margin-bottom: 50px;
+  margin-top: 10px;
+  p {
+    font-size: 150%;
+  }
 }
 // .odd {
 //  display: inline-block;

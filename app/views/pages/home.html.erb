@@ -6,7 +6,6 @@
   </div>
 </div>
 
-
  <div class="container" id="hex-container">
    <div class="hexes">
     <div class="row">
@@ -100,18 +99,90 @@
         <% end %>
       </div>
     </div>
+    <div class="row">
+      <div class=" col-xs-12 col-sm-4">
+        <%= link_to gardens_path do %>
+        <div class="hex hidden-xs hidden-sm hidden-md" id="hex8">
+          <div class="hexagon hexagon1">
+            <div class="hexagon-in1">
+              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpg' %>);">
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to gardens_path do %>
+        <div class="hex" id="hex9">
+          <div class="hexagon hexagon1">
+            <div class="hexagon-in1">
+              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to gardens_path do %>
+        <div class="hex hidden-xs hidden-sm hidden-md" id="hex10">
+          <div class="hexagon hexagon1">
+            <div class="hexagon-in1">
+              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
+<div class=" how-to text-center">
+    <p> <%= link_to "Find", gardens_path(@garden), class: "link" %> a garden in your neighbourhood</p>
+<p> <%= link_to "Connect", gardens_path(@garden), class: "link" %> with the garden owner</p>
+<p><%= link_to "Grow", gardens_path(@garden), class: "link" %> your own veggies</p>
+    </div>
 
-<div class="text-center"><p> Got excited? Explore <%= link_to "gardens", gardens_path(@garden), class: "link" %> in your area! </p></div>
-
+<div>
  <%= render "shared/map"%>
+ <div class="text-center"><p> Got excited? Explore <%= link_to "gardens", gardens_path(@garden), class: "link" %> in your area! </p></div>
+ </div>
 
 
+ <div class="container" style="padding-top: 20px">
+  <div class="row">
+    <% @gardens[0..1].each do |garden|%>
+      <% if garden.available == true %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: url('<%= garden.photo %>');">
+              <div class="card-hover">
+                <h2><%= garden.title %></h2>
+                 <p><%= garden.description %></p>
+                 <div id="garden-address">
+                 <p ><%= garden.address %></p>
+                 </div>
+              </div>
+              <%= link_to "", garden_path(garden), { class: "card-link" } %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
+              <div class="card-hover">
+                <h2>Your Garden</h2>
+                 <p> Share your garden</p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="text-center"><p> What to share some space in your garden? <%= link_to "Add your garden", new_owner_garden_path, {class: "link"} %> </p></div>
+  </div>
 
 
-
-<div class="banner-gray padded">
+<div class="wrapper-grey padded">
 
   <div class="container">
     <div class="row">
@@ -140,20 +211,9 @@
 </div>
 </div>
 
-<div class="container" id="how-it-works">
-        <div class="hex" id="hex8">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background-color: #659157;">
-              </div>
-            </div>
-          </div>
-        </div>
-</div>
 
 
-</div>
-<div class="components">
+<!-- <div class="components" style="opacity: 0.1">
   <div class="timeline-container">
     <div class="title-timeline"><h2>How it works</h2></div>
     <div class="timeline-bar">
@@ -182,6 +242,7 @@
      <% end %>
    </div>
  </div>
+ </div> -->
 
 
 
