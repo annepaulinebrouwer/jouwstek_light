@@ -16,7 +16,6 @@
       <div><%= allotment.start_day %></div>
       <div><%= allotment.end_day %></div>
     </div>
-    <div class="<%= allotment.request_status %> booking-item-btn"><%= allotment.request_status %></div>
     <div class="booking-item-btn"><% if allotment.request_status == "pending" %>
       <%= link_to "cancel", cancel_user_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
       <% elsif allotment.request_status == "accepted" %>
