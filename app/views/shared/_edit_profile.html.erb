@@ -1,0 +1,11 @@
+<!-- When you call this partial you should pass these two variable: path, user  -->
+
+<h2>Edit your profile</h2>
+<%= simple_form_for(user, url: path) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit %>
+<% end %>
