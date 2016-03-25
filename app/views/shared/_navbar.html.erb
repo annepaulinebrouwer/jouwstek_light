@@ -64,7 +64,7 @@ NOT LOGGED IN: logo, about, search, login, join -->
 </div>
 
 <div class="modal fade" id="sign-up">
-<%= render "devise/registrations/sign_up" %>
+  <%= render "devise/registrations/sign_up", user: User.new %>
 </div>
 
 

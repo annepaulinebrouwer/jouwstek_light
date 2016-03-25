@@ -1,4 +1,7 @@
 class Garden < ActiveRecord::Base
+  validates :address, uniqueness: true, presence: true
+  validates :description, :title, :photo, :city, presence: true
+
   belongs_to :owner, class_name: 'User'
 
   has_many :allotments, dependent: :destroy

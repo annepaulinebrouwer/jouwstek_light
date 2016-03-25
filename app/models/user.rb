@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  # validates :email, presence: true, uniqueness: true
+  # validates :photo, presence: true
+
   has_one :garden, dependent: :destroy, foreign_key: 'owner_id'
 
   has_many :allotments, dependent: :destroy
