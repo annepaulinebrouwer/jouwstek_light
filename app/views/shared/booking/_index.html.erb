@@ -3,33 +3,30 @@
     <div class="booking-welcome-text">
       <h2>Hi <%= @current_user.first_name %>, <small> these are your amazing bookings</small></h2>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
           <div class="tabs text-align:center">
             <a class="tab active" data-target="#pending">
-              <div class="circle-tab">
-                <i class="fa fa-question fa-2x"></i>
+              <div class="tab-elements">
+                <div class="circle-tab">
+                  <i class="fa fa-question fa-2x"></i></div>
+                <div class="tab-text"><p>pending</p></div>
               </div>
             </a>
             <a class="tab" data-target="#accepted">
+             <div class="tab-elements">
               <div class="circle-tab">
-                <i class="fa fa-check fa-2x"></i>
-              </div>
+                <i class="fa fa-check fa-2x"></i></div>
+              <div class="tab-text"><p>accepted</p></div>
+             </div>
             </a>
             <a class="tab" data-target="#canceled">
+            <div class="tab-elements">
              <div class="circle-tab">
-                <i class="fa fa-times fa-2x"></i>
-              </div>
+                <i class="fa fa-times fa-2x"></i></div>
+                 <div class="tab-text"><p>cancelled</p> </div>
+                </div>
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
       <div class="tab-content" id="pending">
-        <div class="col-sm-12">
            <% @allotments.each do |allotment| %>
              <% if allotment.request_status == "pending" %>
                <% if current_user.garden %>
@@ -39,10 +36,8 @@
                <% end %>
              <% end %>
            <% end %>
-        </div>
       </div>
       <div class="tab-content hidden" id="accepted">
-        <div class="col-sm-12">
           <% @allotments.each do |allotment| %>
             <% if allotment.request_status == "accepted" %>
               <% if current_user.garden %>
@@ -52,10 +47,8 @@
               <% end %>
             <% end %>
           <% end %>
-        </div>
       </div>
       <div class="tab-content hidden" id="canceled">
-        <div class="col-sm-12">
           <% @allotments.each do |allotment| %>
             <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
               <% if current_user.garden %>
@@ -65,8 +58,6 @@
               <% end %>
             <% end %>
           <% end %>
-        </div>
       </div>
-    </div>
   </div>
 </div>
