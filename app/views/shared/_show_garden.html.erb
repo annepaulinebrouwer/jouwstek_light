@@ -35,7 +35,7 @@
           <div class="buttons-garden"><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
         <% end %>
      <% else %>
-       <div class="buttons-garden"><p>Want to explore <%= garden.owner.first_name %> 's <%= link_to "garden?", new_garden_allotment_path(@garden), {class: "link" } %></p></div>
+       <div class="buttons-garden"><p>Want to grow your veggies in <%= link_to garden.owner.first_name, new_garden_allotment_path(@garden), {class: "link" } %> 's garden?</p></div>
     <% end %>
   </div>
 
@@ -94,232 +94,226 @@
   </div>
 
     <div id="container-map-details">
-      <div class="wrapper-map">
-        <div class="container-small-map">
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=1000x300&sensor=false&maptype=roadmap&markers=color:red|#{@garden.address}" %>
-        </div>
-      </div>
+      <div id="garden-map" lat="<%= @garden.latitude %>" lon="<%= @garden.longitude %>" style="width: 900px; height: 400px;"></div>
+
+      <% content_for(:after_js) do %>
+        <script type="text/javascript">
+          var myLatlng = new google.maps.LatLng($('#garden-map').attr('lat'), $('#garden-map').attr('lon'));
+
+          var myOptions = {
+            zoom: 16,
+            center: myLatlng,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [{
+                  "featureType": "administrative",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "landscape",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "hue": "#ff0300"
+                      },
+                      {
+                          "saturation": -100
+                      },
+                      {
+                          "lightness": 129.33333333333334
+                      },
+                      {
+                          "gamma": 1
+                      },
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "hue": "#abff00"
+                      },
+                      {
+                          "saturation": 61.80000000000001
+                      },
+                      {
+                          "lightness": 13.800000000000011
+                      },
+                      {
+                          "gamma": 1
+                      },
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "color": "#1fa661"
+                      },
+                      {
+                          "weight": "0.55"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway.controlled_access",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.highway.controlled_access",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.arterial",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "hue": "#00b7ff"
+                      },
+                      {
+                          "saturation": -31.19999999999996
+                      },
+                      {
+                          "lightness": 2.1803921568627374
+                      },
+                      {
+                          "gamma": 1
+                      },
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road.local",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "hue": "#00B5FF"
+                      },
+                      {
+                          "saturation": -33.33333333333343
+                      },
+                      {
+                          "lightness": 27.294117647058826
+                      },
+                      {
+                          "gamma": 1
+                      },
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit.line",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit.station.airport",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit.station.bus",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "water",
+                  "elementType": "all",
+                  "stylers": [
+                      {
+                          "hue": "#00B7FF"
+                      },
+                      {
+                          "saturation": 8.400000000000006
+                      },
+                      {
+                          "lightness": 36.400000000000006
+                      },
+                      {
+                          "gamma": 1
+                      }
+                  ]
+              }] // TODO: replace [] by array from https://snazzymaps.com/
+          };
+
+          var map = new google.maps.Map(document.getElementById('garden-map'), myOptions);
+          var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: "You are here!"
+          });
+        </script>
+      <% end %>
     </div>
   </div>
 </div>
 
-
-<div id="garden-map" lat="<%= @garden.latitude %>" lon="<%= @garden.longitude %>" style="width: 900px; height: 400px;"></div>
-
-<% content_for(:after_js) do %>
-  <script type="text/javascript">
-    var myLatlng = new google.maps.LatLng($('#garden-map').attr('lat'), $('#garden-map').attr('lon'));
-
-    var myOptions = {
-      zoom: 16,
-      center: myLatlng,
-      scrollwheel: false,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: [{
-            "featureType": "administrative",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "landscape",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "hue": "#ff0300"
-                },
-                {
-                    "saturation": -100
-                },
-                {
-                    "lightness": 129.33333333333334
-                },
-                {
-                    "gamma": 1
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "poi",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "hue": "#abff00"
-                },
-                {
-                    "saturation": 61.80000000000001
-                },
-                {
-                    "lightness": 13.800000000000011
-                },
-                {
-                    "gamma": 1
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                },
-                {
-                    "color": "#1fa661"
-                },
-                {
-                    "weight": "0.55"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway.controlled_access",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway.controlled_access",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.arterial",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "hue": "#00b7ff"
-                },
-                {
-                    "saturation": -31.19999999999996
-                },
-                {
-                    "lightness": 2.1803921568627374
-                },
-                {
-                    "gamma": 1
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "road.local",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "hue": "#00B5FF"
-                },
-                {
-                    "saturation": -33.33333333333343
-                },
-                {
-                    "lightness": 27.294117647058826
-                },
-                {
-                    "gamma": 1
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "transit",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "transit.line",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "transit.station.airport",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "transit.station.bus",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "elementType": "all",
-            "stylers": [
-                {
-                    "hue": "#00B7FF"
-                },
-                {
-                    "saturation": 8.400000000000006
-                },
-                {
-                    "lightness": 36.400000000000006
-                },
-                {
-                    "gamma": 1
-                }
-            ]
-        }] // TODO: replace [] by array from https://snazzymaps.com/
-    };
-
-    var map = new google.maps.Map(document.getElementById('garden-map'), myOptions);
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: "You are here!"
-    });
-  </script>
-<% end %>

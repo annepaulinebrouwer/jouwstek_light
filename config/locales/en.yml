@@ -36,7 +36,8 @@ en:
         password_confirmation: "Confirm password"
     hints:
       user:
-        password: 'No special characters, please.'
+        password: 'The password should contain at least 8 characters'
     placeholders:
       user:
-        password: '****'
+        email: 'example@example.com'
+
