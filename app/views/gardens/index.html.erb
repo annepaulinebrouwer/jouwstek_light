@@ -1,8 +1,10 @@
-<div class="container" style="padding-top: 20px">
+<div class="container-index">
+<div class="container-gardens" style="padding-top: 20px">
+<h2 class="text-center">Find a garden </h2>
   <div class="row">
     <% @gardens.each do |garden|%>
       <% if garden.available == true %>
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-sm-6">
             <div class="card" style="background: url('<%= garden.photo %>');">
               <div class="card-hover">
                 <h2><%= garden.title %></h2>
@@ -19,7 +21,10 @@
     </div>
   </div>
 
+<div class="container-map">
 <%= render "shared/map", gardens: @gardens%>
+</div>
+</div>
 <!--
 <div class="positioning">
  <div class="hexagon hexagon1">
