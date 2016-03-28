@@ -1,6 +1,7 @@
 .modal {
   color: white;
   text: center;
+  opacity: 0.5;
   h2 {
     color: white;
   }
@@ -14,3 +15,14 @@
   }
 }
 
+.log-in-form {
+    padding: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.log-in-wrapper {
+  background-color: #f5f5f5;
+}

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resource :garden
     resource :profile, only: [:show, :edit, :update]
 
-    resources :allotments, only: [:index] do
+    resources :allotments, only: [:index, :show] do
       member do
         patch :accept
         patch :decline

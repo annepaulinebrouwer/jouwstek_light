@@ -10,12 +10,14 @@ class User::GardenReviewsController < ApplicationController
     @garden_review = GardenReview.new(garden_review_params)
     @garden_review.user = current_user
     @garden_review.allotment = @allotment
-    @garden_review.save!
-    @garden = @allotment.garden_id
-
-    redirect_to garden_path(@garden)
+    if @garden_review.save!
+      @garden = @allotment.garden_id
+      redirect_to garden_path(@garden)
+    else
+      flash[:warning] = 'You cannot create a garden review'
+      redirect_to garden_path(@garden)
+    end
   end
-
 
 private
 

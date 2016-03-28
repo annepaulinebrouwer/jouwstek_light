@@ -1,9 +1,12 @@
 class Owner::AllotmentsController < ApplicationController
 
-  before_action :find_allotment, only: [ :accept, :decline ]
+  before_action :find_allotment, only: [ :show, :accept, :decline ]
 
   def index
     @allotments = current_user.garden_allotments
+  end
+
+  def show
   end
 
   def accept

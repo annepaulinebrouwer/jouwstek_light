@@ -22,6 +22,7 @@
 en:
   activerecord:
     # models:
+    # models:
     #   user: User
     attributes:
       garden:
@@ -42,4 +43,6 @@ en:
     placeholders:
       user:
         email: 'example@example.com'
+        password: '********'
+        password_confirmation: '********'
 
