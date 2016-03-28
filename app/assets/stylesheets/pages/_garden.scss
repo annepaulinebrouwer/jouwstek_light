@@ -17,23 +17,51 @@
   position: relative;
   background-color: #fafafa;
   padding-bottom: 20px;
+  padding: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    flex-flow: column;
+  }
 }
 
+#container-garden-owner {
+  max-width: 900px;
+  margin: 0px auto 0px auto;
+  position: relative;
+  background-color: #fafafa;
+  padding-bottom: 20px;
+  padding: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+}
 #container-map-details {
-  display: flex;
+  // display: flex;
   max-width: 900px;
   margin: 0px auto 25px auto;
   position: relative;
   background-color: #fafafa;
+  border-right: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 #container-garden-top {
   display: flex;
+  flex-direction: row;
   max-width: 900px;
   margin: -100px auto 0px auto;
   position: relative;
   background-color: #fafafa;
-  padding-bottom: 20px;
+  padding-left: 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+  @media (max-width: 600px) {
+    flex-flow: column;
+  }
 }
 
 .border {
@@ -53,7 +81,7 @@
   max-width: 1000px;
   margin: -100px auto 0px auto;
   position: relative;
-  background-color: #fafafa
+  background-color: #fafafa;
 }
 
 .garden-image {
@@ -72,9 +100,18 @@
   padding-bottom: 10px;
 }
 
+.avatar-user {
+  order: 2;
+  flex: 0 0 30%;
+}
+
 .garden-owner-name {
   align-self: center;
   justify-content: center;
+  display: flex;
+}
+
+.garden-owner {
   display: flex;
 }
 
@@ -87,9 +124,14 @@
 }
 
 .buttons-garden {
-  padding: 40px;
-  align-self: center;
-  margin-left: auto;
+  padding: 20px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.button-garden {
+
 }
 
 .container-gar {
@@ -116,11 +158,8 @@ right: 50px;
 }
 
 .garden-description {
-  padding: 20px 20px;
   width: 100%;
-  max-width: 570px;
-  margin: 18px auto;
-
+  margin: 0px auto;
 }
 
 #swipebox-first {
@@ -202,4 +241,33 @@ right: 50px;
   }
 }
 
+.button-garden-view {
+  display: flex;
+  margin-left: 50px;
+  @media (max-width: 600px) {
+    margin-left: 0;
+  }
+}
+
+.garden-owner-fullname {
+  opacity: .5;
+  margin: auto 0;
+}
+
+.garden-description {
+  flex: 1;
+  opacity: .7;
+}
+
+.avatar-user-container {
+  margin-left: auto;
+  padding: 20px;
+  display: flex;
+
+  align-items: center;
+
+  img {
+    margin: 0 10px;
+  }
+}
 
