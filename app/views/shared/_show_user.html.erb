@@ -14,7 +14,7 @@
   </div>
   </div>
 
-<% if @user.owner_reviews.exists? %>
+<% if @user.user_reviews.exists? %>
 <div class="user-container2">
       <div class="row">
         <div class="col-xs-12"><h3>Reviews</h3>
@@ -22,14 +22,14 @@
         </div>
       </div>
   <div class="row">
-  <% @user.owner_reviews.each do |review| %>
+  <% @user.user_reviews.each do |review| %>
     <div class="col-xs-12 col-sm-6">
   <div class="review-cards">
   <div class="circle">
         <%= cl_image_tag  @user.photo, class: "avatar-medium", id: "avatar-review" %>
       </div>
        <div class="review-name">
-          <p> <%= review.user.fullname %></p>
+          <p> <%= review.owner.fullname %></p>
         </div>
         <div class="review-text">
           <p><%= review.description %></p>
