@@ -1,319 +1,324 @@
 <div class="garden-photo">
   <% garden.photos.each do |photo| %>
-    <%= link_to photo.url, class: "swipebox", id: "swipebox-first" do %>
-      <%= cl_image_tag photo, class: "garden-image" %>
-    <% end %>
+  <%= link_to photo.url, class: "swipebox", id: "swipebox-first" do %>
+  <%= cl_image_tag photo, class: "garden-image" %>
+  <% end %>
   <% end %>
 </div>
 
 <div class="wrapper-white-about">
   <div class="container">
     <div id="container-garden-top">
-    <div>
-      <div class="avatar-garden">
-        <%= link_to image_tag(garden.owner.photo, class: "avatar-large"), user_path(garden.owner), { class: "avatar-link card-user" } %>
+      <div>
+        <div>
+          <h2> <%= garden.title %></h2>
+        </div>
+        <div>
+         <%= garden.address %>
+       </div>
+     </div>
+     <div class="avatar-user-container">
+       <div class="avatar-user">
+         <%= link_to image_tag(garden.owner.photo, class: "avatar-small"), user_path(garden.owner), { class: "avatar-link card-user" } %>
+        </div>
+        <div class="garden-owner-fullname">
+          <%= @garden.owner.fullname %>
+        </div>
       </div>
-        <div class="garden-owner-name">
-          <p><%= @garden.owner.fullname %></p>
-        </div>
-        </div>
-
-    <div class="text-garden">
-      <h2> <%= garden.title %></h2>
-      <p> <%= garden.address %></p>
-      <br>
-    </div>
-
+   </div>
+   <div id="container-garden-details">
+    <div class="garden-description">
+     <p> <%= garden.description %></p>
+   </div>
+   <div class="button-garden-view">
     <% if user_signed_in? %>
-      <% if current_user.garden == garden %>
-        <div class="buttons-garden"><%= link_to "Edit", edit_owner_garden_path, class:"btn btn-success" %>
-        </div>
-        <br>
-        <div class="buttons-garden"><%= link_to "Delete", owner_garden_path, method: :delete, class:"btn btn-success" %></div>
-        <% end %>
-        <% if current_user.garden.nil? %>
-          <div class="buttons-garden"><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
-        <% end %>
-     <% else %>
-       <div class="buttons-garden"><p>Want to grow your veggies in <%= link_to garden.owner.first_name, new_garden_allotment_path(@garden), {class: "link" } %> 's garden?</p></div>
+    <% if current_user.garden == garden %>
+    <div class="buttons-garden"><%= link_to "", edit_owner_garden_path, class:"fa fa-pencil" %>
+    </div>
+    <div class="buttons-garden"><%= link_to "", owner_garden_path, method: :delete, class:"fa fa-trash-o" %></div>
     <% end %>
-  </div>
-
-    <div id="container-garden-details">
-      <div style="width: 100%">
-        <div class="garden-description">
-          <p> <%= garden.description %></p>
-        </div>
-          <div class="swipebox2">
-            <% garden.photos.each do |photo| %>
-              <%= link_to photo.url, class: "swipebox" do %>
-              <%= cl_image_tag photo, class: "garden-photo-swipebox" %>
-              <% end %>
-            <% end %>
-          </div>
-      </div>
-    </div>
-
-    <% if current_user != @garden.owner %>
-      <div id="container-garden-details">
-        <div class="garden-description">
-          <h4>Some words about <%= garden.owner.first_name %></h4>
-          <br>
-          <p><%= @garden.owner.description %></p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quaerat omnis fuga eos similique quos odio ratione neque. Soluta ducimus saepe omnis repellat natus similique dicta aspernatur blanditiis, eum placeat quisquam eius officiis ullam sint. Vero sapiente voluptates, saepe placeat necessitatibus consequuntur tenetur quisquam illum magnam. Fugiat rerum doloremque earum? </p>
-        </div>
-      </div>
+    <% if current_user.garden.nil? %>
+    <div class="button-garden"><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
     <% end %>
-
-    <div id="container-garden-details">
-  <!-- <div class="review-container"> -->
-    <div class="row">
-      <% garden.garden_reviews.each do |review| %>
-      <div class="col-xs-12 col-sm-6" >
-        <div class="review-cards" >
-          <div class="circle">
-            <%= cl_image_tag review.user.photo, class: "avatar-medium", id: "avatar-review" %>
-          </div>
-          <div class="review-name">
-            <p> <%= review.user.fullname %></p>
-          </div>
-          <div class="review-text">
-            <p><%= review.description %></p>
-          </div>
-          <div class="carrots">
-            <% review.stars.times do %>
-            <%= image_tag "carrot_full.png", class: "small-icon"%>
-            <% end %>
-            <% (5 - review.stars).times do %>
-            <%= image_tag "carrot_empty",  class: "small-icon"%>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-
-    <div id="container-map-details">
-      <div id="garden-map" lat="<%= @garden.latitude %>" lon="<%= @garden.longitude %>" style="width: 900px; height: 400px;"></div>
-
-      <% content_for(:after_js) do %>
-        <script type="text/javascript">
-          var myLatlng = new google.maps.LatLng($('#garden-map').attr('lat'), $('#garden-map').attr('lon'));
-
-          var myOptions = {
-            zoom: 16,
-            center: myLatlng,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: [{
-                  "featureType": "administrative",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "landscape",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "hue": "#ff0300"
-                      },
-                      {
-                          "saturation": -100
-                      },
-                      {
-                          "lightness": 129.33333333333334
-                      },
-                      {
-                          "gamma": 1
-                      },
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "poi",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "hue": "#abff00"
-                      },
-                      {
-                          "saturation": 61.80000000000001
-                      },
-                      {
-                          "lightness": 13.800000000000011
-                      },
-                      {
-                          "gamma": 1
-                      },
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#1fa661"
-                      },
-                      {
-                          "weight": "0.55"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway.controlled_access",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway.controlled_access",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "hue": "#00b7ff"
-                      },
-                      {
-                          "saturation": -31.19999999999996
-                      },
-                      {
-                          "lightness": 2.1803921568627374
-                      },
-                      {
-                          "gamma": 1
-                      },
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "hue": "#00B5FF"
-                      },
-                      {
-                          "saturation": -33.33333333333343
-                      },
-                      {
-                          "lightness": 27.294117647058826
-                      },
-                      {
-                          "gamma": 1
-                      },
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit.line",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit.station.airport",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit.station.bus",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "water",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "hue": "#00B7FF"
-                      },
-                      {
-                          "saturation": 8.400000000000006
-                      },
-                      {
-                          "lightness": 36.400000000000006
-                      },
-                      {
-                          "gamma": 1
-                      }
-                  ]
-              }] // TODO: replace [] by array from https://snazzymaps.com/
-          };
-
-          var map = new google.maps.Map(document.getElementById('garden-map'), myOptions);
-          var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: "You are here!"
-          });
-        </script>
-      <% end %>
-    </div>
+    <% else %>
+    <div class="buttons-garden"><p>Want to grow your veggies in <%= link_to garden.owner.first_name, new_garden_allotment_path(@garden), {class: "link" } %> 's garden?</p></div>
+    <% end %>
   </div>
 </div>
 
+<div id="container-garden-details">
+  <div class="swipebox2">
+    <% garden.photos.each do |photo| %>
+    <%= link_to photo.url, class: "swipebox" do %>
+    <%= cl_image_tag photo, class: "garden-photo-swipebox" %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if current_user != @garden.owner %>
+<div id="container-garden-owner">
+  <div class="garden-description">
+    <h4>Some words about <%= garden.owner.first_name %></h4>
+    <br>
+    <p><%= @garden.owner.description %></p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quaerat omnis fuga eos similique quos odio ratione neque. Soluta ducimus saepe omnis repellat natus similique dicta aspernatur blanditiis, eum placeat quisquam eius officiis ullam sint. Vero sapiente voluptates, saepe placeat necessitatibus consequuntur tenetur quisquam illum magnam. Fugiat rerum doloremque earum? </p>
+  </div>
+</div>
+<% end %>
+
+
+<div id="container-garden-details">
+  <div class="row">
+    <% garden.garden_reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6" >
+      <div class="review-cards" >
+        <div class="circle">
+          <%= cl_image_tag review.user.photo, class: "avatar-medium", id: "avatar-review" %>
+        </div>
+        <div class="review-name">
+          <p> <%= review.user.fullname %></p>
+        </div>
+        <div class="review-text">
+          <p><%= review.description %></p>
+        </div>
+        <div class="carrots">
+          <% review.stars.times do %>
+          <%= image_tag "carrot_full.png", class: "small-icon"%>
+          <% end %>
+          <% (5 - review.stars).times do %>
+          <%= image_tag "carrot_empty",  class: "small-icon"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="container-map-details">
+  <div id="garden-map" lat="<%= @garden.latitude %>" lon="<%= @garden.longitude %>" style="max-width: 900px; height: 400px;"></div>
+
+  <% content_for(:after_js) do %>
+  <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng($('#garden-map').attr('lat'), $('#garden-map').attr('lon'));
+
+    var myOptions = {
+      zoom: 16,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+        {
+          "hue": "#ff0300"
+        },
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 129.33333333333334
+        },
+        {
+          "gamma": 1
+        },
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+        {
+          "hue": "#abff00"
+        },
+        {
+          "saturation": 61.80000000000001
+        },
+        {
+          "lightness": 13.800000000000011
+        },
+        {
+          "gamma": 1
+        },
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "color": "#1fa661"
+        },
+        {
+          "weight": "0.55"
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "labels.icon",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "road.highway.controlled_access",
+        "elementType": "labels.icon",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "all",
+        "stylers": [
+        {
+          "hue": "#00b7ff"
+        },
+        {
+          "saturation": -31.19999999999996
+        },
+        {
+          "lightness": 2.1803921568627374
+        },
+        {
+          "gamma": 1
+        },
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "road.local",
+        "elementType": "all",
+        "stylers": [
+        {
+          "hue": "#00B5FF"
+        },
+        {
+          "saturation": -33.33333333333343
+        },
+        {
+          "lightness": 27.294117647058826
+        },
+        {
+          "gamma": 1
+        },
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "transit.station.airport",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "on"
+        }
+        ]
+      },
+      {
+        "featureType": "transit.station.bus",
+        "elementType": "all",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+        {
+          "hue": "#00B7FF"
+        },
+        {
+          "saturation": 8.400000000000006
+        },
+        {
+          "lightness": 36.400000000000006
+        },
+        {
+          "gamma": 1
+        }
+        ]
+              }] // TODO: replace [] by array from https://snazzymaps.com/
+            };
+
+            var map = new google.maps.Map(document.getElementById('garden-map'), myOptions);
+            var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: "You are here!"
+            });
+          </script>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

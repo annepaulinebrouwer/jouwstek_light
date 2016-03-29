@@ -15,19 +15,13 @@
   margin: 50px;
   padding: 20px;
   background-color: #FDFDFD;
-  height: 320px;
+  min-height: 300px;
   position: relative;
-  border: 1px solid #1C1C1C;
-}
-
-.review-cards:hover {
-  .circle {
-    background-color: #659157;
+  border: 1px solid rgba(28, 28, 28, 0.18);
+  border-radius: 5px;
+  @media (max-width: 600px) {
+    min-height: 100px;
   }
-  .review-name {
-    color: #659157;
-  }
-
 }
 
 .carrots {
@@ -48,10 +42,10 @@
 
 .circle {
   width: 90px;
-  height: 90px;
+  min-height: 90px;
   border-radius: 50%;
   background-color: white;
-  border: 1px solid #1C1C1C;
+  border: 1px solid rgba(28, 28, 28, 0.18);
   position: absolute;
   top: -45px;
   left: 40%;
