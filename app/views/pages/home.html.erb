@@ -117,7 +117,7 @@
     </div>
     <div class="col-xs-12 col-sm-4">
       <%= link_to gardens_path do %>
-      <div class="hex" id="hex9">
+      <div class="hex hidden-xs" id="hex9">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
             <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-connect.png' %>);">
@@ -153,59 +153,51 @@
 <div class="counters wrapper-grey padded" style="background-color: #FAFAFA">
   <div class="row">
     <div class="col-sm-offset-3 col-sm-3">
-        <div class="count-card">
-          <p> See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
-          <%= link_to "", gardens_path %>
-        </div>
+      <%= link_to gardens_path do %>
+      <div class="count-card">
+        <p> See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
       </div>
+      <% end %>
+    </div>
     <div class="col-sm-3">
-     <a href=" <% link_to new_user_registration_path %>">
+      <%= link_to new_user_registration_path, { "data-toggle": "modal", "data-target": "#sign-up" } do %>
       <div class="count-card">
         <p> Become one of our <span class="count"><%= User.count %></span> pioneers</p>
       </div>
-    </a>
+      <% end %>
+    </div>
   </div>
-
 </div>
-<!-- <a href=" <% link_to gardens_path(@garden), class: "link" %>">
-     <div class="count-card text-center">
-      <br> <p>See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
-     </div>
-     </a>
-     <div class="count-card text-center">
-      <br> <p>Become one of our <span class="count"><%= User.count %></span> <%= link_to "pioneers.", gardens_path(@garden), class: "link" %> </p>
-    </div> -->
-  </div>
 
 
-  <div class="container" style="padding-top: 80px; padding-bottom: 80px">
-    <div class="row">
-      <% @gardens[0..1].each do |garden|%>
-      <% if garden.available == true %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: url('<%= garden.photo %>');">
-          <div class="card-hover">
-            <h2><%= garden.title %></h2>
-            <p><%= garden.description %></p>
-            <div id="garden-address">
-             <p ><%= garden.address %></p>
-           </div>
-         </div>
-         <%= link_to "", garden_path(garden), { class: "card-link" } %>
-       </div>
-     </div>
-     <% end %>
-     <% end %>
-     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
+<div class="container" style="padding-top: 80px; padding-bottom: 80px">
+  <div class="row">
+    <% @gardens[0..1].each do |garden|%>
+    <% if garden.available == true %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background: url('<%= garden.photo %>');">
         <div class="card-hover">
-          <h2>Your Garden</h2>
-          <p> Share your garden</p>
-        </div>
+          <h2><%= garden.title %></h2>
+          <p><%= garden.description %></p>
+          <div id="garden-address">
+           <p ><%= garden.address %></p>
+         </div>
+       </div>
+       <%= link_to "", garden_path(garden), { class: "card-link" } %>
+     </div>
+   </div>
+   <% end %>
+   <% end %>
+   <div class="col-xs-12 col-sm-4">
+    <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
+      <div class="card-hover">
+        <h2>Your Garden</h2>
+        <p> Share your garden</p>
       </div>
     </div>
   </div>
-  <div class=" how-to text-center"><p> What to share some space in your garden? <%= link_to "Add your garden", new_owner_garden_path, {class: "link"} %> </p></div>
+</div>
+<div class=" how-to text-center"><p> Want to share some space in your garden? <%= link_to "Add your garden", new_owner_garden_path, {class: "link"} %> </p></div>
 </div>
 
 
