@@ -1,0 +1,29 @@
+<div class="garden-new">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-6 form-group">
+        <div class="garden-form-box">
+          <div class="garden-form-title"><h2>Hi <%=current_user.first_name %>, <small> welcome to the community</small></h2></div>
+
+          <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
+          <%= g.error_notification %>
+
+          <%= g.input :title, :input_html => {:maxlength => 80}, placeholder: 'Sunny garden facing south' %>
+          <%= g.input :address, :input_html => {:maxlength => 50}, placeholder: 'Prinsengracht 250' %>
+          <%= g.input :city, :input_html => {:maxlength => 50}, placeholder: 'Amsterdam' %>
+          <%= g.input :description, as: :text, :input_html => {:maxlength => 800}, placeholder: 'Describe in max 100 words typical charasteristics of your garden. For example size in square meter, type of ground, type plants, expectations etc.' %>
+
+          <div class="btn-form-garden">
+            <%= g.input :photo, label: 'picture 1' %>
+            <%= g.input :photo2, label: 'picture 2'  %>
+            <%= g.input :photo3, label: 'picture 3'  %>
+          </div>
+
+          <%= g.button :submit, "share garden", class: "btn btn-success" %>
+          <% end %>
+        </div>
+       </div>
+     </div>
+  </div>
+</div>
+
