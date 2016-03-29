@@ -5,8 +5,8 @@
     <div class="booking-item-user-name"><%= allotment.user.fullname %></div>
   </div>
   <div class="booking-item-data">
-    <div><%= allotment.start_day %></div>
-    <div><%= allotment.end_day %></div>
+    <div><%= allotment.start_day.strftime("%A, %b %d")%></div>
+    <div><%= allotment.end_day.strftime("%A, %b %d")%></div>
   </div>
   <div class="booking-item-message"><%= allotment.message %></div>
   <div class="booking-item-side">
