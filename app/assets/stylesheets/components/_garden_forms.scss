@@ -1,12 +1,113 @@
 /* gardens new style form */
 
-.wrapper-fullscreen {
-  min-height: 100vh;
-  background-color: rgb(233, 246, 237);
-  // background: #E6E6E6;
-
+.garden-new {
+  background-image: linear-gradient(to left, rgba(255, 179, 71, 0.36), rgba(255, 204, 51, 0.59)), url(background-form.png);
+  background-size: cover !important;
 }
-.garden-new-title {
+
+.garden-form-box {
+  width: 750px;
   text-align: center;
+  background-color: #FAFAFA;
+  border-radius: 5px;
+  padding: 10px 25px 30px 25px;
+  margin: 50px 0px 100px 0px;
+
+  label.string {
+    text-align: left;
+    flex: 0 0 105px;
+  }
+
+  input.string{
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  label.file {
+   border: 3px solid rgba(0, 0, 0, 0.7);
+   border-radius: 5px;
+   background-color: white;
+   text-align: center;
+   padding: 10px;
+
+    &:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  input.file {
+    display: none;
+
+  }
+}
+
+.garden-form-title {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.form-group.garden_title {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_address {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_city {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_description {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  height: 200px;
+  padding: 20px 0;
+}
+
+textarea#garden_description {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+  margin-left: 20px;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  background: white;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-control{
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  background: white;
+  border-color: none;
+
+  .input {
+    border-bottom:  1px solid rgba(0, 0, 0, 0.14);
+  }
 
 }
+
+abbr { display: none }
+
+.btn-form-garden {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 40px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+
+}
+
