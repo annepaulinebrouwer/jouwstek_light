@@ -3,35 +3,66 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-IMG.hiw {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+#hex-container{
+  position: relative;
+}
 
-  }
+.cirle-arrow {
+  width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 48%;
+    top: 675px;
+    z-index: 2;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    background-color: white;
+}
 
-  .how-it-works {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    #hiw-text{        position: absolute;
-    top: 151px;
-    left: 40%;
-    color: white;
-    font-size: 250%;
-    }
-     #hiw-text2 {
-      text-align: center;
-      position: absolute;
-      left: 40%;
-     }
+
+.count-card {
+  background-color: white;
+  height: 100px;
+  border-bottom: #8ee18e 7px solid;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  p {
+    font-size: 130%;
+    vertical-align: center;
   }
+  p:hover {
+    text-decoration: none;
+  }
+}
+
+.count-card:hover {
+background-color: #8ee18e;
+opacity: 0.5;
+}
+
+.count {
+  color: green;
+  font-size: 200%;
+}
 
 .marker-photo {
-  height: 150px;
-  width: 200px;
+  height: 200px;
+  width: 250px;
 }
+
+.marker-name {
+  a {
+text-decoration: none;
+color: black;
+}
+a:hover{
+  opacity: 0.7;
+  }
+}
+
 
 .container-cards {
   margin: 0 auto;
@@ -44,7 +75,7 @@ IMG.hiw {
 .box {
   text-align: center;
   padding: auto 0,0,0;
-  height: 100px;
+  height: 115px;
   position: relative;
 }
 
@@ -56,7 +87,6 @@ IMG.hiw {
 .container-gar {
   margin: 0 auto;
 }
-
 
 
 .container-tips {
@@ -78,12 +108,13 @@ padding-left: 5em;
     margin-left: auto;
     p {
       text-align: center;
+      margin-top: 10px;
     }
   }
 
 .section-title-border-testimonial {
 width: 250px;
-background-color: #366328;
+background-color: #8ee18e;
     height: 3px;
     margin: 0 auto;
 }
