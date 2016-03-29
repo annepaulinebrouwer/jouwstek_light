@@ -3,10 +3,16 @@ display: flex;
 justify-content: space-between;
 }
 .container-gardens{
+  padding: 40px;
   flex: 0 0 60%;
 }
 .container-map {
-  flex: 0 0 39%;
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    z-index: 1;
 }
 
 .card {
@@ -31,6 +37,7 @@ justify-content: space-between;
 
 .card:hover .card-hover {
   opacity: 0.5;
+  color: white;
   border-radius: 5px;
 }
 .card-hover {
@@ -39,21 +46,22 @@ justify-content: space-between;
     bottom: 0;
     left: 0;
     right: 0;
-    background: black;
+    background: rgba(0, 0, 0, 0.53);
     opacity: 0;
     transition: opacity 0.4s ease;
     border-radius: 5px;
     h2 {
       color: white;
       text-align: center;
-      opacity: 0.8;
+      opacity: 1;
     }
     p {
       color: white;
       text-align: center;
-      opacity: 0.8;
+      opacity: 1;
     }
 }
+
 
 #garden-address {
   position: absolute;

@@ -1,136 +1,35 @@
 
-<div class="banner" style="background: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(<%= image_path 'tomaat.jpg' %>);">
+<div class="banner" style="background: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(<%= image_path 'tomaat.jpg' %>) fixed;">
   <div class="banner-content">
-    <h1 style="color: white; text-shadow: 2px 2px #434242;">Start growing your veggies next door</h1>
-    <h2 style="color: white; text-shadow: 2px 2px #434242;" >Find your urban garden here</h2>
+    <h1>Start growing your veggies next door</h1>
+    <h2>Find your urban garden here</h2>
+  </div>
+  <div class="cirle-arrow">
+    <a href="#hex-container"><i class="fa fa-angle-down" style="color: black;"></i></a>
   </div>
 </div>
 
- <div class="container" id="hex-container">
-   <div class="hexes">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs" id="hex1">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpg' %>);">
-              </div>
+<div class="container" id="hex-container">
+ <div class="hexes">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs" id="hex1">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb6.jpg' %>);">
             </div>
           </div>
         </div>
-      </div>
-      <% end %>
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs" id="hex2">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'garden_tools.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class=" col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs hidden-sm hidden-md" id="hex3">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex" id="hex4">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb3.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs hidden-sm hidden-md" id="hex5">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs" id="hex6">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs" id="hex7">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
-              <%= link_to gardens_path %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class=" col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs hidden-sm hidden-md" id="hex8">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex" id="hex9">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to gardens_path do %>
-        <div class="hex hidden-xs hidden-sm hidden-md" id="hex10">
-          <div class="hexagon hexagon1">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
-              </div>
+    <% end %>
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs" id="hex2">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb1.jpg' %>);">
             </div>
           </div>
         </div>
@@ -138,71 +37,199 @@
       <% end %>
     </div>
   </div>
+  <div class="row">
+    <div class=" col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs hidden-sm hidden-md" id="hex3">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex" id="hex4">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb3.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs hidden-sm hidden-md" id="hex5">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs" id="hex6">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-search.png' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs" id="hex7">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-grow.png' %>);">
+              <%= link_to gardens_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class=" col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs hidden-sm hidden-md" id="hex8">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex" id="hex9">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-connect.png' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to gardens_path do %>
+      <div class="hex hidden-xs hidden-sm hidden-md" id="hex10">
+        <div class="hexagon hexagon1">
+          <div class="hexagon-in1">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb2.jpg' %>);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 </div>
 <div class=" how-to text-center">
-    <p> <%= link_to "Find", gardens_path(@garden), class: "link" %> a garden in your neighbourhood</p>
-<p> <%= link_to "Connect", gardens_path(@garden), class: "link" %> with the garden owner</p>
-<p><%= link_to "Grow", gardens_path(@garden), class: "link" %> your own veggies</p>
-    </div>
+  <p> <%= link_to "Find", gardens_path(@garden), class: "link" %> a garden in your neighbourhood</p>
+  <p> <%= link_to "Connect", gardens_path(@garden), class: "link" %> with the garden owner</p>
+  <p><%= link_to "Grow", gardens_path(@garden), class: "link" %> your own veggies</p>
+</div>
 
-<div>
- <%= render "shared/map"%>
- <div class="text-center"><p> Got excited? Explore <%= link_to "gardens", gardens_path(@garden), class: "link" %> in your area! </p></div>
- </div>
+<%= render "shared/map"%>
 
-
- <div class="container" style="padding-top: 20px">
+<div class="counters wrapper-grey padded" style="background-color: #FAFAFA">
   <div class="row">
-    <% @gardens[0..1].each do |garden|%>
-      <% if garden.available == true %>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: url('<%= garden.photo %>');">
-              <div class="card-hover">
-                <h2><%= garden.title %></h2>
-                 <p><%= garden.description %></p>
-                 <div id="garden-address">
-                 <p ><%= garden.address %></p>
-                 </div>
-              </div>
-              <%= link_to "", garden_path(garden), { class: "card-link" } %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
-              <div class="card-hover">
-                <h2>Your Garden</h2>
-                 <p> Share your garden</p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="text-center"><p> What to share some space in your garden? <%= link_to "Add your garden", new_owner_garden_path, {class: "link"} %> </p></div>
+    <div class="col-sm-offset-3 col-sm-3">
+        <div class="count-card">
+          <p> See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
+          <%= link_to "", gardens_path %>
+        </div>
+      </div>
+    <div class="col-sm-3">
+     <a href=" <% link_to new_user_registration_path %>">
+      <div class="count-card">
+        <p> Become one of our <span class="count"><%= User.count %></span> pioneers</p>
+      </div>
+    </a>
+  </div>
+
+</div>
+<!-- <a href=" <% link_to gardens_path(@garden), class: "link" %>">
+     <div class="count-card text-center">
+      <br> <p>See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
+     </div>
+     </a>
+     <div class="count-card text-center">
+      <br> <p>Become one of our <span class="count"><%= User.count %></span> <%= link_to "pioneers.", gardens_path(@garden), class: "link" %> </p>
+    </div> -->
   </div>
 
 
-<div class="wrapper-grey padded">
+  <div class="container" style="padding-top: 80px; padding-bottom: 80px">
+    <div class="row">
+      <% @gardens[0..1].each do |garden|%>
+      <% if garden.available == true %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-hover">
+            <h2><%= garden.title %></h2>
+            <p><%= garden.description %></p>
+            <div id="garden-address">
+             <p ><%= garden.address %></p>
+           </div>
+         </div>
+         <%= link_to "", garden_path(garden), { class: "card-link" } %>
+       </div>
+     </div>
+     <% end %>
+     <% end %>
+     <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
+        <div class="card-hover">
+          <h2>Your Garden</h2>
+          <p> Share your garden</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" how-to text-center"><p> What to share some space in your garden? <%= link_to "Add your garden", new_owner_garden_path, {class: "link"} %> </p></div>
+</div>
+
+
+<div class="wrapper-grey padded" style="background-color: #FAFAFA">
 
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="card-testimonial">
-          <%= image_tag("person1.png", class: "testimonial-picture", style: "margin-left: 10%") %>
+          <%= image_tag("1persoon.png", class: "testimonial-picture", style: "margin-left: 4%") %>
           <div class="section-title-border-testimonial"></div>
           <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente."</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
        <div class="card-testimonial">
-        <%= image_tag("person2.png", class: "testimonial-picture", style: "margin-left: 25%") %>
+        <%= image_tag("person3.png", class: "testimonial-picture", style: "margin-left: 5%") %>
         <div class="section-title-border-testimonial"></div>
         <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut tempore."</p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
      <div class="card-testimonial">
-      <%= image_tag("person4.png", class: "testimonial-picture", style: "margin-left: 25%") %>
+      <%= image_tag("2persoon.png", class: "testimonial-picture", style: "margin-left: 5%") %>
       <div class="section-title-border-testimonial"></div>
       <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit impedit amet sequi perspiciatis illo, omnis sapiente, eaque aut."" </p>
     </div>
@@ -242,7 +269,7 @@
      <% end %>
    </div>
  </div>
- </div> -->
+</div> -->
 
 
 
