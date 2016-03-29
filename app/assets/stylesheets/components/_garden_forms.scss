@@ -6,6 +6,7 @@
 }
 
 .garden-form-box {
+  width: 750px;
   text-align: center;
   background-color: #FAFAFA;
   border-radius: 5px;
@@ -14,21 +15,30 @@
 
   label.string {
     text-align: left;
-    flex: 0 0 90px;
+    flex: 0 0 105px;
+  }
+
+  input.string{
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   label.file {
    border: 3px solid rgba(0, 0, 0, 0.7);
+   border-radius: 5px;
+   background-color: white;
    text-align: center;
    padding: 10px;
+
+    &:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    }
   }
 
   input.file {
     display: none;
 
-    &:hover{
-    background-color: rgba(0, 0, 0, 0.14);
-    }
   }
 }
 
@@ -60,15 +70,30 @@
 
 .form-group.garden_description {
   border-top: 1px solid rgba(0, 0, 0, 0.14);
-  height: 75px;
+  height: 200px;
+  padding: 20px 0;
+}
+
+textarea#garden_description {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+  margin-left: 20px;
   resize: none;
-  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  background: white;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .form-control{
   box-shadow: none;
-  border: none;
-  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  background: white;
+  border-color: none;
 
   .input {
     border-bottom:  1px solid rgba(0, 0, 0, 0.14);
@@ -81,7 +106,8 @@ abbr { display: none }
 .btn-form-garden {
   display: flex;
   justify-content: center;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0px 40px 0px;
   border-top: 1px solid rgba(0, 0, 0, 0.14);
 
 }
+
