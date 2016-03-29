@@ -1,26 +1,28 @@
-<div class="wrapper-fullscreen">
+<div class="garden-new">
   <div class="container">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-6 form-group">
-        <div class="garden-new-title"><h2>Hi <%=current_user.first_name %>, <small> welcome to the community</small></h2>
-        <br><p><small>Tell us more about your garden</small></p></div>
+        <div class="garden-form-box">
+          <div class="garden-form-title"><h2>Hi <%=current_user.first_name %>, <small> welcome to the community</small></h2></div>
 
-        <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
-        <%= g.error_notification %>
+          <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
+          <%= g.error_notification %>
 
-        <%= g.input :title, placeholder: 'Sunny 30m2 garden' %>
-        <%= g.input :address, placeholder: 'Single 250' %>
-        <%= g.input :city, placeholder: 'Amsterdam' %>
-        <%= g.input :description, placeholder: 'Describe in max. 100 words typical charasteristics of your garden <br>
-          - size
-          - hours of Sunny' %>
-        <%= g.input :photo %>
-        <%= g.input :photo2 %>
-        <%= g.input :photo3 %>
+          <%= g.input :title, placeholder: 'Sunny 30m2 garden' %>
+          <%= g.input :address, placeholder: 'Single 250' %>
+          <%= g.input :city, placeholder: 'Amsterdam' %>
+          <%= g.input :description, :input_html => {:size => 40, :maxlength => 27}, placeholder: 'Describe in max. 100 words typical charasteristics of your garden' %>
 
-        <%= g.button :submit %>
-        <% end %>
-      </div>
-    </div>
+          <div class="btn-form-garden">
+            <%= g.input :photo, label: 'picture 1' %>
+            <%= g.input :photo2, label: 'picture 2'  %>
+            <%= g.input :photo3, label: 'picture 3'  %>
+          </div>
+
+          <%= g.button :submit %>
+          <% end %>
+        </div>
+       </div>
+     </div>
   </div>
 </div>

@@ -1,12 +1,80 @@
 /* gardens new style form */
 
-.wrapper-fullscreen {
-  min-height: 100vh;
-  background-color: rgb(233, 246, 237);
-  // background: #E6E6E6;
+.garden-new {
+  background-image: linear-gradient(to left, rgba(255, 179, 71, 0.36), rgba(255, 204, 51, 0.59)), url(background-form.png);
+  background-size: cover !important;
+}
+
+.garden-form-box {
+  text-align: center;
+  background-color: #FAFAFA;
+  border-radius: 5px;
+  padding: 10px 25px 30px 25px;
+  margin: 50px 0px 100px 0px;
+
+  label.string {
+    text-align: left;
+    flex: 0 0 90px;
+  }
+
+  label.file {
+   border: 3px solid rgba(0, 0, 0, 0.7);
+   text-align: center;
+   padding: 10px;
+  }
+
+  input.file {
+    display: none
+  }
+}
+
+.garden-form-title {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.form-group.garden_title {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_address {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_city {
+  height: 75px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.form-group.garden_description {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  height: 75px;
+}
+
+.form-control{
+  box-shadow: none;
+  border: none;
+  background: none;
+
+  .input {
+    border-bottom:  1px solid rgba(0, 0, 0, 0.14);
+  }
 
 }
-.garden-new-title {
-  text-align: center;
 
+abbr { display: none }
+
+.btn-form-garden {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 20px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
 }
