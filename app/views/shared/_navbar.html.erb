@@ -20,6 +20,7 @@ NOT LOGGED IN: logo, about, search, login, join -->
 <div class="navbar-wagon-item">
   <div class="dropdown">
     <!-- <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
+    <div class="user-name"><%= current_user.first_name %></div>
 <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
@@ -37,7 +38,7 @@ NOT LOGGED IN: logo, about, search, login, join -->
 </div>
 
 <% if !current_user.garden %>
-<%= link_to "start sharing your garden", new_owner_garden_path, {class: "navbar-wagon-item btn btn-success btn-default"} %>
+<%= link_to "Share your garden", new_owner_garden_path, {class: "navbar-wagon-item btn btn-small"} %>
 <% end %>
 
 <% else %>

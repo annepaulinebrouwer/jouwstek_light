@@ -12,6 +12,7 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 .user-container-text {
@@ -27,8 +28,13 @@
   position: relative;
   text-align: center;
   margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
+.user-description {
+  opacity: 0.7;
+  padding-bottom: 20px;
+}
 .section-solid .section-title-border {
   background: rgba(34,191,34,0.3);
 }

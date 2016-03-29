@@ -3,8 +3,8 @@
 }
 
 .btn.btn-success {
-  background-color: #659157 !important;
-  border-color: #659157 !important;
+  background-color: #196900 !important;
+  border-color: #196900 !important;
   border-radius: 20px;
   text-decoration: none !important;
   &:hover {
@@ -26,6 +26,12 @@
   &:hover {
     text-decoration: none
   }
+}
+
+.btn {
+  border: 2px solid rgba(0,0,0,0.6);
+  border-radius: 5%;
+  font-weight: bold;
 }
 
 
