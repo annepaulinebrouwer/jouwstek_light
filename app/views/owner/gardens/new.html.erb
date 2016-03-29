@@ -8,10 +8,10 @@
           <%= simple_form_for(@garden, url: owner_garden_path) do |g| %>
           <%= g.error_notification %>
 
-          <%= g.input :title, placeholder: 'Sunny 30m2 garden' %>
+          <%= g.input :title, placeholder: 'Sunny garden' %>
           <%= g.input :address, placeholder: 'Single 250' %>
           <%= g.input :city, placeholder: 'Amsterdam' %>
-          <%= g.input :description, :input_html => {:size => 40, :maxlength => 27}, placeholder: 'Describe in max. 100 words typical charasteristics of your garden' %>
+          <%= g.input :description, :input_html => {:maxlength => 100}, placeholder: 'Describe in max. 100 words typical charasteristics of your garden' %>
 
           <div class="btn-form-garden">
             <%= g.input :photo, label: 'picture 1' %>
