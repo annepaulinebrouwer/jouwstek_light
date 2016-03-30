@@ -1,0 +1,39 @@
+.reviews-form {
+
+  .review-form-box {
+    width: 750px;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px 25px 30px 25px;
+    margin: 50px 0px 100px 0px;
+
+    label.string {
+      text-align: left;
+      flex: 0 0 105px;
+    }
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+     border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 10px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+  }
+}

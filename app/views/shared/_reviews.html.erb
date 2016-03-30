@@ -1,0 +1,20 @@
+<div class="reviews-form" style="background: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url('carrots.jpg') fixed;" >
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-6 form-group">
+        <div class="reviews-form-box">
+          <h2>Hi <%= @current_user.first_name %>, <small>create a ssreview </small></h2>
+          <%= simple_form_for(review, url: path) do |g| %>
+          <%= g.error_notification %>
+
+          <%= g.input :description %>
+          <%= g.input :stars %>
+
+          <%= g.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
