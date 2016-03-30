@@ -14,18 +14,16 @@ left: 47%;
   background: #659157;
   opacity: 0.4;
   position: relative;
-  // margin-bottom: 10px;
   width: 3px;
-  margin-right: -26px;
   z-index: 0;
-  padding-top: 100px 0;
+  // padding-top: 100px 0;
+      margin: 40px 0px;
+    margin-right: -26px;
 }
 
 .timeline-content {
   position: relative;
   max-width: 675px;
-  padding: 60px 0;
-  // padding-top: 80px 0;
 }
 
 .timeline-item {
@@ -54,7 +52,7 @@ left: 47%;
 }
 
 .timeline-item-title {
-    font-size: 15px;
+    font-size: 20px;
     letter-spacing: 4px;
     margin-bottom: 0px;
     display: flex;
@@ -66,4 +64,5 @@ left: 47%;
 .timeline-item-description {
   opacity: 0.5;
   width: 100vh;
+  font-size: 17px;
 }
