@@ -13,7 +13,7 @@
     border-radius: 50%;
     position: absolute;
     left: 48%;
-    top: 675px;
+    top: -25px;
     z-index: 2;
     line-height: 50px;
     font-size: 30px;
@@ -21,14 +21,18 @@
     background-color: white;
 }
 
+.counters {
+  height: 250px;
+  background-color: #FAFAFA;
+}
 
 .count-card {
   background-color: white;
   height: 100px;
   border-bottom: #8ee18e 7px solid;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
   p {
     font-size: 130%;
     vertical-align: center;
@@ -79,10 +83,14 @@ a:hover{
   position: relative;
 }
 
-// .padded {
-//   margin: 0 auto;
-
-// }
+.how-to {
+  margin-bottom: 50px;
+  margin-top: 10px;
+  p {
+    font-size: 150%;
+    margin-top: 50px;
+  }
+}
 
 .container-gar {
   margin: 0 auto;

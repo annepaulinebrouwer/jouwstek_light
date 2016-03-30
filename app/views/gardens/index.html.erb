@@ -8,9 +8,9 @@
             <div class="card" style="background: url('<%= garden.photo %>');">
               <div class="card-hover">
                 <h2><%= garden.title %></h2>
-                 <p><%= garden.description %></p>
+              <p><%= truncate(garden.description, length: 300) %></p>
                  <div id="garden-address">
-                 <p ><%= garden.address %></p>
+                 <p ><%= garden.address %>, <%= garden.city %> </p>
                  </div>
               </div>
               <%= link_to "", garden_path(garden), { class: "card-link" } %>
