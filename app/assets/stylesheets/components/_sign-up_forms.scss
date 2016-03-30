@@ -1,0 +1,121 @@
+.sign-up-form {
+  .modal {
+    color: black;
+    text: center;
+    opacity: 0.8;
+    h2 {
+      color: black;
+    }
+    a {
+       color: black;
+    background-color: transparent;
+    text-decoration: none;
+    }
+    p {
+      color: black;
+    }
+  }
+
+  .container-sign-up {
+      padding: 20px;
+      align-items: center;
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+  }
+
+  #sign-up {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  abbr { display: none }
+
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .sign-up-form-box {
+    width: 600px;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px 25px 30px 25px;
+    margin: 50px 0px 100px 0px;
+      h2 {
+        margin-bottom: 30px;
+        color: black;
+      }
+      label.string {
+      text-align: left;
+      flex: 0 0 105px;
+      color: black;
+    }
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+     border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 10px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+  }
+
+  // .
+  //    background: #fafafa;
+  //     padding: 20px;
+  //     margin-top: 50px;
+  //     margin-bottom: 50px;
+
+
+  .form-group.email {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.password {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.file {
+    height: 75px;
+    padding: 20px 0;
+  }
+
+  .sign-in-form-buttons {
+    display: flex;
+    margin: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    align-items: center;
+    justify-content: space-around;
+  }
+  label {
+    color: black;
+    flex: 0 0 150px;
+    text-align: left;
+  }
+
+  .links {
+    color: black;
+  }
+}
