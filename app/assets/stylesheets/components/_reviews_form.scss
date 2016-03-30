@@ -1,7 +1,22 @@
 .reviews-form {
 
+  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), image-url('carrots.jpg') ;
+  background-size: cover;
+
+ .form-group.garden_review_description {
+    display: flex;
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+.form-group.garden_review_stars {
+    display: flex;
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    justify-content: space-between;
+  }
   .review-form-box {
-    width: 750px;
+    width: 500px;
     text-align: center;
     background-color: #FAFAFA;
     border-radius: 5px;
@@ -34,6 +49,19 @@
     input.file {
       display: none;
 
+    }
+  }
+
+  abbr { display: none }
+
+  .form-control{
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    background: white;
+    border-color: none;
+
+    .input {
+      border-bottom:  1px solid rgba(0, 0, 0, 0.14);
     }
   }
 }
