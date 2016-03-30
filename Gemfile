@@ -29,6 +29,7 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'bootstrap-datepicker-rails', '~> 1.6','>= 1.6.0.1'
 gem 'autoprefixer-rails'
 
 group :development, :test do

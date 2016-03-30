@@ -18,7 +18,7 @@ class AllotmentsController < ApplicationController
     if @allotment.save
       redirect_to user_allotments_path
     else
-      # todo. handle error
+      render :new
     end
   end
 
