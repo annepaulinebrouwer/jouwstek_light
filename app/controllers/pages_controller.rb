@@ -18,9 +18,9 @@ class PagesController < ApplicationController
                          <p class='marker-address text-center'>#{ garden.address }, #{ garden.city } </p>"
       marker.lat garden.latitude
       marker.picture({
-         url: "https://40.media.tumblr.com/bd28bda80a014c88c2588ebc0c3f007e/tumblr_o4ri1oe7Ko1qjknfdo1_75sq.png", # up to you to pass the proper parameters in the url, I guess with a method from device
-         width: 40,
-         height: 40
+        url: "https://41.media.tumblr.com/028c5097d2e537595c86a81934b83cbf/tumblr_o4u8o54tpv1qjknfdo1_75sq.png", # up to you to pass the proper parameters in the url, I guess with a method from device
+        width: 36,
+        height: 36
       })
       marker.lng garden.longitude
     end
