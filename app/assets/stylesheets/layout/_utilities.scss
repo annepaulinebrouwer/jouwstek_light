@@ -24,6 +24,14 @@
   background: #3b5998;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 // sticky footer, ensures that body is fullscreen
 .site {
   display: flex;
@@ -33,4 +41,5 @@
 
 .site-content {
   flex: 1;
+
 }

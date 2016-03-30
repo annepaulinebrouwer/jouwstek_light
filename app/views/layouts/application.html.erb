@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Greenthumb</title>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyB1EP2MWdU82Nyi5p8y7AppqqVIUqvUZ64" %>
   <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
-    <meta name="keywords" content="garden, urban gardening, Amsterdam, cultivate vegetables, Greenthumb">
-  <meta name="description" content="Looking for a garden to grow your own vegetables? Check out Greenthumb to find a garden in your area.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<!-- Facebook Open Graph data -->
-    <meta property="og:title" content="Greenthumb" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://trygreenthumb.herokuapp.com/" />
-    <meta property="og:image" content="/images/garden1.jpeg" />
-    <meta property="og:description" content="Looking for a garden to grow your own vegetables? Check out Greentumb to find a garden in your area." />
-    <meta property="og:site_name" content="Greenthumb" />
+  <title><%= meta_title %></title>
+  <meta name="description" content="<%= meta_description %>">
+  <meta name="keywords" content="garden, urban gardening, Amsterdam, cultivate vegetables, Greenthumb">
 
+  <!-- Facebook Open Graph data -->
+  <meta property="og:title" content="<%= meta_title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:image" content="<%= image_url(meta_image) %>" />
+  <meta property="og:description" content="<%= meta_description %>" />
+  <meta property="og:site_name" content="<%= meta_title %>" />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="<%= DEFAULT_META[:twitter_account] %>">
+  <meta name="twitter:title" content="<%= meta_title %>">
+  <meta name="twitter:description" content="<%= meta_description %>">
+  <meta name="twitter:creator" content="<%= DEFAULT_META[:twitter_account] %>">
+  <meta name="twitter:image:src" content="<%= image_url(meta_image) %>">
+
+  <!-- Google+ Schema.org markup -->
+  <meta itemprop="name" content="<%= meta_title %>">
+  <meta itemprop="description" content="<%= meta_description %>">
+  <meta itemprop="image" content="<%= image_url(meta_image) %>">
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= favicon_link_tag 'favicon.ico' %>

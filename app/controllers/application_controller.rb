@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :photo
     devise_parameter_sanitizer.for(:sign_up) << :photo_cache
   end
+
+  def default_url_options
+    { host: ENV['HOST'] || 'localhost:3000' }
+  end
 end

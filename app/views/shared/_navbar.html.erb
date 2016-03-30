@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "temporal_logo.jpg" %>
+  <%= image_tag "logo_white.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -38,7 +38,9 @@ NOT LOGGED IN: logo, about, search, login, join -->
 </div>
 
 <% if !current_user.garden %>
-<%= link_to "Share your garden", new_owner_garden_path, {class: "navbar-wagon-item btn btn-small"} %>
+
+<%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn btn-success btn-default"} %>
+
 <% end %>
 
 <% else %>
