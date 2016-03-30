@@ -1,0 +1,98 @@
+.booking-form {
+  background-size: cover !important;
+  display: fixed;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+
+  .booking-form-box {
+    width: 750px;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px 25px 30px 25px;
+    margin: 50px 0px 100px 0px;
+
+    label.date {
+      text-align: left;
+      // flex: 0 0 15px;
+    }
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+     border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 10px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+  }
+
+  .btn-form-allotment {
+    padding-top: 25px;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .form-group.allotment_start_day {
+    height: 75px;
+    justify-content: space-between;
+  }
+
+  .form-group.allotment_end_day {
+    height: 75px;
+    justify-content: space-between;
+  }
+
+  .form-group.allotment_message {
+    height: 150px;
+  }
+
+
+  textarea#allotment_message {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+    margin-left: 20px;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    background: white;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .form-control{
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    background: white;
+    border-color: none;
+
+    .input {
+      border-bottom:  1px solid rgba(0, 0, 0, 0.14);
+    }
+  }
+
+  abbr { display: none }
+}
+
