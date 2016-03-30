@@ -1,0 +1,97 @@
+.edit-profile {
+  .log-in-wrapper {
+  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(tomato.jpg);
+  background-size: cover !important;
+  }
+
+  .edit-profile-form-box {
+    max-width: 550px;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px 25px 30px 25px;
+    margin: 50px auto 50px auto;
+    h2 {
+        margin-bottom: 30px;
+        color: black;
+      }
+      label.string {
+      text-align: left;
+      flex: 0 0 105px;
+      color: black;
+    }
+  }
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+    border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 5px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+
+  .form-group.user_first_name {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.user_last_name {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.user_description {
+    padding: 20px 0;
+    padding-right: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    height: 200px;
+  }
+
+  textarea#user_description {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+    margin-left: 20px;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    background: white;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .edit-profile-btn {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px 40px 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+   abbr { display: none }
+}

@@ -43,3 +43,9 @@ body {
   flex: 1;
 
 }
+
+a {
+  &:focus {
+    outline: 0
+  }
+}
