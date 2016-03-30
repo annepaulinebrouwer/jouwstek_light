@@ -1,14 +1,23 @@
-<div class="col-sm-offset-4 col-sm-4 form-group">
+<div class="booking-form" style="background: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(<%= @garden.photo %>) fixed;">
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-offset-3 col-sm-6 form-group">
+        <div class="booking-form-box">
+          <h2>Start growing <small> your veggies in <%= @garden.owner.first_name%> garden </small> </h2>
 
-  <h2>Book your allotment in garden: <%= @garden.title%></h2>
+          <%= simple_form_for([:garden, @allotment]) do |a| %>
+          <%= a.error_notification %>
 
-  <%= simple_form_for([:garden, @allotment]) do |a| %>
-  <%= a.error_notification %>
+          <%= a.input :start_day, start_year: Time.now.year, order: [:day, :month, :year] %>
+          <%= a.input :end_day, start_year: Time.now.year, order: [:day, :month, :year]  %>
+          <%= a.input :message, as: :text, :input_html => {:maxlength => 500}, placeholder: 'What would you like to tell the garden-owner?' %>
 
-  <%= a.input :start_day, placeholder: 'When would you like to start?' %>
-  <%= a.input :end_day, placeholder: 'Till when would you like share the garden?' %>
-  <%= a.input :message, placeholder: 'What would you like to tell the garden-owner?' %>
-
-  <%= a.button :submit %>
-  <% end %>
+          <div class="btn-form-allotment">
+          <%= a.button :submit, "share garden", class: "btn btn-success" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
