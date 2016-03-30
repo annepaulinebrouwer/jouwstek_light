@@ -24,10 +24,12 @@
   <div class="row">
   <% @user.user_reviews.each do |review| %>
     <div class="col-xs-12 col-sm-6">
-  <div class="review-cards">
+  <div class="review-cards-user">
+  <%= link_to user_profile_path(@user) do %>
   <div class="circle">
         <%= cl_image_tag  @user.photo, class: "avatar-medium", id: "avatar-review" %>
       </div>
+      <% end %>
        <div class="review-name">
           <p> <%= review.owner.fullname %></p>
         </div>
@@ -48,5 +50,7 @@
   </div>
 </div>
 <% end %>
+
+
 </div>
 </div>
