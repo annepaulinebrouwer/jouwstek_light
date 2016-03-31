@@ -1,33 +1,22 @@
-.edit-profile {
-  .log-in-wrapper {
-  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(tomatoos.jpg);
-  background-size: cover !important;
-  }
+/* gardens new style form */
 
-  .edit-profile-form-box {
-    max-width: 550px;
+.garden-new {
+  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(background-form.png);
+  background-size: cover !important;
+
+
+  .garden-form-box {
+    width: 750px;
     text-align: center;
     background-color: #FAFAFA;
     border-radius: 5px;
     padding: 10px 25px 30px 25px;
-    margin: 50px auto 50px auto;
-    h2 {
-        margin-bottom: 30px;
-        color: black;
-      }
-      label.string {
+    margin: 50px 0px 100px 0px;
+
+    label.string {
       text-align: left;
       flex: 0 0 105px;
-      color: black;
     }
-  }
-.form-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0;
-  }
-
 
     input.string{
       &:focus {
@@ -35,20 +24,12 @@
       }
     }
 
-    input#user_last_name {
-       border: 1px solid rgba(0, 0, 0, 0.11);
-    }
-
-    input#user_first_name {
-       border: 1px solid rgba(0, 0, 0, 0.11);
-    }
-
     label.file {
-    border: 3px solid rgba(0, 0, 0, 0.7);
+     border: 3px solid rgba(0, 0, 0, 0.7);
      border-radius: 5px;
      background-color: white;
      text-align: center;
-     padding: 5px;
+     padding: 10px;
 
       &:hover{
       background-color: rgba(0, 0, 0, 0.2);
@@ -57,29 +38,43 @@
 
     input.file {
       display: none;
-      border: 1px solid rgba(0, 0, 0, 0.11);
+
     }
-
-  .form-group.user_first_name {
-    height: 75px;
-    border-top: 1px solid rgba(0, 0, 0, 0.14);
-    padding: 20px 0;
   }
 
-  .form-group.user_last_name {
-    height: 75px;
-    border-top: 1px solid rgba(0, 0, 0, 0.14);
-    padding: 20px 0;
+  .garden-form-title {
+    margin-bottom: 30px;
   }
 
-  .form-group.user_description {
-    padding: 20px 0;
-    padding-right: 0px;
+  .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .form-group.garden_title {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  .form-group.garden_address {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  .form-group.garden_city {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  .form-group.garden_description {
     border-top: 1px solid rgba(0, 0, 0, 0.14);
     height: 200px;
+    padding: 20px 0;
   }
 
-  textarea#user_description {
+  textarea#garden_description {
     margin-top: 0px;
     margin-bottom: 0px;
     height: 100%;
@@ -94,12 +89,25 @@
     }
   }
 
-  .edit-profile-btn {
+  .form-control{
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    background: white;
+    border-color: none;
+
+    .input {
+      border-bottom:  1px solid rgba(0, 0, 0, 0.14);
+    }
+
+  }
+
+  abbr { display: none }
+
+  .btn-form-garden {
     display: flex;
     justify-content: center;
     padding: 20px 0px 40px 0px;
     border-top: 1px solid rgba(0, 0, 0, 0.14);
-  }
 
-   abbr { display: none }
+  }
 }
