@@ -1,0 +1,20 @@
+<div class="reviews-form" >
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-6 form-group">
+        <div class="review-form-box">
+          <h2>Hi <%= @current_user.first_name %>, <small>create a review </small></h2>
+          <%= simple_form_for(review, url: path) do |g| %>
+          <%= g.error_notification %>
+
+          <%= g.input :description, as: :text, :input_html => {:maxlength => 500} %>
+          <%= g.input :stars, as: :select, :collection => [1, 2, 3, 4, 5] %>
+
+          <div class="btn-review">
+          <%= g.button :submit %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
