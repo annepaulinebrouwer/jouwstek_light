@@ -20,20 +20,21 @@ NOT LOGGED IN: logo, about, search, login, join -->
 <div class="navbar-wagon-item">
   <div class="dropdown">
     <!-- <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
-    <div class="user-name"><%= current_user.first_name %></div>
-<%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% if current_user.garden %>
-        <li><%= link_to t(".allotments", default: "Allotments"), owner_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% else %>
-        <li><%= link_to t(".allotments", default: "Allotments"), user_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% end %>
-        <% if current_user.garden %>
-          <li><%= link_to t(".garden", default: "My garden"), owner_garden_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% end %>
-        <li><%= link_to t(".destroy", default: "Sign out"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
+    <%= link_to current_user.first_name, user_profile_path, class:"user-name" %>
+    <!-- <div class="user-name"><%= current_user.first_name %></div> -->
+    <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <li><%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% if current_user.garden %>
+      <li><%= link_to t(".allotments", default: "Bookings"), owner_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% else %>
+      <li><%= link_to t(".allotments", default: "Bookings"), user_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% end %>
+      <% if current_user.garden %>
+      <li><%= link_to t(".garden", default: "My garden"), owner_garden_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% end %>
+      <li><%= link_to t(".destroy", default: "Sign out"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+    </ul>
   </div>
 </div>
 
