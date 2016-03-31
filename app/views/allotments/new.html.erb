@@ -10,10 +10,9 @@
 
           <%= a.input :start_day, start_year: Time.now.year, order: [:day, :month, :year] %>
           <%= a.input :end_day, start_year: Time.now.year, order: [:day, :month, :year]  %>
-          <%= a.input :message, as: :text, :input_html => {:maxlength => 500}, placeholder: 'What would you like to tell the garden-owner?' %>
-
+          <%= a.input :message, as: :text, :input_html => {:maxlength => 500}, placeholder: 'Tell the gardenhost something about yourself. What would you like to grow? How much space do you need and what are your expectations? Do not forget to send your emailaddress' %>
           <div class="btn-form-allotment">
-          <%= a.button :submit, "share garden", class: "btn btn-success" %>
+          <%= a.button :submit, "send", class: "btn btn-success" %>
           </div>
           <% end %>
         </div>
