@@ -39,7 +39,7 @@
          <% else %>
            <%= render "shared/booking/content_user", allotment: allotment %>
          <% end %>
-       <% else %>
+       <% elsif allotment.request_status.empty? %>
         <div class="no-requests">
           <h2><small>At the moment you have no pending bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
         </div>
@@ -49,25 +49,25 @@
   </div>
 
   <div class="tab-content hidden" id="accepted">
-      <% if @allotments.empty? %>
-         <div class="no-requests">
-          <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
-        </div>
-        <% else %>
-          <% @allotments.each do |allotment| %>
-            <% if allotment.request_status == "accepted" %>
-              <% if current_user.garden %>
-                <%= render "shared/booking/content_owner", allotment: allotment %>
-              <% else %>
-                <%= render "shared/booking/content_user", allotment: allotment %>
-              <% end %>
+    <% if @allotments.empty? %>
+       <div class="no-requests">
+        <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+      </div>
+      <% else %>
+        <% @allotments.each do |allotment| %>
+          <% if allotment.request_status == "accepted" %>
+            <% if current_user.garden %>
+              <%= render "shared/booking/content_owner", allotment: allotment %>
             <% else %>
-              <div class="no-requests">
-                <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
-              </div>
+              <%= render "shared/booking/content_user", allotment: allotment %>
             <% end %>
+          <% elsif allotment.request_status.empty? %>
+            <div class="no-requests">
+              <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+            </div>
           <% end %>
         <% end %>
+      <% end %>
     </div>
   <div class="tab-content hidden" id="canceled">
     <% if @allotments.empty? %>
@@ -82,7 +82,7 @@
           <% else %>
             <%= render "shared/booking/content_user", allotment: allotment %>
           <% end %>
-        <% else %>
+        <% elsif allotment.request_status.empty? %>
           <div class="no-requests">
             <h2><small>At the moment you have no cancelled bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
           </div>
