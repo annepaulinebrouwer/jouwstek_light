@@ -43,7 +43,7 @@
       <div class="hex hidden-xs hidden-sm hidden-md" id="hex3">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-photo2.jpg' %>);">
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
       <div class="hex hidden-xs hidden-sm hidden-md" id="hex5">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-photo.jpg' %>);">
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
       <div class="hex hidden-xs" id="hex6">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-search.png' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpg' %>);">
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
       <div class="hex hidden-xs" id="hex7">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-grow.png' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb5.jpg' %>);">
               <%= link_to gardens_path %>
             </div>
           </div>
@@ -108,7 +108,7 @@
       <div class="hex hidden-xs hidden-sm hidden-md" id="hex8">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'afb4.jpg' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'moestuin1.jpg' %>);">
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@
       <div class="hex hidden-xs" id="hex9">
         <div class="hexagon hexagon1">
           <div class="hexagon-in1">
-            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-connect.png' %>);">
+            <div class="hexagon-in2" style= "background: url(<%= image_path 'hex-photo3.jpg' %>);">
             </div>
           </div>
         </div>
@@ -177,14 +177,15 @@
     <div class="col-sm-offset-3 col-sm-3">
       <%= link_to gardens_path do %>
       <div class="count-card">
-        <p> See all our <span class="count"> <%= Garden.count %></span> gardens. </p>
+        <p> See all our <span class="count"> <%= Garden.count %></span> gardens </p>
       </div>
       <% end %>
     </div>
+
     <div class="col-sm-3">
       <%= link_to new_user_registration_path, { "data-toggle": "modal", "data-target": "#sign-up" } do %>
       <div class="count-card">
-        <p> Become one of our <span class="count"><%= User.count %></span> pioneers</p>
+        <p> Become one of our <span class="count"><%= User.count %></span> greenkeepers </p>
       </div>
       <% end %>
     </div>
@@ -199,7 +200,7 @@
       <div class="card" style="background: url('<%= garden.photo %>');">
         <div class="card-hover">
           <h2><%= garden.title %></h2>
-          <p><%= truncate(garden.description, length: 300) %></p>
+          <p><%= truncate(garden.description, length: 310) %></p>
           <div id="garden-address">
            <p ><%= garden.address %></p>
          </div>
@@ -210,10 +211,10 @@
    <% end %>
    <% end %>
    <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background: url(<%= image_path 'afb2.jpg' %>);">
+    <div class="card" style="background: url(<%= image_path 'your-garden.jpg' %>);">
       <div class="card-hover">
-        <h2>Your Garden</h2>
-        <p> Share your garden</p>
+        <h2>Your garden</h2>
+        <p> This could be your garden </p>
       </div>
     </div>
   </div>
@@ -228,37 +229,25 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="card-testimonial">
-          <%= image_tag("1persoon.png", class: "testimonial-picture", style: "margin-left: 4%") %>
+          <%= image_tag("testimonial1.jpg", class: "avatar-xxl", style: "margin-left: 6%") %>
           <div class="section-title-border-testimonial"></div>
           <p> “Greenthumbs is an easy app to use. I could easily see which gardens are in my area and directly book one!” </p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
        <div class="card-testimonial">
-        <%= image_tag("person3.png", class: "testimonial-picture", style: "margin-left: 5%") %>
+         <%= image_tag("testimonial2.jpg", class: "avatar-xxl", style: "margin-left: 6%") %>
         <div class="section-title-border-testimonial"></div>
-        <p> “With 3 different greenkeepers I finally make full use of my intire garden. And I met some very nice people too!” </p>
+        <p> “I wanted to teach my kids about real and healthy food. Thanks to Greenthumbs I found a garden in my neigbourhood in which we are now growing our own tomatoes and carrots.” </p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
      <div class="card-testimonial">
-      <%= image_tag("2persoon.png", class: "testimonial-picture", style: "margin-left: 5%") %>
+      <%= image_tag("testimonial4.jpg", class: "avatar-xxl", style: "margin-left: 6%") %>
       <div class="section-title-border-testimonial"></div>
-      <p> “Thanks to Greenthumbs I found a garden in my neigbourhood in which I am now growing my own tomatoes and carrots.” </p>
+      <p> “With 3 different greenkeepers I finally make full use of my intire garden. And I met some very nice people too!”</p>
     </div>
   </div>
 </div>
 </div>
 </div>
-
-<div class="modal fade" id="sign-up">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <%= render "devise/registrations/sign_up", user: User.new %>
-    </div>
-  </div>
-</div>
-
-
-
-
