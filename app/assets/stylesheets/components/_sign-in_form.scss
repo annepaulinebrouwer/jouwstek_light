@@ -1,0 +1,120 @@
+.sign-in {
+  .sign-in-form-box {
+    max-width: 550px;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 10px 25px 30px 25px;
+    margin: 50px auto;
+
+    label {
+      text-align: left;
+      flex: 0 0 105px;
+    }
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+     border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 10px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+  }
+
+// .log-in-form {
+//     padding: 20px;
+//     padding-top: 20px;
+//     margin-top: 20px;
+//     margin-bottom: 20px;
+//     background-color: #fafafa;
+//     border: 1px solid rgba(0, 0, 0, 0.11);
+// }
+
+.log-in-wrapper {
+  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0) 0%, rgba(195, 209, 83, 0.31) 50%), url(background-form.png);
+  background-size: cover !important;
+}
+
+.sign-in-form-title{
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+
+    input.string{
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    label.file {
+     border: 3px solid rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     background-color: white;
+     text-align: center;
+     padding: 5px;
+
+      &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.file {
+      display: none;
+
+    }
+
+.form-group.email {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.password {
+    height: 75px;
+    border-top: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 20px 0;
+  }
+
+  .form-group.file {
+    height: 75px;
+    padding: 20px 0;
+    padding-right: 40px;
+  }
+
+.help-block {
+    font-size: 10px;
+}
+
+.form-control{
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    background: white;
+    border-color: none;
+
+    .input {
+      border-bottom:  1px solid rgba(0, 0, 0, 0.14);
+    }
+
+  }
+}
+}

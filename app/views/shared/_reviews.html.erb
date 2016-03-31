@@ -8,7 +8,7 @@
           <%= g.error_notification %>
 
           <%= g.input :description, as: :text, :input_html => {:maxlength => 500} %>
-          <%= g.input :stars, label: 'rating' %>
+          <%= g.input :stars, as: :select, :collection => [1, 2, 3, 4, 5] %>
 
           <div class="btn-review">
           <%= g.button :submit %></div>

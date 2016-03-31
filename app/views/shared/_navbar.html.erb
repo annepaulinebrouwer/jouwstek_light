@@ -39,17 +39,17 @@ NOT LOGGED IN: logo, about, search, login, join -->
 
 <% if !current_user.garden %>
 
-<%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn btn-success btn-default"} %>
+<%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
 
 <% end %>
 
 <% else %>
 
 <!-- Login text link -->
-<%= link_to "Log in", new_user_session_path, {class: "navbar-wagon-item btn btn-success btn-default"} %>
+<%= link_to "Log in", new_user_session_path, {class: "navbar-wagon-item btn-success"} %>
 
 <!-- Button (call-to-action) -->
-<%= link_to "Join", new_user_registration_path, {class: "navbar-wagon-item btn btn-success btn-default", "data-toggle": "modal", "data-target": "#sign-up"} %>
+<%= link_to "Join", "#", {class: "navbar-wagon-item btn-success", "data-toggle": "modal", "data-target": "#sign-up"} %>
 
 <% end %>
 
@@ -65,8 +65,5 @@ NOT LOGGED IN: logo, about, search, login, join -->
 
 </div>
 
-<div class="modal fade" id="sign-up">
-  <%= render "devise/registrations/sign_up", user: User.new %>
-</div>
 
 
