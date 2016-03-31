@@ -3,6 +3,7 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+
 #hex-container{
   position: relative;
 }
@@ -33,8 +34,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  border-right: 1px solid rgba(0, 0, 0, 0.11);
   p {
-    font-size: 130%;
+    font-size: 115%;
     vertical-align: center;
   }
   p:hover {
@@ -111,7 +115,7 @@ padding-left: 5em;
   }
 
   .card-testimonial {
-    width: 250px;
+    width: 300px;
     margin-right: auto;
     margin-left: auto;
     p {
@@ -121,7 +125,7 @@ padding-left: 5em;
   }
 
 .section-title-border-testimonial {
-width: 250px;
+width: 320px;
 background-color: #8ee18e;
     height: 3px;
     margin: 0 auto;
