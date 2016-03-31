@@ -7,7 +7,7 @@
           <%= simple_form_for(review, url: path) do |g| %>
           <%= g.error_notification %>
 
-          <%= g.input :description, as: :text, :input_html => {:maxlength => 500} %>
+          <%= g.input :description, as: :text, :input_html => {:maxlength => 500}, placeholder: 'Tell us more about your experience..' %>
           <%= g.input :stars, as: :select, :collection => [1, 2, 3, 4, 5] %>
 
           <div class="btn-review">

@@ -4,22 +4,26 @@
     <div class="container">
       <div class="edit-profile-form-box">
         <div class="edit-profile-form-title">
-        <h2>Edit your profile</h2>
+          <h2>Edit your profile</h2>
         </div>
 
         <%= simple_form_for(user, url: path) do |f| %>
         <div class="form-inputs">
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :description %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :description, as: :text, :input_html => {:maxlength => 500}, placeholder: 'Tell us something about yorself, your expectations and what you are looking for at Greenthumbs..' %>
         </div>
         <div class="edit-profile-btn">
-        <%= f.input :photo, label: 'picture' %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <div class="form-actions">
-        <%= f.button :submit, "Update", class: "btn-success" %>
+        <div class="user-picture">
+         <%= image_tag(user.photo, class: "avatar-small") %>
         </div>
+          <%= f.input :photo, label: 'picture' %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <div class="form-actions">
+            <%= f.button :submit, "Update", class: "btn-success" %>
+          </div>
         </div>
+
         <% end %>
       </div>
     </div>
