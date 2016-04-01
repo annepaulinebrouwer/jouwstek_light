@@ -14,18 +14,22 @@ User.destroy_all
 puts "deleting all users"
 puts "creating new users"
 
-anne = User.create!(first_name: "Anne", last_name: "Smith", description: "Looking for a garden to grow my tomatoes", email: "asmith@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_woman.jpg")))
-david = User.create!(first_name: "David", last_name: "Bergema", description: "Looking for a garden to grow strawberries", email: "blabla@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_man1.jpg")))
+anne = User.create!(first_name: "Anne", last_name: "Smith", description: "Looking for a garden to grow my tomatoes", email: "anne@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_woman.jpg")))
+david = User.create!(first_name: "David", last_name: "Bergema", description: "Looking for a garden to grow strawberries", email: "david@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_man1.jpg")))
 sophia = User.create!(first_name: "Sophia", last_name: "Jones", description: "Looking for a garden to plant some weed", email: "sophia@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
 anays = User.create!(first_name: "Anays", last_name: "Lamers", description: "Looking for a garden to plant some carrots", email: "anays@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
 cecile = User.create!(first_name: "Cecile", last_name: "Venezia", description: "Looking for a garden to plant some ginkgo", email: "cecile@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/person5.jpg")))
-
-paula = User.create!(first_name: "Paula", last_name: "Dylan", description: "I have a big garden, but I don't make use of it fully, I would love if someone else could make use of it.", email: "paula@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
-jojanneke = User.create!(first_name: "Jojanneke", last_name: "Tamis", description: "Looking for a garden to grow some tomatoes", email: "jojanneke@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
-carolien = User.create!(first_name: "Carolien", last_name: "Jonkers", description: "Looking for a garden to work in", email: "carolien@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_woman.jpg")))
 freek = User.create!(first_name: "Freek", last_name: "Jansen", description: "Looking for a garden to grow my tomatoes", email: "freek@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_man2.jpg")))
 els = User.create!(first_name: "Els", last_name: "Hijmans", description: "Looking for a garden to grow strawberries", email: "els@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_woman.jpg")))
 marie = User.create!(first_name: "Marie", last_name: "Hellinga", description: "Looking for a garden to plant some spices", email: "marie@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
+lotte = User.create!(first_name: "Lotte", last_name: "de Vries", description: "I have a big garden, but I don't make use of it fully, I would love if someone else could make use of it.", email: "lotte@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
+
+
+paula = User.create!(first_name: "Paula", last_name: "Brouwer", description: "Looking for a garden to grow some tomatoes", email: "paula@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
+jojanneke = User.create!(first_name: "Jojanneke", last_name: "Tamis", description: "Looking for a garden to grow some tomatoes", email: "jojanneke@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
+carolien = User.create!(first_name: "Carolien", last_name: "Jonker", description: "Looking for a garden to work in", email: "carolien@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_woman.jpg")))
+rianne = User.create!(first_name: "Rianne", last_name: "Rijker", description: "Looking for a garden to grow some tomatoes", email: "rianne@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
+vera = User.create!(first_name: "Vera", last_name: "Klerx", description: "Looking for a garden to grow some tomatoes", email: "vera@gmail.com", password: "password", password_confirmation: "password", photo: File.open(Rails.root.join("db/fixtures/images/users/garden_vrouw2.jpg")))
 
 puts "Now there are users"
 
@@ -43,7 +47,7 @@ ams3_garden = Garden.create!(title: 'Sunny garden', owner: anays, address: "Roze
 sleep(0.3)
 ams4_garden = Garden.create!(title: 'Beautiful garden', owner: cecile, address: "Bethaniendwarsstraat 17", city: "Amsterdam", available: "true", description: "I have a very big garden that I don't use a lot. You could plant flowers in my garden.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden2.jpeg")), photo2: File.open(Rails.root.join("db/fixtures/images/gardens/bloemen.jpg")))
 sleep(0.3)
-ams5_garden = Garden.create!(title: 'Sunny garden', owner: paula, address: "Rokin 1", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, mollitia?", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden6.jpeg")))
+ams5_garden = Garden.create!(title: 'Sunny garden', owner: lotte, address: "Rokin 1", city: "Amsterdam", available: "true", description: "I have some extra space in my garden. Come over! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, mollitia?", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden6.jpeg")))
 sleep(0.3)
 ams6_garden = Garden.create!(title: 'Sunny garden', owner: freek, address: "Herengracht 200", city: "Amsterdam", available: "true", description: "I have space in my garden. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, aliquam.", photo: File.open(Rails.root.join("db/fixtures/images/gardens/garden7.jpeg")))
 sleep(0.3)
@@ -58,6 +62,8 @@ puts "deleting all allotments"
 
 puts "creating new allotments"
 
+rianne_allotment = Allotment.create!(garden: ams1_garden, user: rianne, start_day: "2016-04-30", end_day: "2016-08-30", request_status: "pending", message: "Hi, I would like to work in your garden")
+vera_allotment = Allotment.create!(garden: ams1_garden, user: vera, start_day: "2016-04-30", end_day: "2016-08-30", request_status: "pending", message: "Hi, I would like to work in your garden")
 david_allotment = Allotment.create!(garden: ams0_garden, user: david, start_day: "2016-04-30", end_day: "2016-05-30", request_status: "pending", message: "Hi, I would like to work in your garden")
 sophia_allotment = Allotment.create!(garden: ams0_garden, user: sophia, start_day: "2016-07-19", end_day: "2016-05-30", request_status: "pending", message: "Hi, I would like to work in your garden")
 jojanneke_allotment = Allotment.create!(garden: ams5_garden, user: jojanneke, start_day: "2016-04-30", end_day: "2016-05-30", request_status: "pending", message: "Hi, I would like to work in your garden")
