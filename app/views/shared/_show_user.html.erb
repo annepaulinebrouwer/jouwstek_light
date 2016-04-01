@@ -13,9 +13,8 @@
         </div>
       </div>
     </div>
-
-      <% if @user.user_reviews.exists? %>
-      <div class="container">
+  </div>
+    <% if @user.user_reviews.exists? %>
         <div class="user-container2">
           <div class="row">
             <div class="col-xs-12"><h3>Reviews</h3>
@@ -24,34 +23,33 @@
           </div>
 
           <div class="row">
-          <% @user.user_reviews.each do |review| %>
-            <div class="col-xs-12 col-sm-6">
-              <div class="review-cards-user">
-                <%= link_to user_profile_path(@user) do %>
-                  <div class="circle">
-                  <%= cl_image_tag  @user.photo, class: "avatar-medium", id: "avatar-review" %>
+            <% @user.user_reviews.each do |review| %>
+              <div class="col-xs-12 col-sm-6">
+                <div class="review-cards-user">
+                  <%= link_to user_profile_path(@user) do %>
+                    <div class="circle">
+                      <%= cl_image_tag review.user.photo, class: "avatar-medium", id: "avatar-review" %>
+                    </div>
+                  <% end %>
+                  <div class="review-name">
+                    <p> <%= review.owner.fullname %></p>
                   </div>
-                <% end %>
-                <div class="review-name">
-                  <p> <%= review.owner.fullname %></p>
-                </div>
-                <div class="review-text">
-                  <p><%= review.description %></p>
-                </div>
-                <div class="carrots">
-                  <% review.stars.times do %>
-                  <%= image_tag "carrot_full.png", class: "small-icon"%>
-                  <% end %>
-                  <% (5 - review.stars).times do %>
-                  <%= image_tag "carrot_empty",  class: "small-icon"%>
-                  <% end %>
+                  <div class="review-text">
+                    <p><%= review.description %></p>
+                  </div>
+                  <div class="carrots">
+                    <% review.stars.times do %>
+                      <%= image_tag "carrot_full.png", class: "small-icon"%>
+                    <% end %>
+                    <% (5 - review.stars).times do %>
+                      <%= image_tag "carrot_empty",  class: "small-icon"%>
+                    <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
