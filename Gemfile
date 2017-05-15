@@ -4,6 +4,8 @@ ruby '2.3.0'
 
 gem 'rails', '4.2.5.1'
 gem 'rails_12factor', group: :production
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 gem 'puma', group: :production
 gem 'pg'
@@ -45,6 +47,3 @@ group :development, :test do
 
 end
 
-group :production do
-  gem 'rails_12factor'
-end
