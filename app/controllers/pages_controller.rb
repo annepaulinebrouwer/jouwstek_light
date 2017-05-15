@@ -20,7 +20,7 @@ class PagesController < ApplicationController
                          <p class='marker-address text-center'>#{ garden.full_address }</p>"
       marker.lat garden.latitude
       marker.picture({
-        url: "https://41.media.tumblr.com/028c5097d2e537595c86a81934b83cbf/tumblr_o4u8o54tpv1qjknfdo1_75sq.png", # up to you to pass the proper parameters in the url, I guess with a method from device
+        url: "#{view_context.image_path 'map-icon.png'}", # up to you to pass the proper parameters in the url, I guess with a method from device
         width: 36,
         height: 36
       })

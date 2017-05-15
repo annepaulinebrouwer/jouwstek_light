@@ -7,60 +7,62 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 <!-- LOGGED IN: logo, about, search, my profile, my bookings, my gardens, log out, message
-NOT LOGGED IN: logo, about, search, login, join -->
+  NOT LOGGED IN: logo, about, search, login, join -->
 
-<!--  <%= link_to t(".about", default: "About"), about_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
+  <!--  <%= link_to t(".about", default: "About"), about_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
 
-<!-- Different navigation if login or not -->
-<% if user_signed_in? %>
+  <!-- Different navigation if login or not -->
+  <% if user_signed_in? %>
 
-<!-- Notification -->
+  <!-- Notification -->
 
 
-<div class="navbar-wagon-item">
-  <div class="dropdown">
-    <!-- <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
-    <%= link_to current_user.first_name, user_profile_path, class:"user-name" %>
-    <!-- <div class="user-name"><%= current_user.first_name %></div> -->
-    <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
-    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <li><%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      <% if current_user.garden %>
-      <li><%= link_to t(".allotments", default: "Bookings"), owner_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+  <div class="navbar-wagon-item">
+    <div class="dropdown">
+      <% if current_user.first_name.nil? %>
+      <%= link_to "Your dashboard", user_profile_path, class:"user-name" %>
       <% else %>
-      <li><%= link_to t(".allotments", default: "Bookings"), user_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <%= link_to current_user.first_name, user_profile_path, class:"user-name" %>
       <% end %>
-      <% if current_user.garden %>
-      <li><%= link_to t(".garden", default: "My garden"), owner_garden_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      <% end %>
-      <li><%= link_to t(".destroy", default: "Sign out"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
-    </ul>
+      <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to t(".profile", default: "Profile"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% if current_user.garden %>
+        <li><%= link_to t(".allotments", default: "Bookings"), owner_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% else %>
+        <li><%= link_to t(".allotments", default: "Bookings"), user_allotments_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
+        <% if current_user.garden %>
+        <li><%= link_to t(".garden", default: "My garden"), owner_garden_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
+        <li><%= link_to t(".destroy", default: "Sign out"), destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      </ul>
+    </div>
   </div>
-</div>
 
-<% if !current_user.garden %>
+  <% if !current_user.garden %>
 
-<%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
+  <%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
 
-<% end %>
+  <% end %>
 
-<% else %>
+  <% else %>
 
-<!-- Login text link -->
-<%= link_to "Log in", new_user_session_path, {class: "navbar-wagon-item btn-success"} %>
+  <!-- Login text link -->
+  <%= link_to "Log in", new_user_session_path, {class: "navbar-wagon-item btn-success"} %>
 
-<!-- Button (call-to-action) -->
-<%= link_to "Join", "#", {class: "navbar-wagon-item btn-success", "data-toggle": "modal", "data-target": "#sign-up"} %>
+  <!-- Button (call-to-action) -->
+  <%= link_to "Join", "#", {class: "navbar-wagon-item btn-success", "data-toggle": "modal", "data-target": "#sign-up"} %>
 
-<% end %>
+  <% end %>
 
-<!-- Search form -->
+  <!-- Search form -->
 <!-- <form action="" class="navbar-wagon-search">
   <input type="text" class="navbar-wagon-search-input" placeholder="Search">
     <button type="submit" class="navbar-wagon-search-btn">
       <i class="fa fa-search"></i>
     </button>
-</form> -->
+  </form> -->
 
 </div>
 
