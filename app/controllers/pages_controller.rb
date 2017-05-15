@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+    @home = Home.first
+    @recommendations = Recommendation.all
     @gardens = Garden.all
     # @markers = Gmaps4rails.build_markers(@gardens) do |garden, marker|
     #   marker.lat garden.latitude
