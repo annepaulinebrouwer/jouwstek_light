@@ -13,6 +13,7 @@ class Owner::AllotmentsController < ApplicationController
     @allotment.request_status = "accepted"
     if @allotment.save
       redirect_to owner_allotments_path
+      UserMailer.accept_allotment_request(@allotment).deliver_now
     else
       flash[:warning] = 'Canceling the garden did not work'
       redirect_to owner_allotments_path
@@ -23,6 +24,7 @@ class Owner::AllotmentsController < ApplicationController
     @allotment.request_status = "declined"
     if @allotment.save
       redirect_to owner_allotments_path
+      UserMailer.decline_allotment_request(@allotment).deliver_now
     else
       flash[:warning] = 'Declining the garden did not work'
       redirect_to owner_allotments_path
