@@ -35,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails', '~> 1.6','>= 1.6.0.1'
 gem 'autoprefixer-rails'
+gem 'postmark-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
