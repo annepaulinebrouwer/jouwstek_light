@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
 		@garden = allotment.garden
 		@owner = @garden.owner
 		
-		mail(to: @owner.email, subject: "#{@user.first_name} is geinteresseerd in je tuin")
+		mail(to: @owner.email, subject: "#{@user.first_name} is geinteresseerd in je tuin..")
 	end
 
 	def accept_allotment_request(allotment)
