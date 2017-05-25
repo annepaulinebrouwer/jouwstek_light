@@ -1,0 +1,17 @@
+<p>Hallo <%=@user.first_name %></p>
+<br>
+<p>
+	<%=@owner.first_name%> heeft je verzoek voor de tuin op de <%=@garden.address %> helaas niet geaccepteerd. Gelukkig staan er ook andere tuinen op ons platform. Ga opzoek naar <%= link_to "een tuin", gardens_url %> bij jou in de buurt!
+</p>
+<br>
+<p>
+	Dit was jouw bericht naar de eigenaar:
+	<%= @allotment.message %>
+</p>
+<br>
+<p>Mocht je nog vragen hebben neem dan gerust contact met ons op via info@jouwstek.com</p>
+<br>
+<p>
+	Groetjes,
+	Jouw Stek Team
+</p>

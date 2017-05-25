@@ -16,6 +16,7 @@ class AllotmentsController < ApplicationController
 
 
     if @allotment.save
+      UserMailer.delay.request_allotment(current_user, @allotment).deliver_now
       redirect_to user_allotments_path
     else
       render :new
