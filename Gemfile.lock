@@ -154,6 +154,12 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    postmark (1.10.0)
+      json
+      rake
+    postmark-rails (0.15.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.10.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -279,6 +285,7 @@ DEPENDENCIES
   markerclustererplus-rails
   omniauth-facebook
   pg
+  postmark-rails
   pry-byebug
   pry-rails
   puma
@@ -295,5 +302,8 @@ DEPENDENCIES
   spring
   uglifier
 
+RUBY VERSION
+   ruby 2.3.4p301
+
 BUNDLED WITH
-   1.11.2
+   1.15.0
