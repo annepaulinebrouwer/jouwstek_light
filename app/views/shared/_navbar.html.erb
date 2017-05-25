@@ -1,7 +1,11 @@
-<div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo_white.png" %>
+  <% if params[:controller] == "pages" && params[:action] == "home" %>  
+    <div class="navbar-wagon flex-end">
+  <% else %>
+    <div class="navbar-wagon space-between">
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo_white.png" %>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->
