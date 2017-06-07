@@ -10,7 +10,7 @@
 
           <%= a.input :start_day, label: "Startdatum:", start_year: Time.now.year, order: [:day, :month, :year] %>
           <%= a.input :end_day, label: "Einddatum:", start_year: Time.now.year, order: [:day, :month, :year]  %>
-          <%= a.input :message, label: "Bericht:", as: :text, :input_html => {:maxlength => 500}, placeholder: 'Vertel iets over jezelf!' %>
+          <%= a.input :message, label: "Bericht:", as: :text, :input_html => {:maxlength => 500}, placeholder: 'Vertel iets over jezelf en wat je graag in de tuin wil doen..' %>
           <div class="btn-form-allotment">
           <%= a.button :submit, "verzenden", class: "btn btn-success" %>
           </div>

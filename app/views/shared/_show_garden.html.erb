@@ -29,7 +29,7 @@
            <%= garden.address %> 
          </p> 
          <p>
-         Created at: <%= garden.created_at.strftime("%d-%m-%Y") %> 
+         Geplaatst op <%= garden.created_at.strftime("%d-%m-%Y") %> 
          </p>
        </div>
      </div>
@@ -75,7 +75,7 @@
 <% if current_user != @garden.owner %>
 <div id="container-garden-owner">
   <div class="garden-description">
-    <h4>Some words about <%= garden.owner.first_name %></h4>
+    <h4>Leer onze Stek-Eigenaar <%= garden.owner.first_name %> kennen:</h4>
     <br>
     <p><%= @garden.owner.description %></p>
   </div>

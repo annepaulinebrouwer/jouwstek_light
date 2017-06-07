@@ -11,7 +11,7 @@ module Owner
         @garden = Garden.new
       else
         redirect_to edit_user_profile_path
-        flash[:notice] = "You are one step away from creating your garden. You need to complete your profile first!"
+        flash[:notice] = "Je bent één stap verwijderd van het aanmaken van Jouw Stek. Zorg eerst dat je profiel compleet is."
       end
     end
 
@@ -21,7 +21,7 @@ module Owner
       if @garden.save
         redirect_to owner_garden_path
       else
-        flash[:alert] = "Unable to create your garden."
+        flash[:alert] = "Het was niet mogelijk een tuin te maken"
         render :new
       end
     end
@@ -36,12 +36,12 @@ module Owner
 
     def destroy
       if current_user.garden_destroyable? == false
-        flash[:alert] = "Hi #{current_user.first_name}, why deleting your garden? Checkout <a href='allotments'>here</a> who is still waiting to share your garden".html_safe
+        flash[:alert] = "Hi #{current_user.first_name}, waarom zou je je tuin verwijderen? Bekijk <a href='allotments'>hier</a> wie er nog geintereserd is in Jouw Stek".html_safe
         render :show
       else
         @garden.destroy!
         redirect_to user_path(current_user)
-        flash[:notice] = "Hi #{current_user.first_name}, you have scuccefully deleted the garden"
+        flash[:notice] = "Hi #{current_user.first_name}, je hebt succesvol je tuin verwijderd"
       end
     end
 

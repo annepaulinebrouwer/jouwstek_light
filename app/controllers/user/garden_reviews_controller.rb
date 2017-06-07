@@ -14,7 +14,7 @@ class User::GardenReviewsController < ApplicationController
       @garden = @allotment.garden_id
       redirect_to garden_path(@garden)
     else
-      flash[:warning] = 'You cannot create a garden review'
+      flash[:warning] = 'Het was niet mogelijk een tuin-review aan te maken'
       redirect_to garden_path(@garden)
     end
   end

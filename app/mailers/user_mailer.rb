@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
 
-	def request_allotment(user, allotment)
-		@user = user
+	def request_allotment(user_id, allotment)
+		@user = User.find(user_id)
 		@allotment = allotment
 		@garden = allotment.garden
 		@owner = @garden.owner
