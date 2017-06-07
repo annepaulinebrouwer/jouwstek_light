@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   has_many :garden_reviews, dependent: :destroy
   has_many :user_reviews, dependent: :destroy
   has_many :owner_reviews, dependent: :destroy, class_name: 'UserReview', foreign_key: 'owner_id'
-  has_many :rented_gardens, through: :allotments
 
   validates :photo, presence: true
 

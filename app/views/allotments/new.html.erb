@@ -3,16 +3,16 @@
     <div class="row">
     <div class="col-sm-offset-3 col-sm-6 form-group">
         <div class="booking-form-box">
-          <h2>Start growing <small> your veggies in <%= @garden.owner.first_name%> garden </small> </h2>
+          <h2>Start met tuinieren<small> in <%= @garden.owner.first_name%>'s tuin </small> </h2>
 
           <%= simple_form_for([:garden, @allotment]) do |a| %>
           <%= a.error_notification %>
 
-          <%= a.input :start_day, start_year: Time.now.year, order: [:day, :month, :year] %>
-          <%= a.input :end_day, start_year: Time.now.year, order: [:day, :month, :year]  %>
-          <%= a.input :message, as: :text, :input_html => {:maxlength => 500}, placeholder: 'Tell the gardenhost something about yourself. What would you like to grow? How much space do you need and what are your expectations? Do not forget to send your emailaddress' %>
+          <%= a.input :start_day, label: "Startdatum:", start_year: Time.now.year, order: [:day, :month, :year] %>
+          <%= a.input :end_day, label: "Einddatum:", start_year: Time.now.year, order: [:day, :month, :year]  %>
+          <%= a.input :message, label: "Bericht:", as: :text, :input_html => {:maxlength => 500}, placeholder: 'Vertel iets over jezelf!' %>
           <div class="btn-form-allotment">
-          <%= a.button :submit, "send", class: "btn btn-success" %>
+          <%= a.button :submit, "verzenden", class: "btn btn-success" %>
           </div>
           <% end %>
         </div>

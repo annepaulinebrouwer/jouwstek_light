@@ -12,7 +12,8 @@ class Owner::AllotmentsController < ApplicationController
   def accept
     @allotment.request_status = "accepted"
     if @allotment.save
-      redirect_to owner_allotments_path
+      redirect_to owner_allotments_path(accepted: "active")
+      flash[:notice] = "#{@allotment.user.first_name} is geaccepteerd!"
       UserMailer.accept_allotment_request(@allotment).deliver_now
     else
       flash[:warning] = 'Canceling the garden did not work'

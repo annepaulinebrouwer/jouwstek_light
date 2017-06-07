@@ -1,93 +1,107 @@
 <div class="container">
   <div class="booking-welcome-text">
     <h2>Hi <%= @current_user.first_name %>, <small> dit zijn jouw boekingen</small></h2>
-   </div>
+  </div>
   <div class="tabs text-align:center">
-    <a class="tab active" data-target="#pending">
-      <div class="tab-elements">
-        <div class="circle-tab">
-          <i class="fa fa-question fa-2x"></i></div>
-        <div class="tab-text hidden-xs"><p>in afwachting</p></div>
-      </div>
-    </a>
-    <a class="tab" data-target="#accepted">
-     <div class="tab-elements">
-      <div class="circle-tab">
-        <i class="fa fa-check fa-2x"></i></div>
-      <div class="tab-text hidden-xs"><p>geaccepteerd</p></div>
-     </div>
-    </a>
-    <a class="tab" data-target="#canceled">
-    <div class="tab-elements">
-     <div class="circle-tab">
-        <i class="fa fa-times fa-2x"></i></div>
-         <div class="tab-text hidden-xs"><p>afgewezen</p> </div>
-        </div>
-    </a>
-  </div>
-
-  <div class="tab-content" id="pending">
-    <% if @allotments.empty? %>
-      <div class="no-requests">
-        <h2><small>Op het moment heb je geen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
-      </div>
-    <% else %>
-      <% @allotments.each do |allotment| %>
-       <% if allotment.request_status == "pending" %>
-         <% if current_user.garden %>
-            <%= render "shared/booking/content_owner", allotment: allotment %>
-         <% else %>
-           <%= render "shared/booking/content_user", allotment: allotment %>
-         <% end %>
-       <% elsif allotment.request_status.empty? %>
-        <div class="no-requests">
-          <h2><small>Op het moment heb je geen boekingen in afwachting. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
-        </div>
-       <% end %>
-     <% end %>
-    <% end %>
-  </div>
-
-  <div class="tab-content hidden" id="accepted">
-    <% if @allotments.empty? %>
-       <div class="no-requests">
-        <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
-      </div>
+    <% if params["accepted"] %>
+    <a class="tab" data-target="#pending">
       <% else %>
-        <% @allotments.each do |allotment| %>
-          <% if allotment.request_status == "accepted" %>
-            <% if current_user.garden %>
-              <%= render "shared/booking/content_owner", allotment: allotment %>
-            <% else %>
-              <%= render "shared/booking/content_user", allotment: allotment %>
-            <% end %>
-          <% elsif allotment.request_status.empty? %>
-            <div class="no-requests">
-              <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
-            </div>
-          <% end %>
+      <a class="tab active" data-target="#pending">
         <% end %>
-      <% end %>
-    </div>
-  <div class="tab-content hidden" id="canceled">
-    <% if @allotments.empty? %>
-     <div class="no-requests">
-      <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
-    </div>
-    <% else %>
-      <% @allotments.each do |allotment| %>
-        <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
-          <% if current_user.garden %>
-            <%= render "shared/booking/content_owner", allotment: allotment %>
-          <% else %>
-            <%= render "shared/booking/content_user", allotment: allotment %>
-          <% end %>
-        <% elsif allotment.request_status.empty? %>
-          <div class="no-requests">
-            <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+        <div class="tab-elements">
+          <div class="circle-tab">
+            <i class="fa fa-question fa-2x"></i></div>
+            <div class="tab-text hidden-xs"><p>in afwachting</p></div>
           </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+        </a>
+        <% if params["accepted"] %>
+        <a class="tab active" data-target="#accepted">
+          <% else %>
+          <a class="tab" data-target="#accepted">
+            <% end %>
+            <div class="tab-elements">
+              <div class="circle-tab">
+                <i class="fa fa-check fa-2x"></i></div>
+                <div class="tab-text hidden-xs"><p>geaccepteerd</p></div>
+              </div>
+            </a>
+            <a class="tab" data-target="#canceled">
+              <div class="tab-elements">
+               <div class="circle-tab">
+                <i class="fa fa-times fa-2x"></i></div>
+                <div class="tab-text hidden-xs"><p>afgewezen</p> </div>
+              </div>
+            </a>
+          </div>
+          <% if params["accepted"] %>
+          <div class="tab-content hidden" id="pending">
+            <% else %>
+            <div class="tab-content" id="pending">
+              <% end %>
+              <% if @allotments.empty? %>
+              <div class="no-requests">
+                <h2><small>Op het moment heb je geen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+              </div>
+              <% else %>
+              <% @allotments.each do |allotment| %>
+              <% if allotment.request_status == "pending" %>
+              <% if current_user.garden %>
+              <%= render "shared/booking/content_owner", allotment: allotment %>
+              <% else %>
+              <%= render "shared/booking/content_user", allotment: allotment %>
+              <% end %>
+              <% elsif allotment.request_status.empty? %>
+              <div class="no-requests">
+                <h2><small>Op het moment heb je geen boekingen in afwachting. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+              </div>
+              <% end %>
+              <% end %>
+              <% end %>
+            </div>
+            <% if params["accepted"] %>
+            <div class="tab-content" id="accepted">
+              <% else %>
+              <div class="tab-content hidden" id="accepted">
+                <% end %>
+                <% if @allotments.empty? %>
+                <div class="no-requests">
+                  <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+                </div>
+                <% else %>
+                <% @allotments.each do |allotment| %>
+                <% if allotment.request_status == "accepted" %>
+                <% if current_user.garden %>
+                <%= render "shared/booking/content_owner", allotment: allotment %>
+                <% else %>
+                <%= render "shared/booking/content_user", allotment: allotment %>
+                <% end %>
+                <% elsif allotment.request_status.empty? %>
+                <div class="no-requests">
+                  <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+                </div>
+                <% end %>
+                <% end %>
+                <% end %>
+              </div>
+              <div class="tab-content hidden" id="canceled">
+                <% if @allotments.empty? %>
+                <div class="no-requests">
+                  <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+                </div>
+                <% else %>
+                <% @allotments.each do |allotment| %>
+                <% if allotment.request_status == "cancelled" || allotment.request_status == "declined"%>
+                <% if current_user.garden %>
+                <%= render "shared/booking/content_owner", allotment: allotment %>
+                <% else %>
+                <%= render "shared/booking/content_user", allotment: allotment %>
+                <% end %>
+                <% elsif allotment.request_status.empty? %>
+                <div class="no-requests">
+                  <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
+                </div>
+                <% end %>
+                <% end %>
+                <% end %>
+              </div>
+            </div>
