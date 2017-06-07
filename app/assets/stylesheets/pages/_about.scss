@@ -1,0 +1,25 @@
+.about-link {
+  display: inline-block;
+  position: relative;
+  span {
+    border-bottom: 7px solid #8ee18e;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  &:hover {
+    color: black;
+  }
+}
+
+.about-text {
+  line-height: 26px;
+}
+
+.about-image {
+  display: block;
+  width: 250px;
+  margin: 40px auto;
+}
