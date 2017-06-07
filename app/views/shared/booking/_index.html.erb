@@ -1,27 +1,27 @@
 <div class="container">
   <div class="booking-welcome-text">
-    <h2>Hi <%= @current_user.first_name %>, <small> these are your bookings</small></h2>
+    <h2>Hi <%= @current_user.first_name %>, <small> dit zijn jouw boekingen</small></h2>
    </div>
   <div class="tabs text-align:center">
     <a class="tab active" data-target="#pending">
       <div class="tab-elements">
         <div class="circle-tab">
           <i class="fa fa-question fa-2x"></i></div>
-        <div class="tab-text"><p>pending</p></div>
+        <div class="tab-text"><p>in afwachting</p></div>
       </div>
     </a>
     <a class="tab" data-target="#accepted">
      <div class="tab-elements">
       <div class="circle-tab">
         <i class="fa fa-check fa-2x"></i></div>
-      <div class="tab-text"><p>accepted</p></div>
+      <div class="tab-text"><p>geaccepteerd</p></div>
      </div>
     </a>
     <a class="tab" data-target="#canceled">
     <div class="tab-elements">
      <div class="circle-tab">
         <i class="fa fa-times fa-2x"></i></div>
-         <div class="tab-text"><p>cancelled</p> </div>
+         <div class="tab-text"><p>afgewezen</p> </div>
         </div>
     </a>
   </div>
@@ -29,7 +29,7 @@
   <div class="tab-content" id="pending">
     <% if @allotments.empty? %>
       <div class="no-requests">
-        <h2><small>At the moment you have no pending bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+        <h2><small>Op het moment heb je geen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
       </div>
     <% else %>
       <% @allotments.each do |allotment| %>
@@ -41,7 +41,7 @@
          <% end %>
        <% elsif allotment.request_status.empty? %>
         <div class="no-requests">
-          <h2><small>At the moment you have no pending bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+          <h2><small>Op het moment heb je geen boekingen in afwachting. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
         </div>
        <% end %>
      <% end %>
@@ -51,7 +51,7 @@
   <div class="tab-content hidden" id="accepted">
     <% if @allotments.empty? %>
        <div class="no-requests">
-        <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+        <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
       </div>
       <% else %>
         <% @allotments.each do |allotment| %>
@@ -63,7 +63,7 @@
             <% end %>
           <% elsif allotment.request_status.empty? %>
             <div class="no-requests">
-              <h2><small>At the moment you have no accepted bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+              <h2><small>Op het moment heb je geen geaccepteerde boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
             </div>
           <% end %>
         <% end %>
@@ -72,7 +72,7 @@
   <div class="tab-content hidden" id="canceled">
     <% if @allotments.empty? %>
      <div class="no-requests">
-      <h2><small>At the moment you have no cancelled bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+      <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
     </div>
     <% else %>
       <% @allotments.each do |allotment| %>
@@ -84,7 +84,7 @@
           <% end %>
         <% elsif allotment.request_status.empty? %>
           <div class="no-requests">
-            <h2><small>At the moment you have no cancelled bookings. <br> You can checkout the gardens in your neighbourhood <%= link_to 'here', gardens_path, {class: "link" } %></small></h2>
+            <h2><small>Op het moment heb je geen afgewezen boekingen. <br> Je kan <%= link_to 'hier', gardens_path, {class: "link" } %> tuinen bij jou in de buurt bekijken</small></h2>
           </div>
         <% end %>
       <% end %>

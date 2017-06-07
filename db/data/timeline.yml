@@ -1,9 +1,9 @@
-- title: FIND
-  content: Find a garden in your neighbourhood
+- title: VIND
+  content: Vind een tuin bij jou in de buurt
   icon: fa fa-search
-- title: CONNECT
-  content: Connect with the greenhost
+- title: KOM IN CONTACT
+  content: Zoek contact met de eigenaar
   icon: fa fa-comments
-- title: GROW
-  content: Grow your own veggies
+- title: GROEI
+  content: Groei je eigen planten
   icon: fa fa-pagelines

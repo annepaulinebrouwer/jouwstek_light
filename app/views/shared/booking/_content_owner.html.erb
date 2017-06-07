@@ -11,10 +11,10 @@
   <div class="booking-item-message"><%= allotment.message %></div>
   <div class="booking-item-side">
     <div><% if allotment.request_status == "pending" %>
-      <%= link_to "accept", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm booking-item-btn", method: :patch %>
-      <%= link_to "decline", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm booking-item-btn", method: :patch %>
+      <%= link_to "accepteer", accept_owner_allotment_path(allotment), class: "btn btn-success btn-sm booking-item-btn", method: :patch %>
+      <%= link_to "afwijzen", decline_owner_allotment_path(allotment), class: "btn btn-danger btn-sm booking-item-btn", method: :patch %>
       <% elsif allotment.request_status == "accepted" %>
-      <%= link_to "write review", new_owner_allotment_user_review_path(allotment), class: "btn btn-success btn-sm" %>
+      <%= link_to "schrijf review", new_owner_allotment_user_review_path(allotment), class: "btn btn-success btn-sm" %>
     <% end %>
   </div>
  </div>

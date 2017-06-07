@@ -177,7 +177,7 @@
   <div class="col-sm-offset-3 col-sm-3">
     <%= link_to gardens_path do %>
     <div class="count-card">
-      <p> See all our <span class="count"> <%= Garden.count %></span> gardens </p>
+      <p> Bekijk al onze <span class="count"> <%= Garden.count %></span> tuinen </p>
     </div>
     <% end %>
   </div>
@@ -185,7 +185,7 @@
   <div class="col-sm-3">
     <%= link_to new_user_registration_path, { "data-toggle": "modal", "data-target": "#sign-up" } do %>
     <div class="count-card">
-      <p> Become one of our <span class="count"><%= User.count %></span> greenkeepers </p>
+      <p> Wordt een van onze <span class="count"><%= User.count %></span> Stek eigenaren. </p>
     </div>
     <% end %>
   </div>
@@ -219,7 +219,7 @@
     </div>
   </div>
 </div>
-<div class=" how-to text-center"><p> Want to share some space in your garden? <%= link_to "Become a greenhost", new_owner_garden_path, {class: "link"} %> </p></div>
+<div class=" how-to text-center"><p> Wil je ruimte delen in jouw tuin? <%= link_to "Wordt een Stek eigenaar", new_owner_garden_path, {class: "link"} %> </p></div>
 </div>
 
 

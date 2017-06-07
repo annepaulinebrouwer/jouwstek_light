@@ -4,22 +4,22 @@
  * ------------------------------------- */
 
 
-#hex-container{
+ #hex-container{
   position: relative;
 }
 
 .cirle-arrow {
   width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    left: 48%;
-    top: -25px;
-    z-index: 2;
-    line-height: 50px;
-    font-size: 30px;
-    text-align: center;
-    background-color: white;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 48%;
+  top: -25px;
+  z-index: 2;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  background-color: white;
 }
 
 .counters {
@@ -47,8 +47,8 @@
 }
 
 .count-card:hover {
-background-color: #8ee18e;
-opacity: 0.5;
+  background-color: #8ee18e;
+  opacity: 0.5;
 }
 
 .count {
@@ -63,11 +63,11 @@ opacity: 0.5;
 
 .marker-name {
   a {
-text-decoration: none;
-color: black;
-}
-a:hover{
-  opacity: 0.7;
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    opacity: 0.7;
   }
 }
 
@@ -102,31 +102,30 @@ a:hover{
 
 
 .container-tips {
-padding-right: 5em;
-padding-left: 5em;
+  padding-right: 5em;
+  padding-left: 5em;
 }
 
 .testimonial-picture {
-  // width: 350px;
-  // height: 350px;
-  // object-fit: cover
-   margin-right: auto;
-    margin-left: auto;
-  }
+  height: 200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-  .card-testimonial {
-    width: 300px;
-    margin-right: auto;
-    margin-left: auto;
-    p {
-      text-align: center;
-      margin-top: 10px;
-    }
+.card-testimonial {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  p {
+    text-align: center;
+    margin-top: 10px;
   }
+}
 
 .section-title-border-testimonial {
-width: 320px;
-background-color: #8ee18e;
-    height: 3px;
-    margin: 0 auto;
+  width: 320px;
+  background-color: #8ee18e;
+  height: 3px;
+  margin: 0 auto;
 }
