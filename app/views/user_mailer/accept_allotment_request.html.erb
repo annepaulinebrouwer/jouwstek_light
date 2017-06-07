@@ -1,19 +1,3 @@
-<p>Hallo <%=@user.first_name %></p>
-<br>
-<p>
-	<%= @owner.first_name%> heeft je verzoek voor de tuin op de <%=@garden.address %> geaccepteerd. Het tuinieren kan beginnen! Neem contact op met de eigenaar van de tuin en plan een kennismaking in. 
-</p>
-<br>
-<p>
-	Dit was jouw bericht naar de eigenaar:
-	<%= @allotment.message %>
-</p>
-<br>
-<p>
-	Mocht je nog vragen hebben dan kan je contact opnemen met <%= @owner.first_name%> via dit email adres: <%= @owner.email %>
-</p>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -245,7 +229,7 @@
 			<tr>
 				<td bgcolor="#ffffff" style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: center;">
 					<p style="margin: 0;">
-						<%= @owner.first_name%> heeft je verzoek voor de tuin op de <strong><%=@garden.address %></strong> geaccepteerd. Het tuinieren kan beginnen! Neem contact op met <%= @owner.first_name%> via dit email adres: <strong><%= @owner.email %></strong> en plan een kennismaking in.<br><br>
+						<%= @owner.first_name%> heeft je verzoek voor de tuin op de <strong><%=@garden.address %></strong> geaccepteerd. Het tuinieren kan beginnen! Neem contact op met Raksha van de Gezonde Stad via dit email adres: <strong><a href="mailto:info@jouwstek.org?Subject=Meer%20info">info@jouwstek.org</a></strong>.<br><br>
 						Dit was jouw bericht naar de eigenaar:
 						<br><br><strong><%= @allotment.message%></strong><br>
 					</p>

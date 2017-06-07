@@ -48,8 +48,11 @@
   </div>
 
   <% if !current_user.garden %>
-
+  <% if params[:controller] == "pages" && params[:action] == "home" %>  
+  <%= link_to "start met delen", new_owner_garden_path, {class: "navbar-wagon-item btn-success-inverted"} %>
+  <% else %>
   <%= link_to "start met delen", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
+  <% end %>
 
   <% end %>
 

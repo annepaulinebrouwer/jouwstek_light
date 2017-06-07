@@ -18,7 +18,7 @@
   width: 3px;
   z-index: 0;
   // padding-top: 100px 0;
-  margin: 40px 0px;
+  margin: 45px 0px;
   margin-right: -26px;
 }
 
@@ -59,8 +59,16 @@
 }
 
 @media (min-width: 600px) {
+  .timeline-item {
+    justify-content: space-between;
+  }
   .timeline-item-info {
     flex-direction: row;
+    flex: 1 0 auto;
+    justify-content: space-between;
+  }
+  .timeline-item-description {
+    text-align: right;
   }
 }
 
