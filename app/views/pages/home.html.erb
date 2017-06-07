@@ -1,12 +1,12 @@
 
-<div class="banner" style="background:url(<%= cl_image_path @home.background_image %>) fixed;">
+<div class="banner" style="background-image:url(<%= cl_image_path @home.background_image %>);">
   <div class="banner-content">
     <h1><%= @home.header_1 %></h1>
     <h2><%= @home.header_2 %></h2>
   </div>
 </div>
 
-<div class="container" id="hex-container">
+<div class="container hidden-xs" id="hex-container">
   <div class="cirle-arrow">
     <a href="#hex-container"><i class="fa fa-angle-down" style="color: black;"></i></a>
   </div>
@@ -144,7 +144,7 @@
 </div>
 
 <div class="timeline-container">
-  <div class="timeline-bar">
+  <div class="timeline-bar hidden-xs">
     <div class="timeline-bar-starter">
     </div>
     <div class="timeline-bar-body">
@@ -230,7 +230,7 @@
       <% @recommendations.each do |recommendation| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card-testimonial">
-          <%= cl_image_tag(recommendation.photo, class: "avatar-xxl", style: "margin-left: 6%") %>
+          <%= cl_image_tag(recommendation.photo, class: "avatar-xxl") %>
           <div class="section-title-border-testimonial"></div>
           <p> 
             <%= recommendation.content %>

@@ -1,15 +1,15 @@
   <!-- Logo -->
   <% if params[:controller] == "pages" && params[:action] == "home" %>  
-    <div class="navbar-wagon flex-end">
-  <% else %>
+  <div class="navbar-wagon flex-end">
+    <% else %>
     <div class="navbar-wagon space-between">
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo_white.png" %>
-    <% end %>
-  <% end %>
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo_white.png" %>
+      <% end %>
+      <% end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right">
 <!-- LOGGED IN: logo, about, search, my profile, my bookings, my gardens, log out, message
   NOT LOGGED IN: logo, about, search, login, join -->
 
@@ -26,7 +26,10 @@
       <% if current_user.first_name.nil? %>
       <%= link_to "Jouw profiel", user_profile_path, class:"user-name" %>
       <% else %>
-      <%= link_to current_user.first_name, user_profile_path, class:"user-name" %>
+      <%= link_to user_profile_path, class:"user-name" do %>
+      <%= current_user.first_name %>
+      <span class="green-underline"></span>
+      <% end %>
       <% end %>
       <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -46,7 +49,7 @@
 
   <% if !current_user.garden %>
 
-  <%= link_to "start sharing", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
+  <%= link_to "start met delen", new_owner_garden_path, {class: "navbar-wagon-item btn-success"} %>
 
   <% end %>
 
