@@ -4,8 +4,15 @@ class AllotmentsController < ApplicationController
      before_action :find_garden, only: [ :create ]
 
   def new
-    @allotment = Allotment.new
-    @garden = find_garden
+
+    if current_user.profile_complete? == true
+      @allotment = Allotment.new
+      @garden = find_garden
+    else
+      redirect_to edit_user_profile_path
+      flash[:notice] = "Je bent twee stappen verwijderd van het boeken van deze Stek. Zorg eerst dat je profiel compleet is, daarna kan je de tuin boeken!"
+    end
+
   end
 
   def create
@@ -16,7 +23,7 @@ class AllotmentsController < ApplicationController
 
 
     if @allotment.save
-      UserMailer.request_allotment(current_user, @allotment).deliver_now
+      UserMailer.request_allotment(current_user.id, @allotment).deliver_now
       redirect_to user_allotments_path
     else
       render :new
