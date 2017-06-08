@@ -28,7 +28,7 @@
                 <div class="review-cards-user">
                   <%= link_to user_profile_path(@user) do %>
                     <div class="circle">
-                      <%= cl_image_tag review.user.photo, class: "avatar-medium", id: "avatar-review" %>
+                      <%= cl_image_tag review.owner.photo, class: "avatar-medium", id: "avatar-review" %>
                     </div>
                   <% end %>
                   <div class="review-name">
