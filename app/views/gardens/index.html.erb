@@ -1,74 +1,56 @@
-<div class="container-index">
-<div class="container-gardens" style="padding-top: 20px">
-<h2 class="text-center">Waar zou je willen tuinieren? </h2>
-  <div class="row">
-    <% @gardens.each do |garden|%>
+<div class="container-index hidden-xs">
+  <div class="container-gardens" style="padding-top: 20px">
+    <h2 class="text-center">Waar zou je willen tuinieren? </h2>
+    <div class="row">
+      <% @gardens.each do |garden|%>
       <% if garden.available == true %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card" style="background: url('<%= garden.photo %>');">
+          <div class="card-hover">
+            <h2><%= garden.title %></h2>
+            <p><%= truncate(garden.description, length: 300) %></p>
+            <div id="garden-address">
+             <p ><%= garden.address %>, <%= garden.city %> </p>
+           </div>
+         </div>
+         <%= link_to "", garden_path(garden), { class: "card-link" } %>
+       </div>
+     </div>
+     <% end %>
+     <% end %>
+   </div>
+ </div>
+</div>
+
+
+ <div class="container-map hidden-xs">
+    <%= render "shared/map", gardens: @gardens%>
+ </div>
+</div>
+
+<div class="row hidden-sm hidden-md hidden-lg">
+  <div class="col-xs-12">
+   <div class="container-gardens" style="padding-top: 20px">
+        <h2 class="text-center">Waar zou je willen tuinieren? </h2>
+        <div class="row">
+          <% @gardens.each do |garden|%>
+          <% if garden.available == true %>
           <div class="col-xs-12 col-sm-6">
             <div class="card" style="background: url('<%= garden.photo %>');">
               <div class="card-hover">
                 <h2><%= garden.title %></h2>
-              <p><%= truncate(garden.description, length: 300) %></p>
-                 <div id="garden-address">
+                <p><%= truncate(garden.description, length: 300) %></p>
+                <div id="garden-address">
                  <p ><%= garden.address %>, <%= garden.city %> </p>
-                 </div>
-              </div>
-              <%= link_to "", garden_path(garden), { class: "card-link" } %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-<div class="container-map">
-<%= render "shared/map", gardens: @gardens%>
-</div>
-</div>
-<!--
-<div class="positioning">
- <div class="hexagon hexagon1">
-  <div class="hexagon-in1">
-    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
-  </div>
- </div>
-</div>
-
-<div class="positioning">
- <div class="hexagon hexagon1">
-  <div class="hexagon-in1">
-    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
-  </div>
- </div>
-</div>
-
-<div class="positioning">
- <div class="hexagon hexagon1">
-  <div class="hexagon-in1">
-    <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
-  </div>
- </div>
-</div> -->
-
-<!-- <div class="odd">
- <div class="positioning">
-   <div class="hexagon hexagon1">
-    <div class="hexagon-in1">
-      <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
-    </div>
+               </div>
+             </div>
+             <%= link_to "", garden_path(garden), { class: "card-link" } %>
+           </div>
+         </div>
+         <% end %>
+         <% end %>
+       </div>
+     </div>
    </div>
  </div>
-
-
-
- <div class="positioning">
-   <div class="hexagon hexagon1">
-    <div class="hexagon-in1">
-      <div class="hexagon-in2" style= "background-image: url(http://placekitten.com/241/241)"></div>
-    </div>
-   </div>
- </div>
-</div> -->
-
-
 
