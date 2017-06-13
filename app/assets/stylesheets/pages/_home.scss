@@ -122,9 +122,35 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
+  position: relative;
   p {
     text-align: center;
     margin-top: 10px;
+  }
+  &:hover .description {
+    opacity: 0.8;
+    p {
+      opacity: 1;
+    }
+  }
+  .description {
+    transition: opacity 200ms ease;
+    opacity: 0;
+    background-color: white;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+    }
   }
 }
 
