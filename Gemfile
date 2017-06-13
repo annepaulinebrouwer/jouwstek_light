@@ -21,6 +21,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem "markerclustererplus-rails"
 gem 'omniauth-facebook'
+gem 'redcarpet'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

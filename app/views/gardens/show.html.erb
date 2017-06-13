@@ -2,4 +2,4 @@
 <% content_for :meta_description, @garden.description %>
 <% content_for :meta_image, @garden.photos.first.url %>
 
-<%= render "shared/show_garden", garden: @garden %>
+<%= render partial: "shared/show_garden", locals: { garden: @garden, markdown: @markdown } %>

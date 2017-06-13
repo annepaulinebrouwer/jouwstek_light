@@ -45,7 +45,7 @@
 
   <div id="container-garden-details">
     <div class="garden-description">
-     <p> <%= garden.description %></p>
+     <p> <%= @markdown.render(garden.description).html_safe %></p>
    </div>
    <div class="button-garden-view">
     <% if user_signed_in? && current_user.garden %>

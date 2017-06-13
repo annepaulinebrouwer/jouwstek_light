@@ -4,6 +4,7 @@ module Owner
     before_action :find_garden, only: [ :show, :edit, :update, :destroy ]
 
     def show
+      @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {})
     end
 
     def new
@@ -45,27 +46,27 @@ module Owner
       end
     end
 
-  private
+    private
 
-  def garden_params
-    params.require(:garden).permit(
-      :title,
-      :description,
-      :address,
-      :city,
-      :available,
-      :photo,
-      :photo_cache,
-      :photo2,
-      :photo2_cache,
-      :photo3,
-      :photo3_cache
-    )
+    def garden_params
+      params.require(:garden).permit(
+        :title,
+        :description,
+        :address,
+        :city,
+        :available,
+        :photo,
+        :photo_cache,
+        :photo2,
+        :photo2_cache,
+        :photo3,
+        :photo3_cache
+        )
+    end
+
+    def find_garden
+      @garden = current_user.garden
+    end
+
   end
-
-  def find_garden
-    @garden = current_user.garden
-  end
-
-end
 end
