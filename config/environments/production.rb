@@ -78,6 +78,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_controller.asset_host = 'http://jouwstek.org'
+  config.action_mailer.asset_host = config.action_controller.asset_host
+
   # postmark mailer configuratie
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
