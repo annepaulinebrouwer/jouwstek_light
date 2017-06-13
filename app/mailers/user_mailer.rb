@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-include EmailHelper
+	helper EmailHelper
 	def request_allotment(user_id, allotment)
 		@user = User.find(user_id)
 		@allotment = allotment
