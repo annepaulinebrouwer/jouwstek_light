@@ -10,6 +10,13 @@
   margin-top: 30px;
 }
 
+
+@media (max-width: 600px) {
+  .swipebox2 {
+    flex-direction: column;
+  }
+}
+
 #container-garden-details {
   display: flex;
   max-width: 900px;
