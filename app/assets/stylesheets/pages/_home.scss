@@ -3,8 +3,12 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+.video-box {
+  margin: 40px auto;
+  display: block;
+}
 
- #hex-container{
+#hex-container{
   position: relative;
 }
 
