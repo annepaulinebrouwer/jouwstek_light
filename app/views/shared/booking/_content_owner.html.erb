@@ -1,7 +1,7 @@
 
 <div class="booking-item">
   <div class="booking-item-user">
-   <div><%= link_to image_tag(allotment.user.photo, class: "avatar-large"), user_path(allotment.user) %></div>
+   <div><%= link_to cl_image_tag(allotment.user.photo, cl_image_options_avatar_large(class: "avatar-large")), user_path(allotment.user) %></div>
     <div class="booking-item-user-name"><%= allotment.user.fullname %></div>
   </div>
   <div class="booking-item-data">

@@ -1,11 +1,11 @@
 <div class="booking-item">
   <div class="booking-item-owner">
     <div class="booking-picture">
-    <%= link_to image_tag(allotment.garden.owner.photo, class: "avatar-small"), user_path(allotment.garden.owner)%>
+    <%= link_to cl_image_tag(allotment.garden.owner.photo, cl_image_options_avatar_large(class: "avatar-small")), user_path(allotment.garden.owner)%>
     </div>
     <div><%= allotment.garden.owner.fullname %></div>
   </div>
-  <div class="booking-item-thumb"><%= link_to image_tag(allotment.garden.photo, class: "avatar-large"), garden_path(allotment.garden)%></div>
+  <div class="booking-item-thumb"><%= link_to cl_image_tag(allotment.garden.photo, cl_image_options_avatar_large(class: "avatar-large")), garden_path(allotment.garden)%></div>
 <div class="booking-item-infos">
   <div class="booking-item-street"><%= allotment.garden.address %></div>
   <div class="booking-item-city"><%= allotment.garden.city %></div>

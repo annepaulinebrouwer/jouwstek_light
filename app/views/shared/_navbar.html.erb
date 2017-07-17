@@ -31,7 +31,7 @@
       <span class="green-underline"></span>
       <% end %>
       <% end %>
-      <%= image_tag current_user.photo, class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"%>
+      <%= cl_image_tag current_user.photo, cl_image_options_avatar_thumb(class:"avatar-small dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown")%>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to t(".profile", default: "Profiel"), user_profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% if current_user.garden %>

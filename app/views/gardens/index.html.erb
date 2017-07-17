@@ -2,10 +2,10 @@
   <div class="container-gardens" style="padding-top: 20px">
     <h2 class="text-center">Waar zou je willen tuinieren? </h2>
     <div class="row">
-      <% @gardens.each do |garden|%>
+      <% @gardens.reverse.each do |garden|%>
       <% if garden.available == true %>
       <div class="col-xs-12 col-sm-6">
-        <div class="card" style="background: url('<%= garden.photo %>');">
+        <div class="card" style="background: url('<%= cl_image_path(garden.photo, cl_image_options_card_extra_large) %>');">
           <div class="card-hover">
             <h2><%= garden.title %></h2>
             <p><%= truncate(garden.description, length: 300) %></p>
@@ -33,10 +33,10 @@
    <div class="container-gardens" style="padding-top: 20px">
         <h2 class="text-center">Waar zou je willen tuinieren? </h2>
         <div class="row">
-          <% @gardens.each do |garden|%>
+          <% @gardens.reverse.each do |garden|%>
           <% if garden.available == true %>
           <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background: url('<%= garden.photo %>');">
+            <div class="card" style="background: url('<%= cl_image_path(garden.photo, cl_image_options_card_large) %>');">
               <div class="card-hover">
                 <h2><%= garden.title %></h2>
                 <p><%= truncate(garden.description, length: 300) %></p>

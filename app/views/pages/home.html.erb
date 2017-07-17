@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image:url(<%= cl_image_path @home.background_image %>);">
+<div class="banner" style="background-image:url(<%= cl_image_path @home.background_image, cl_image_options_banner_extra_large %>);">
   <div class="banner-content">
     <h1><%= @home.header_1 %></h1>
     <h2><%= @home.header_2 %></h2>
@@ -194,10 +194,10 @@
 
 <div class="container" style="padding-top: 80px; padding-bottom: 50px">
   <div class="row">
-    <% @gardens[0..1].each do |garden|%>
+    <% @gardens.reverse[0..1].each do |garden|%>
     <% if garden.available == true %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background: url('<%= garden.photo %>');">
+      <div class="card" style="background: url('<%= cl_image_path(garden.photo, cl_image_options_card_extra_large) %>');">
         <div class="card-hover">
           <h2><%= garden.title %></h2>
           <p><%= truncate(garden.description, length: 310) %></p>
@@ -230,7 +230,7 @@
       <% @recommendations.each do |recommendation| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card-testimonial">
-          <%= cl_image_tag(recommendation.photo, class: "avatar-xxl") %>
+          <%= cl_image_tag(recommendation.photo, cl_image_options_card_medium(class: "avatar-xxl")) %>
           <div class="section-title-border-testimonial"></div>
           <p> 
             <%= recommendation.content %>
