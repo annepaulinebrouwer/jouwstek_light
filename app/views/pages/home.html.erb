@@ -98,7 +98,7 @@
       <% @recommendations.each do |recommendation| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card-testimonial">
-          <%= cl_image_tag(recommendation.photo, cl_image_options_card_medium(class: "avatar-xxl")) %>
+          <%= cl_image_tag(recommendation.photo, cl_image_options_card_large(class: "avatar-xxl")) %>
           <div class="section-title-border-testimonial"></div>
           <p> 
             <%= recommendation.content %>
