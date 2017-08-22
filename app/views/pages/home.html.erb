@@ -11,6 +11,12 @@
 <h2 class="text-center">JOUW STEK LANCERING</h2>
   <iframe class="video-box" width="560" height="315" src="https://www.youtube.com/embed/fZmV6lPqZsg" frameborder="0" allowfullscreen></iframe>
 
+<div>
+    <%= link_to gardens_path do %> 
+      <h2 class="text-center"> Bekijk alle <span class="count"> <%= Garden.count %></span> tuinen in Amsterdam </h2>
+    <% end %>
+</div>
+
 <div class="timeline-container">
   <div class="timeline-bar">
     <div class="timeline-bar-starter">
