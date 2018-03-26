@@ -1,7 +1,13 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://www.jouwstek.org" }
+  config.action_mailer.default_url_options = { host: "https://www.jouwstek.org" }
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_controller.asset_host = 'https://jouwstek.org'
+  config.action_mailer.asset_host = config.action_controller.asset_host
 
+  # postmark mailer configuratie
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "https://jouwstek.org" }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -78,11 +84,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_controller.asset_host = 'http://jouwstek.org'
-  config.action_mailer.asset_host = config.action_controller.asset_host
 
-  # postmark mailer configuratie
-  config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
-  config.action_mailer.default_url_options = { host: "http://jouwstek.org" }
 end
