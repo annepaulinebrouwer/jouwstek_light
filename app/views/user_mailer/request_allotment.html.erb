@@ -214,7 +214,7 @@
 			<!-- Hero Image, Flush : BEGIN -->
 			<tr>
 				<td bgcolor="#ffffff">
-				<div class="banner" style="background-image:url('<%= cl_image_path @garden.photo %>');background-size:cover;width:100%;height:200px;"></div>
+				<div class="banner" style="background-image:url('<%= cl_image_path @garden.photo, cl_image_options_banner_large %>');background-size:cover;width:100%;height:200px;"></div>
 			
 				</td>
 			</tr>
@@ -234,7 +234,7 @@
 						<%= @user.first_name%> heeft je het volgende bericht gestuurd:
 						<br><br><strong><%= @allotment.message%></strong><br><br>
 						Bekijk het profiel van <%= @user.first_name%> <%= link_to "hier", user_url(@user.id) %>.<br>
-						Geef op <%= link_to "deze pagina", owner_allotments_url%> aan of je het verzoek aanneemt of weigert.<br> Mocht je nog vragen hebben dan kan je contact opnemen met <%= @user.first_name%> via dit email adres: <%= @user.email %>
+						Geef op <%= link_to "deze pagina", owner_allotments_url%> aan of je het verzoek aanneemt of weigert.<br><br> Mocht je nog vragen hebben dan kan je contact opnemen met Raksha van de Gezonde Stad via dit email adres: <a href="mailto:info@jouwstek.org?Subject=Meer%20info">info@jouwstek.org</a>
 					</p>
 				</td>
 			</tr>

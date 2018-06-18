@@ -1,7 +1,7 @@
-<div class="garden-photo">
+<div class="">
   <% garden.photos.each do |photo| %>
   <%= link_to photo.url, class: "swipebox", id: "swipebox-first" do %>
-  <%= cl_image_tag photo, class: "garden-image" %>
+  <%= cl_image_tag photo, cl_image_options_banner_extra_large(class: "garden-image") %>
   <% end %>
   <% end %>
 </div>
@@ -12,7 +12,7 @@
       <%= link_to gardens_path do %>
       <div class="search-results ">
         <div class="fa fa-chevron-left icon"></div>
-        <div class="link">To all gardens</div>
+        <div class="link">Naar alle tuinen</div>
       </div>
       <% end  %>
     </div>
@@ -29,13 +29,13 @@
            <%= garden.address %> 
          </p> 
          <p>
-         Created at: <%= garden.created_at.strftime("%d-%m-%Y") %> 
+         Geplaatst op <%= garden.created_at.strftime("%d-%m-%Y") %> 
          </p>
        </div>
      </div>
      <div class="avatar-user-container">
        <div class="avatar-user">
-         <%= link_to image_tag(garden.owner.photo, class: "avatar-small"), user_path(garden.owner), { class: "avatar-link card-user" } %>
+         <%= link_to cl_image_tag(garden.owner.photo, cl_image_options_avatar_thumb( class: "avatar-small")), user_path(garden.owner), { class: "avatar-link card-user" } %>
        </div>
        <div class="garden-owner-fullname">
         <%= @garden.owner.fullname %>
@@ -50,13 +50,13 @@
    <div class="button-garden-view">
     <% if user_signed_in? && current_user.garden %>
     <% else %>
-    <div class="button-garden"><%= link_to "Book this Garden", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
+    <div class="button-garden"><%= link_to "Tuinier in deze tuin", new_garden_allotment_path(@garden), {class: "btn btn-success" } %></div>
     <% end %>
     <% if user_signed_in? %>
     <% if current_user.garden == garden %>
     <div class="buttons-garden"><%= link_to "", edit_owner_garden_path, class:"fa fa-pencil" %>
     </div>
-    <div class="buttons-garden"><%= link_to "", owner_garden_path, method: :delete, class:"fa fa-trash-o" %></div>
+    <div class="buttons-garden"><%= link_to "", owner_garden_path, method: :delete, data: {confirm: "Weet je zeker dat je tuin wil verwijderen?"}, class:"fa fa-trash-o" %></div>
     <% end %>
     <% end %>
   </div>
@@ -66,7 +66,7 @@
   <div class="swipebox2">
     <% garden.photos.each do |photo| %>
     <%= link_to photo.url, class: "swipebox" do %>
-    <%= cl_image_tag photo, class: "garden-photo-swipebox" %>
+    <%= cl_image_tag photo, cl_image_options_banner_large(class: "garden-photo-swipebox") %>
     <% end %>
     <% end %>
   </div>
@@ -75,7 +75,7 @@
 <% if current_user != @garden.owner %>
 <div id="container-garden-owner">
   <div class="garden-description">
-    <h4>Some words about <%= garden.owner.first_name %></h4>
+    <h4>Leer onze Stek-Eigenaar <%= garden.owner.first_name %> kennen:</h4>
     <br>
     <p><%= @garden.owner.description %></p>
   </div>
@@ -97,7 +97,7 @@
       <div class="col-xs-12 col-sm-6" >
         <div class="review-cards" >
           <div class="circle">
-            <%= cl_image_tag review.user.photo, class: "avatar-medium", id: "avatar-review" %>
+            <%= cl_image_tag review.user.photo, cl_image_options_avatar_medium(class: "avatar-medium", id: "avatar-review") %>
           </div>
           <div class="review-name">
             <p> <%= review.user.fullname %></p>

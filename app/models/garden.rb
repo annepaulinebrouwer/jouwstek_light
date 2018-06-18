@@ -8,7 +8,7 @@ class Garden < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode, if: :full_address_changed?
 
-  validates :address, uniqueness: true, presence: true
+  validates :address, presence: true
   validates :description, :title, :photo, :city, presence: true
 
   mount_uploader :photo, PhotoUploader

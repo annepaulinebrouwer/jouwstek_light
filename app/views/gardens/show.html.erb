@@ -1,5 +1,5 @@
-<% content_for :meta_title, "#{@garden.title} - Greenthumbs" %>
+<% content_for :meta_title, "#{@garden.title} - Jouw Stek" %>
 <% content_for :meta_description, @garden.description %>
 <% content_for :meta_image, @garden.photos.first.url %>
 
-<%= render "shared/show_garden", garden: @garden %>
+<%= render partial: "shared/show_garden", locals: { garden: @garden, markdown: @markdown } %>

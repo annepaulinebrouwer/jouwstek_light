@@ -11,7 +11,7 @@ class User::AllotmentsController < ApplicationController
      if @allotment.save
       redirect_to user_allotments_path
     else
-      flash[:warning] = 'Canceling the garden did not work'
+      flash[:warning] = 'Het was niet mogelijk om de boeking te annuleren'
       redirect_to user_allotments_path
     end
   end

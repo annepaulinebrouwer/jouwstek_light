@@ -1,21 +1,22 @@
 <div class="booking-item">
-  <div class="booking-item-thumb"><%= link_to image_tag(allotment.garden.photo, class: "avatar-large"), garden_path(allotment.garden)%></div>
+  <div class="booking-item-owner">
+    <div class="booking-picture">
+    <%= link_to cl_image_tag(allotment.garden.owner.photo, cl_image_options_avatar_large(class: "avatar-small")), user_path(allotment.garden.owner)%>
+    </div>
+    <div><%= allotment.garden.owner.fullname %></div>
+  </div>
+  <div class="booking-item-thumb"><%= link_to cl_image_tag(allotment.garden.photo, cl_image_options_avatar_large(class: "avatar-large")), garden_path(allotment.garden)%></div>
 <div class="booking-item-infos">
   <div class="booking-item-street"><%= allotment.garden.address %></div>
   <div class="booking-item-city"><%= allotment.garden.city %></div>
 </div>
-<div class="booking-item-text">
-  <div class="booking-item-owner">
-    <div class="booking-picture"><%= link_to image_tag(allotment.garden.owner.photo, class: "avatar-small"), user_path(allotment.garden.owner)%></div>
-    <div><%= allotment.garden.owner.fullname %></div>
-  </div>
-  <div class="booking-item-message"><%= allotment.message %></div>
+<div class="booking-item-message"><%= allotment.message %></div>
+<div class="booking-item-data">
+  <%= allotment.start_day.strftime("%A, %b %d")%>
+  <br>
+  <%= allotment.end_day.strftime("%A, %b %d")%>
 </div>
   <div class="booking-item-side">
-    <div class="booking-item-data">
-      <div><%= allotment.start_day.strftime("%A, %b %d")%></div>
-      <div><%= allotment.end_day.strftime("%A, %b %d")%></div>
-    </div>
     <div class="booking-item-btn"><% if allotment.request_status == "pending" %>
       <%= link_to "cancel", cancel_user_allotment_path(allotment), class: "btn btn-success btn-sm", method: :patch %>
       <% elsif allotment.request_status == "accepted" %>

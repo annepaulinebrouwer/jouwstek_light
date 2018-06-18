@@ -10,6 +10,13 @@
   margin-top: 30px;
 }
 
+
+@media (max-width: 600px) {
+  .swipebox2 {
+    flex-direction: column;
+  }
+}
+
 #container-garden-details {
   display: flex;
   max-width: 900px;
@@ -158,9 +165,9 @@
 }
 
 #avatar-owner-garden {
-position: absolute;
-top: 50px;
-right: 50px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
 }
 
 .garden-photo {
@@ -179,6 +186,7 @@ right: 50px;
 .garden-description {
   width: 100%;
   margin: 0px auto;
+  line-height: 30px;
 }
 
 .search-results {
@@ -212,33 +220,33 @@ right: 50px;
 }
 #swipebox-next, #swipebox-prev{
  position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    background: white;
-    height: 4px;
-    width: 15px;
-    top: 0px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    transform: rotate(45deg) translateY(-6px)
-  }
+ &:after {
+  content: '';
+  position: absolute;
+  background: white;
+  height: 4px;
+  width: 15px;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(45deg) translateY(-6px)
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    background: white;
-    height: 4px;
-    width: 15px;
-    left: 0;
-    margin: auto;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    transform: rotate(-45deg) translateY(6px)
-  }
+&:before {
+  content: '';
+  position: absolute;
+  background: white;
+  height: 4px;
+  width: 15px;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotate(-45deg) translateY(6px)
+}
 }
 
 #swipebox-prev {

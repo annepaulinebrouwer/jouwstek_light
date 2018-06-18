@@ -12,10 +12,11 @@ class Owner::AllotmentsController < ApplicationController
   def accept
     @allotment.request_status = "accepted"
     if @allotment.save
-      redirect_to owner_allotments_path
+      redirect_to owner_allotments_path(accepted: "active")
+      flash[:notice] = "#{@allotment.user.first_name} is geaccepteerd!"
       UserMailer.accept_allotment_request(@allotment).deliver_now
     else
-      flash[:warning] = 'Canceling the garden did not work'
+      flash[:warning] = 'Het is niet mogelijk de boeking te accepteren. Neem contact op met info@jouwstek.org'
       redirect_to owner_allotments_path
     end
   end
@@ -26,7 +27,7 @@ class Owner::AllotmentsController < ApplicationController
       redirect_to owner_allotments_path
       UserMailer.decline_allotment_request(@allotment).deliver_now
     else
-      flash[:warning] = 'Declining the garden did not work'
+      flash[:warning] = 'Het is niet mogelijk de boeking te weigeren. Neem contact op met info@jouwstek.org'
       redirect_to owner_allotments_path
     end
   end

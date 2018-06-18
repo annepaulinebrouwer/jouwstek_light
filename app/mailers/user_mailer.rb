@@ -1,12 +1,14 @@
 class UserMailer < ApplicationMailer
-
-	def request_allotment(user, allotment)
-		@user = user
+	helper PhotoHelper
+	def request_allotment(user_id, allotment)
+		@user = User.find(user_id)
 		@allotment = allotment
 		@garden = allotment.garden
 		@owner = @garden.owner
 		
+		mail(to: "hello@paulabrouwer.com", subject: "#{@user.first_name} is geinteresseerd in je tuin..")
 		mail(to: @owner.email, subject: "#{@user.first_name} is geinteresseerd in je tuin..")
+
 	end
 
 	def accept_allotment_request(allotment)
@@ -15,7 +17,7 @@ class UserMailer < ApplicationMailer
 		@garden = allotment.garden
 		@owner = @garden.owner
 
-		mail(to: @user.email, subject: "Tuinieren kan beginnen")
+		mail(to: @user.email, subject: "Het tuinieren kan beginnen..")
 	end
 
 	def decline_allotment_request(allotment)
@@ -24,7 +26,7 @@ class UserMailer < ApplicationMailer
 		@garden = allotment.garden
 		@owner = @garden.owner
 
-		mail(to: @user.email, subject: "#{@owner.first_name} heeft je verzoek geweigerd")
+		mail(to: @user.email, subject: "Helaas heeft #{@owner.first_name} je verzoek niet geaccepteerd..")
 	end
 
 end
